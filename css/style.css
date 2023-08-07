@@ -5,22 +5,23 @@ body {
 
 nav {
     display: flex;
-    background: #ece6e6;
+    background:#F4EADC;
     padding: 20px;
     align-items: center;
 }
 
 .logo img {
+    margin-left: 40px;
     max-height: 80px; 
     vertical-align: middle;
 }
 
 .hambu{
-    color: #5e4242;
-  margin-left: 20px;
+    color: #e47f21;
+  margin-left: 60px;
   font-family: 'Medula One', cursive;
-  letter-spacing: 15px; 
-  font-size: 25px;
+  letter-spacing: 20px; 
+  font-size: 20px;
 }
 body{
     font-family: sans-serif;
