@@ -10,28 +10,59 @@ nav {
 }
 
 .logo img {
-    max-height: 80px; 
+    max-height: 80px;
     vertical-align: middle;
 }
 
-.hambu{
+.hambu {
     color: #5e4242;
-  margin-left: 20px;
-  font-style: 'medula one';
+    margin-left: 20px;
+    font-style: 'medula one';
 }
-body{
+
+body {
     font-family: sans-serif;
-  }
-  
-  .label-float{
+}
+
+fieldset {
+    border: 1px solid;
+    width: 400px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 100px;
+
+}
+
+.login {
+    /* width: 640px; */
+    /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+/* .class corpo{
+    justify-content: center;
+    display: inline-block;
+    align-items: center;
+} */
+.label-float {
     position: relative;
     padding-top: 13px;
-  }
-  
-  .label-float input{
+    margin: auto;
+    display: flex;
+}
+
+input {
     border: 1px solid lightgrey;
     border-radius: 5px;
     outline: none;
+    height: 10px;
     min-width: 250px;
     padding: 15px 20px;
     font-size: 16px;
@@ -39,18 +70,20 @@ body{
     transition: all .1s linear;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
-    -webkit-appearance:none;
-  }
-  
-  .label-float input:focus{
+    -webkit-appearance: none;
+    
+    
+}
+
+.label-float input:focus {
     border: 2px solid #5e4242;
-  }
-  
-  .label-float input::placeholder{
-    color:transparent;
-  }
-  
-  .label-float label{
+}
+
+.label-float input::placeholder {
+    color: transparent;
+}
+
+.label-float label {
     pointer-events: none;
     position: absolute;
     top: calc(50% - 8px);
@@ -62,19 +95,21 @@ body{
     padding: 5px;
     box-sizing: border-box;
     color: #5e4242;
-  }
-  
-  .label-float input:required:invalid + label{
+}
+
+.label-float input:required:invalid+label {
     color: #5e4242;
-  }
-  .label-float input:focus:required:invalid{
+}
+
+.label-float input:focus:required:invalid {
     border: 2px solid #5e4242;
-  }
-  .label-float input:focus + label,
-  .label-float input:not(:placeholder-shown) + label{
+}
+
+.label-float input:focus+label,
+.label-float input:not(:placeholder-shown)+label {
     font-size: 13px;
     font-weight: bold;
     top: 0;
     color: #5e4242;
-  }
-
+    
+}
