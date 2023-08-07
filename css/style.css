@@ -5,8 +5,9 @@ body {
 
 nav {
     display: flex;
-    background-color: #ece6e6;
+    background: #ece6e6;
     padding: 20px;
+    align-items: center;
 }
 
 .logo img {
@@ -14,10 +15,14 @@ nav {
     vertical-align: middle;
 }
 
-.hambu{
-    color: #5e4242;
-  margin-left: 20px;
-  font-style: 'medula one';
+.hambu{ 
+    text-align: center;
+    justify-content: center;
+ font-size: 25px;
+ letter-spacing: 15px;
+  color: #5e4242;
+  margin-left: 40px;
+  font-family: 'Medula One', cursive;
 
 
 
