@@ -28,11 +28,12 @@ body {
 }
 
 fieldset {
-    border: 1px solid;
+    border: 3px solid;
     width: 400px;
     margin: auto;
     border-radius: 20px;
     margin-top: 100px;
+    border-color: #FFB67B;
 
 }
 
@@ -79,7 +80,7 @@ input {
 }
 
 .label-float input:focus {
-    border: 2px solid #5e4242;
+    border: 2px solid #FFB67B;
 }
 
 .label-float input::placeholder {
@@ -105,7 +106,7 @@ input {
 }
 
 .label-float input:focus:required:invalid {
-    border: 2px solid #5e4242;
+    border: 2px solid #FFB67B;
 }
 
 .label-float input:focus+label,
@@ -116,3 +117,41 @@ input {
     color: #5e4242;
     
 }
+#h2login{
+    color: #5e4242;
+}
+#botaologin{
+    margin-top: 20px;
+    background-color: #00D128;
+    border-radius: 30px;
+    border: #fff;
+    color: #fff;
+    height: 40px;
+    width: 90px;
+    font-weight: bold;
+    
+}
+#filial{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    height: 30px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 290px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance: none;
+}
+.footer {
+    margin-top: 100px;
+    background-image: url("cores.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 50px 0; 
+    height: 1px;
+  }
+    
