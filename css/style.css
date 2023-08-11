@@ -113,6 +113,9 @@ input {
     color: #5e4242;
 }
 #botaologin{
+   position: relative;
+    top: 40%;
+    left: 37%;
     margin-top: 20px;
     background-color: #00D128;
     border-radius: 30px;
@@ -121,8 +124,25 @@ input {
     height: 40px;
     width: 90px;
     font-weight: bold;
-    
+   
 }
+
+select option[value="cacapava"] {
+    background: rgba(225, 131, 16, 0.103);
+  }
+  
+  select option[value="taubate"] {
+    background: rgba(225, 131, 16, 0.3);
+  }
+  
+  select option[value="sanja"] {
+    background: rgba(225, 131, 16, 0.3);
+  }
+  
+  select option[value="lagoinha"] {
+    background: rgba(225, 131, 16, 0.3);
+  }
+
 #filial{
     border: 1px solid lightgrey;
     border-radius: 5px;
