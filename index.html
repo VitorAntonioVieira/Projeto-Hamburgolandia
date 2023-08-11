@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
     <title>HAMBURGOLÂNDIA - Controlador de Pedidos</title>
 </head>
+
 <body>
-<img src="img/xburguer.png" alt="xburguer" width="260" >
+    <nav>
+        <div class="logo">
+            <img src="img/logoHBGLD.png" alt="Logo">
+        </div>
+
+        <div class="hambu">
+            <h1>HAMBURGOLÂNDIA</h1>
+        </div>
+        <!-- <div class="nav">
+            <img id="nav-logo" src="img/logoHBGLD.png" alt="Logo HAMBURGOLÂNDIA">
+        </div> -->
+    </nav>
+    <div class="corpo">
+        <fieldset>
+            <form class="login">
+                <h2 id="h2login">Inicie sua Sessão:</h2>
+                <div class="label-float">
+                    <input type="text" placeholder=" " required="">
+                    <label>Nome de Usuário</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" placeholder=" ">
+                    <label>Email</label>
+                </div>
+                <div class="label-float">
+                    <select id="filial" name="filial" placeholder=" ">
+                        
+                        <option>Caçapava</option>
+                        <option>Taubaté</option>
+                        <option>São José do Campos</option>
+                        <option>Lagoinha</option>
+                    </select>
+                    <label>Escolha a filial</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" placeholder=" ">
+                    <label>Senha</label>
+                </div>
+                <div class="botao"></div>
+                    <button id="botaologin" onclick="confirmarlogin()">ENTRAR</button>
+                </div>
+                <footer class="footer">
+                    <p>Rodapé</p>
+                  </footer>
+    </div>
+    </form>
+    </fieldset>
+    </div>
 </body>
+
 </html>
