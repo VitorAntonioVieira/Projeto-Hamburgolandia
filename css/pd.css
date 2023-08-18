@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    background: #ece6e6;
+    padding: 20px;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 80px;
+    vertical-align: middle;
+}
+.hambu {
+    color: #5e4242;
+  margin-left: 20px;
+  font-family: 'Medula One', cursive;
+  letter-spacing: 15px; 
+  font-size: 20px;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+fieldset {
+    border: 3px solid;
+    width: 400px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 90px;
+    border-color: #FFB67B;
+    background-color: #efefef;
+    padding: 0;
+    height: 100%;
+}
+
+
+#produto {
+    height: px;
+
+}
+#cores{
+    width:100%;
+    height: 30px;
+  }
+
+.abas{
+    align-items: center;
+}
+
+.quadrado {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-top-left-radius: 0; /* Não arredondar o canto superior esquerdo */
+    border-top-right-radius: 0; /* Não arredondar o canto superior direito */
+    border-bottom-left-radius: 20px; /* Arredondar apenas o canto inferior esquerdo */
+    border-bottom-right-radius: 20px; /* Arredondar apenas o canto inferior direito */
+}
+
+#lanche{
+    padding: 10px;
+}
+
+
+
+
+.contador {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.botao {
+    background-color: #e74c3c;
+    color: #efefef;
+    border: none;
+    border-radius: 50%; /* Botão arredondado */
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.valor {
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%; /* Botão arredondado */
+    margin: 0 20px;
+}

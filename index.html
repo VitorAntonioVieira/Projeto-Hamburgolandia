@@ -20,12 +20,10 @@
         <div class="hambu">
             <h1>HAMBURGOLÂNDIA</h1>
         </div>
-        <!-- <div class="nav">
-            <img id="nav-logo" src="img/logoHBGLD.png" alt="Logo HAMBURGOLÂNDIA">
-        </div> -->
     </nav>
     <div class="corpo">
         <fieldset>
+
             <form class="login">
                 <h2 id="h2login">Inicie sua Sessão:</h2>
                 <div class="label-float">
@@ -37,23 +35,27 @@
                     <label>Email</label>
                 </div>
                 <div class="label-float">
-                    <select id="filial" name="filial">
-                        <option disabled selected>Selecione sua filial</option>
-                        <option>Caçapava</option>
-                        <option>Taubaté</option>
-                        <option>São José do Campos</option>
-                        <option>Lagoinha</option>
+                    <select id="filial" name="filial" placeholder=" ">
+                        
+                        <option value="cacapava">Caçapava</option>
+                        <option value="taubate">Taubaté</option>
+                        <option value="sanja">São José do Campos</option>
+                        <option value="lagoinha">Lagoinha</option>
                     </select>
+                    <label>Escolha a filial</label>
                 </div>
                 <div class="label-float">
                     <input type="text" placeholder=" ">
                     <label>Senha</label>
                 </div>
-
-
-
+                <div class="botao"></div>
+                    <button id="botaologin" onclick="confirmarlogin()">LOGIN</button>
+                </div>
+                <footer class="footer">
+                  </footer>
+            </form>
     </div>
-    </form>
+
     </fieldset>
     </div>
 </body>

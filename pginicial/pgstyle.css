@@ -1,0 +1,96 @@
+nav {
+    display: flex;
+    background: #ece6e6;
+    padding: 20px;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 70px;
+    vertical-align: middle;
+}
+
+.hambu {
+    color: #5e4242;
+  margin-left: 20px;
+  font-family: 'Medula One', cursive;
+  letter-spacing: 15px; 
+  font-size: 20px;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#cores{
+  width:100%;
+  height: 30px;
+}
+.encaminhamentos{
+    text-decoration:none;
+
+}
+#maispedidos{
+    margin-left:100px ;
+    padding: 10px;
+}
+#bebidas{
+    margin-left:100px ;
+    padding: 10px;
+    margin-top: 70px;
+}
+#box {
+    border: 3px solid;
+    width: 140px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 40px;
+    border-color: #FFB67B;
+    background-color: #efefef;
+    align-items: center;
+    text-align: center;;
+}
+#produto{
+    height: 130px;
+}
+.mpedidos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    justify-items: center;
+    margin-left: 100px;
+  }
+  .fild{
+    margin-right: 30px;
+  }
+   .bebi{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.porço{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#porçoes{
+    margin-left:100px ;
+    padding: 10px;
+    margin-top: 70px;
+}
+#sobremesa{
+    margin-left:100px ;
+    padding: 10px;
+    margin-top: 70px; 
+}
+.sobre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
