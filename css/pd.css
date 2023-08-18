@@ -48,9 +48,28 @@ fieldset {
     height: 30px;
   }
 
-.abas{
-    align-items: center;
+  #abas{
+    margin-top: 2%;
+  }
+
+  #abas ul {
+    list-style: none; /* Remover as bolinhas da lista */
+    display: flex; /* Exibir os itens em linha */
+    justify-content: center; /* Centralizar os itens horizontalmente */
+    margin: 0;
+    padding: 0;
 }
+
+#abas ul li {
+    margin: 0 10px; /* Espaçamento entre os itens */
+}
+
+a{
+    text-decoration: none;
+    color: #800F0F;
+    font-size: 150%;
+}
+
 
 .quadrado {
     width: 100%;
@@ -65,9 +84,6 @@ fieldset {
 #lanche{
     padding: 10px;
 }
-
-
-
 
 .contador {
     display: flex;
@@ -95,4 +111,8 @@ fieldset {
     padding: 10px;
     border-radius: 50%; /* Botão arredondado */
     margin: 0 20px;
+}
+li{
+    padding-left: 100px;
+    padding-right: 100px;
 }
