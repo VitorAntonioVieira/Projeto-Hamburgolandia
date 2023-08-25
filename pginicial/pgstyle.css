@@ -106,9 +106,85 @@ body {
 #pedidopreparo{
     height: 200px
 }
+#pedidopreparo1{
+    height: 200px;
+    width: 180px;
+}
 #pedido1{
-    width: 80%;
+    width: 610px;
     border-radius: 25px;
     border-color: #FFB67B;
     border-style:bold solid;
+    margin-left: 60px;
+    display:flex;
+    margin-bottom: 60px;
 }
+.descricao{
+    margin-left: 50px;
+    margin-top: 15px;
+}
+#bfp{
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    width: 150px;
+    margin-left: 52px;
+    margin-top: 140px;
+}
+.containerpedidos{
+    display: flex;
+}
+#bap{
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    width: 150px;
+    margin-left: 52px;
+    margin-top: 100px;
+}
+#bep{
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    width: 150px;
+    margin-left: 52px;
+    margin-top:10px;
+}
+
+.minha-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;}
+  
+  .minha-lista li {
+    padding: 10px; 
+    border-right: 1px solid #ccc;
+    
+  }
+  
+  
+  .minha-lista li a {
+    text-decoration: none; 
+    color: #333; 
+  }
+  
+ 
+  .minha-lista li a:hover {
+    color: #fff; 
+    background-color: #5e4242;
+    border-radius: 30px;
+  }
+  .encaminhamentos{
+    margin-left: 30px;
+  }
+  
