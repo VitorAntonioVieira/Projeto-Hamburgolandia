@@ -23,20 +23,18 @@
     </nav>
     <div class="corpo">
         <fieldset>
-
-            <form class="login">
+            <form action="processar_login.php" method="post" class="login">
                 <h2 id="h2login">Inicie sua Sessão:</h2>
                 <div class="label-float">
-                    <input type="text" placeholder=" " required="">
+                    <input name="user" type="text" placeholder=" " required>
                     <label>Nome de Usuário</label>
                 </div>
                 <div class="label-float">
-                    <input type="text" placeholder=" ">
+                    <input name="email" type="email" placeholder=" " required>
                     <label>Email</label>
                 </div>
                 <div class="label-float">
-                    <select id="filial" name="filial" placeholder=" ">
-                        
+                    <select id="filial" name="filial" placeholder=" " required>
                         <option value="cacapava">Caçapava</option>
                         <option value="taubate">Taubaté</option>
                         <option value="sanja">São José do Campos</option>
@@ -45,18 +43,14 @@
                     <label>Escolha a filial</label>
                 </div>
                 <div class="label-float">
-                    <input type="text" placeholder=" ">
+                    <input name="senha" type="password" placeholder=" " required>
                     <label>Senha</label>
                 </div>
                 <div class="botao"></div>
-                    <button id="botaologin" onclick="confirmarlogin()">LOGIN</button>
+                    <input type="submit" value="LOGIN" id="botaologin">
                 </div>
-                <footer class="footer">
-                  </footer>
             </form>
-    </div>
-
-    </fieldset>
+        </fieldset>
     </div>
 </body>
 
