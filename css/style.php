@@ -160,11 +160,12 @@ select option[value="lagoinha"] {
 }
 
 .footer {
-    margin-top: 90px;
+    margin-top: 101px;
     background-image: url("FOOTER.jpg");
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 30px 0;
-}
+    padding:30px 0; 
+  }
+

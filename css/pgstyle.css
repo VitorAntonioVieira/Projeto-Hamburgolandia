@@ -1,3 +1,5 @@
+@media screen and (min-width:
+1024px) {
 body {
     font-family: sans-serif;
     margin: 0;
@@ -154,4 +156,5 @@ nav {
     border-radius: 25px;
     border-color: #FFB67B;
     border-style: bold solid;
+}
 }
