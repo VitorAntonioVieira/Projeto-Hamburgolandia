@@ -1,3 +1,5 @@
+<?php header('Content-type: text/css'); ?>
+
 body {
     margin: 0;
     padding: 0;
@@ -164,11 +166,6 @@ select option[value="lagoinha"] {
     background-position: center;
     color: white;
     text-align: center;
-<<<<<<< HEAD
     padding:30px 0; 
   }
 
-=======
-    padding: 30px 0;
-}
->>>>>>> cc05540d9698770f43c8a6e601f801c061feeafe

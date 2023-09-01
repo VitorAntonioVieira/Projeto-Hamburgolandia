@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logoHBGLD.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/main.js"></script>
+    
     <title>HAMBURGOLÂNDIA - Controlador de Pedidos</title>
 </head>
 
@@ -46,7 +48,7 @@
                     <input name="senha" type="password" placeholder=" " required>
                     <label>Senha</label>
                 </div>
-                <div class="botao"></div>
+                <div class="botao">
                     <input type="submit" value="LOGIN" id="botaologin">
                 </div>
             </form>

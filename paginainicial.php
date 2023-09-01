@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+
+    if($_SESSION['usuario_logado'] !== true){
+        session_destroy();
+        header('Location: index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,6 +16,7 @@
     <script src="js/main.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/pgstyle.css">
     <script src="js/main.js"></script>
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
@@ -19,19 +29,27 @@
             <img src="img/2x/round_search_black_24dp.png" alt="">
             <input type="text" id="txtBusca" placeholder="Buscar por itens" />
         </div>
+        <div id="logout">
+            <a href="logout.php"><span class="material-symbols-outlined">
+                logout
+            </span></a>
+        </div>
     </nav>
     <div class="cores">
         <img id="cores" src="img/cores.png" alt="cores">
     </div>
     <div class="encaminhamentos">
         <ul>
-            <li><a href="paginainicial.html">Produtos</a></li>
+            <li><a href="paginainicial.php">Produtos</a></li>
             <li><a href="#">Pedidos</a></li>
-            <li><a href="#">Em preparo</a></li>
+            <li><a href="prepagarçom.php">Em preparo</a></li>
         </ul>
     </div>
-    <h1 id="maispedidos">LANCHES</h1>
+    <h1 class="grid-title">LANCHES</h1>
     <div class="grid-container">
+        <?php
+            
+        ?>
         <div class="mpedidos">
             <div class="fild">
                 <fieldset class="box">
@@ -40,7 +58,7 @@
                     <p>R$28,09</p>
                 </fieldset>
             </div>
-            <div class="fild">
+            <!-- <div class="fild">
                 <fieldset class="box">
                     <img class="produto" src="img/xburguer.png" alt="Lanche xburguer">
                     <h3>Simpleslândia</h3>
@@ -81,10 +99,10 @@
                     <h3>Salalândia</h3>
                     <p>R$27,09</p>
                 </fieldset>
-            </div>
+            </div> -->
         </div>
     </div>
-    <h1 id="bebidas">BEBIDAS</h1>
+    <h1 class="grid-title">BEBIDAS</h1>
     <div class="grid-container">
         <div class="bebi">
 
@@ -139,7 +157,7 @@
             </div>
         </div>
     </div>
-    <h1 id="porçoes">PORÇÕES</h1>
+    <h1 class="grid-title">PORÇÕES</h1>
     <div class="grid-container">
         <div class="porço">
             <div class="fild">
