@@ -11,7 +11,7 @@ nav {
 }
 
 .hambu {
-    color: #5e4242;
+    /* color: #5e4242; */
     margin-left: 20px;
     font-family: 'Medula One', cursive;
     letter-spacing: 15px;
@@ -21,7 +21,7 @@ nav {
 .mpedidos {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .grid-container {
@@ -32,6 +32,11 @@ nav {
     margin-left: 100px;
 }
 
+.grid-title {
+    margin-left: 100px;
+    padding: 10px;
+    margin-top: 70px;
+}
 /* .fild {} */
 
 .produto {
@@ -51,12 +56,12 @@ nav {
 }
 
 .encaminhamentos ul {
-
+    display: flex;
     list-style: none;
 }
 
-.encaminhamentos li a {
-    color: #;
+.encaminhamentos a {
+    color: #5e4242;
     text-decoration: none;
 }
 
@@ -84,12 +89,12 @@ nav {
 }
 
 #logo {
-    width: 5%;
+    width: 64px;
 }
 
 #divBusca {
     display: flex;
-    width: 90%;
+    width: 80%;
     height: 10%;
     align-items: center;
     background-color: white;
@@ -100,14 +105,23 @@ nav {
 }
 
 #divBusca img {
-    width: 2%;
+    width: 24px;
 }
 
 #divBusca input {
-    width: 90%;
+    width: 100%;
     height: 30px;
     border-radius: 5px;
     border-style: none;
+}
+
+#divBusca input:focus {
+    outline: 0;
+}
+
+#logout a{
+    text-decoration: none;
+    color: #5e4242;
 }
 
 #cores {
@@ -117,25 +131,6 @@ nav {
 }
 
 
-
-#maispedidos {
-    margin-left: 100px;
-    padding: 10px;
-}
-
-#bebidas {
-    margin-left: 100px;
-    padding: 10px;
-    margin-top: 70px;
-}
-
-
-
-#porçoes {
-    margin-left: 100px;
-    padding: 10px;
-    margin-top: 70px;
-}
 
 #sobremesa {
     margin-left: 100px;

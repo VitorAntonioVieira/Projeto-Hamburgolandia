@@ -7,13 +7,14 @@
 
         if($usuario[0]==$user1[0] && $usuario[1]==$user1[1] && $usuario[2]==$user1[2] && $usuario[3]==$user1[3]){
             session_start();
-            $_SESSION['usuario_logado'] = $usuario[0];
+            $_SESSION['usuario_logado'] = true
 
             sleep(1);
             header('Location: paginaInicial.php');
         } else {
             sleep(1);
             header('Location: index.php');
+            echo '<script>alertaErro()</script>';
         }
     }
 ?>

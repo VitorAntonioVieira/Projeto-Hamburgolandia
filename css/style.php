@@ -1,3 +1,5 @@
+<?php header('Content-type: text/css'); ?>
+
 body {
     margin: 0;
     padding: 0;
