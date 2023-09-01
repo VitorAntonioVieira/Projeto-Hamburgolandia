@@ -5,30 +5,30 @@ body {
 
 nav {
     display: flex;
-    background:#F4EADC;
+    background: #F4EADC;
     padding: 20px;
     align-items: center;
 }
 
 .logo img {
     margin-left: 40px;
-    max-height: 80px; 
+    max-height: 80px;
     vertical-align: middle;
 }
 
-.hambu{
+.hambu {
     color: #e47f21;
-  margin-left: 60px;
+    margin-left: 60px;
     max-height: 80px;
     vertical-align: middle;
 }
 
 .hambu {
     color: #5e4242;
-  margin-left: 20px;
-  font-family: 'Medula One', cursive;
-  letter-spacing: 20px; 
-  font-size: 20px;
+    margin-left: 20px;
+    font-family: 'Medula One', cursive;
+    letter-spacing: 20px;
+    font-size: 20px;
 }
 
 body {
@@ -75,8 +75,8 @@ input {
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
     -webkit-appearance: none;
-    
-    
+
+
 }
 
 .label-float input:focus {
@@ -115,13 +115,14 @@ input {
     font-weight: bold;
     top: 0;
     color: #5e4242;
-    
 }
-#h2login{
+
+#h2login {
     color: #5e4242;
 }
-#botaologin{
-   position: relative;
+
+#botaologin {
+    position: relative;
     top: 40%;
     left: 37%;
     margin-top: 20px;
@@ -132,26 +133,17 @@ input {
     height: 40px;
     width: 90px;
     font-weight: bold;
-   
+
 }
 
-select option[value="cacapava"] {
+select option[value="cacapava"],
+select option[value="taubate"],
+select option[value="sanja"],
+select option[value="lagoinha"] {
     background: rgba(225, 131, 16, 0.103);
-  }
-  
-  select option[value="taubate"] {
-    background: rgba(225, 131, 16, 0.3);
-  }
-  
-  select option[value="sanja"] {
-    background: rgba(225, 131, 16, 0.3);
-  }
-  
-  select option[value="lagoinha"] {
-    background: rgba(225, 131, 16, 0.3);
-  }
+}
 
-#filial{
+#filial {
     border: 1px solid lightgrey;
     border-radius: 5px;
     height: 30px;
@@ -164,6 +156,7 @@ select option[value="cacapava"] {
     -moz-transition: all .1s linear;
     -webkit-appearance: none;
 }
+
 .footer {
     margin-top: 101px;
     background-image: url("FOOTER.jpg");
@@ -171,6 +164,11 @@ select option[value="cacapava"] {
     background-position: center;
     color: white;
     text-align: center;
+<<<<<<< HEAD
     padding:30px 0; 
   }
 
+=======
+    padding: 30px 0;
+}
+>>>>>>> cc05540d9698770f43c8a6e601f801c061feeafe
