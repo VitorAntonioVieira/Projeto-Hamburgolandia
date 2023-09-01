@@ -116,3 +116,11 @@ li{
     padding-left: 100px;
     padding-right: 100px;
 }
+
+@media screen and (max-width: 600px) {
+    #abas ul li {
+        margin: 0 5px; /* Reduz o espaçamento entre as abas */
+        padding: 5px 10px; /* Ajusta o espaçamento interno das abas */
+    }
+}
+
