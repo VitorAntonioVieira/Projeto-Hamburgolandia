@@ -31,15 +31,16 @@
         </div>
     </nav>
     <div class="cores">
-        <img id="cores" src="css/FOOTER.jpg" alt="cores">
+        <img id="cores" src="img/FOOTER.jpg" alt="cores">
     </div>
-    <div id="abas">
+    <div id="abas" class="abas">
         <ul>
-            <li> <a href="#Produtos"> Produtos </a> </li>
-            <li> <a href="#Pedidos"> Pedidos</a> </li>
-            <li> <a href="#EmPreparo"> Em Preparo </a> </li>
+             <li><a href="#Produtos">Produtos</a></li>
+             <li><a href="#Pedidos">Pedidos</a></li>
+             <li><a href="#EmPreparo">Em Preparo</a></li>
         </ul>
     </div>
+
     <div class="corpo">
         <fieldset>
             <div>
