@@ -1,26 +1,27 @@
 <?php
-    
-    $conn = new mysqli("localhost", "root", "", "hamburgolandia");
+$conn = new mysqli("localhost", "root", "", "hamburgolandia");
 
-    if ($conn->connect_error) {
-        die("Erro de conexão: ".$conn->connect_error);
-    }
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $nome = $_POST['nome'];
-        $data_nasc = $_POST['data_nasc'];
-        $id_pessoal = $_POST['cpf'];
-        $filial = $_POST['filial'];
-        $email = $_POST['email'];
-        $user = $_POST['user'];
-        $senha = $_POST['senha'];
+if ($conn->connect_error) {
+    die("Erro de conexão: ".$conn->connect_error);
+}
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nome = $_POST['nome'];
+    $data_nasc = $_POST['data_nasc'];
+    $cpf = $_POST['cpf'];
+    $filial = $_POST['filial'];
+    $email = $_POST['email'];
+    $user = $_POST['user'];
+    $senha = $_POST['senha'];
 
-        $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc, cpf, user, filial) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssiss", $nome, $email, $senha, $data_nasc, $cpf, $user, $filial);
-        $stmt->execute();
-        header: exit();
-        $conn->close;
-    }
+    $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc, cpf, user, filial) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssiss", $nome, $email, $senha, $data_nasc, $cpf, $user, $filial);
+    $stmt->execute();
+
+    header ("Location: index.php");   
+    exit();
+}
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +50,7 @@
     </nav>
     <div class="corpo">
         <fieldset>
-            <form action="<?php$_SERVER['PHP_SELF'];?>" method="post" class="login">
+            <form action='<?php $_SERVER["PHP_SELF"]; ?>' method="post" class="login">
                 <h2 id="h2login">Cadastro de colaboradores:</h2>
                 <div class="label-float">
                     <input name="nome" type="text" placeholder=" " required>
