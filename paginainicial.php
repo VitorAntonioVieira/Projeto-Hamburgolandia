@@ -1,9 +1,10 @@
 <?php 
     session_start();
 
-    if($_SESSION['usuario_logado'] !== true){
+    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
         session_destroy();
         header('Location: index.php');
+        exit;
     }
 ?>
 
@@ -42,7 +43,7 @@
         <ul>
             <li><a href="paginainicial.php">Produtos</a></li>
             <li><a href="#">Pedidos</a></li>
-            <li><a href="prepagarçom.php">Em preparo</a></li>
+            <li><a href="prepagarcom.php">Em preparo</a></li>
         </ul>
     </div>
     <h1 class="grid-title">LANCHES</h1>

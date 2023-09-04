@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+
+    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
+        session_destroy();
+        header('Location: index.php');
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,9 +30,9 @@
             <input type="text" id="txtBusca" placeholder="Buscar por itens" />
         </div>
         <div id="logout">
-            <span class="material-symbols-outlined">
+            <a href="logout.php"><span class="material-symbols-outlined">
                 logout
-            </span>
+            </span></a>
         </div>
     </nav>
     <div class="cores">

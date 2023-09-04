@@ -1,3 +1,27 @@
+<?php
+    
+    $conn = new mysqli("localhost", "root", "", "hamburgolandia");
+
+    if ($conn->connect_error) {
+        die("Erro de conexão: ".$conn->connect_error);
+    }
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $nome = $_POST['nome'];
+        $data_nasc = $_POST['data_nasc'];
+        $id_pessoal = $_POST['cpf'];
+        $filial = $_POST['filial'];
+        $email = $_POST['email'];
+        $user = $_POST['user'];
+        $senha = $_POST['senha'];
+
+        $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc, cpf, user, filial) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssiss", $nome, $email, $senha, $data_nasc, $cpf, $user, $filial);
+        $stmt->execute();
+        header: exit();
+        $conn->close;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,15 +49,19 @@
     </nav>
     <div class="corpo">
         <fieldset>
-            <form action="processar_login.php" method="post" class="login">
-                <h2 id="h2login">Inicie sua Sessão:</h2>
+            <form action="<?php$_SERVER['PHP_SELF'];?>" method="post" class="login">
+                <h2 id="h2login">Cadastro de colaboradores:</h2>
                 <div class="label-float">
-                    <input name="user" type="text" placeholder=" " required>
-                    <label>Nome de Usuário</label>
+                    <input name="nome" type="text" placeholder=" " required>
+                    <label>Nome do Colaborador</label>
                 </div>
                 <div class="label-float">
-                    <input name="email" type="email" placeholder=" " required>
-                    <label>Email</label>
+                    <input name="data_nasc" type="date" placeholder=" " required>
+                    <label>Data de Nascimento</label>
+                </div>
+                <div class="label-float">
+                    <input name="cpf" type="text" placeholder=" " required>
+                    <label>CPF</label>
                 </div>
                 <div class="label-float">
                     <select id="filial" name="filial" placeholder=" " required>
@@ -43,6 +71,14 @@
                         <option value="lagoinha">Lagoinha</option>
                     </select>
                     <label>Escolha a filial</label>
+                </div>
+                <div class="label-float">
+                    <input name="email" type="email" placeholder=" " required>
+                    <label>Email</label>
+                </div>
+                <div class="label-float">
+                    <input name="user" type="text" placeholder=" " required>
+                    <label>Nome de usuário</label>
                 </div>
                 <div class="label-float">
                     <input name="senha" type="password" placeholder=" " required>

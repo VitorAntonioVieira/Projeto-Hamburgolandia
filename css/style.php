@@ -126,7 +126,7 @@ input {
 #botaologin {
     position: relative;
     top: 40%;
-    left: 37%;
+    left: 17%;
     margin-top: 20px;
     background-color: #00D128;
     border-radius: 30px;
