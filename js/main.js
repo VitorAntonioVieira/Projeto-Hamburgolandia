@@ -28,3 +28,10 @@ it.addEventListener("click", () => {
 //     //   });
 //     alert('Dados incorretos');
 // }
+
+//document.getElementByClassName('produto').onclick = function abrir() {
+//modal.showModal()
+//}
+//document.getElementsByClassName('adicionar').onclick= function adicionar(){
+//    modal.close()
+//}

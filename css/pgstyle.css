@@ -157,4 +157,15 @@ nav {
     border-color: #FFB67B;
     border-style: bold solid;
 }
+/*
+dialog::backdrop{
+background-color: rgb(0 0 0 / .3);
+}
+dialog{
+    border:none;
+    border-radius: 20px;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    width: 80%;
+}
+*/
 }

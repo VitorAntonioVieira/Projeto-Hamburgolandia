@@ -64,7 +64,15 @@
                 </fieldset>
             </div>
             <?php } ?>
-            <!-- <div class="fild">
+              
+            <!-- <dialog>
+            <h2>X-tudão</h2>
+            <h3>Descrição</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quaerat dolores quisquam accusamus animi, voluptatum hic nostrum, officia, sint aliquam nobis! Nemo, alias earum. Corrupti, iste. Itaque reiciendis veritatis pariatur!</p>
+            <button class="adicionar">Adicionar Item</button>
+        </dialog>
+
+            <div class="fild">
                 <fieldset class="box">
                     <img class="produto" src="img/xburguer.png" alt="Lanche xburguer">
                     <h3>Simpleslândia</h3>
