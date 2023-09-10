@@ -1,5 +1,3 @@
-<?php header('Content-type: text/css'); ?>
-
 body {
     margin: 0;
     padding: 0;
@@ -148,10 +146,10 @@ select option[value="lagoinha"] {
 #filial {
     border: 1px solid lightgrey;
     border-radius: 5px;
-    height: 30px;
-    padding: 15px 20px;
+    height: 40px;
+    padding-left: 7%;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     width: 290px;
     transition: all .1s linear;
     -webkit-transition: all .1s linear;

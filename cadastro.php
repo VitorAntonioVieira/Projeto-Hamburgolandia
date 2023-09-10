@@ -1,27 +1,25 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "hamburgolandia");
 
-if ($conn->connect_error) {
-    die("Erro de conexão: ".$conn->connect_error);
-}
+include 'includes/conexao.php';
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST['nome'];
     $data_nasc = $_POST['data_nasc'];
-    $cpf = $_POST['cpf'];
+    $cpf = password_hash($_POST['cpf'], PASSWORD_DEFAULT);
     $filial = $_POST['filial'];
     $email = $_POST['email'];
     $user = $_POST['user'];
-    $senha = $_POST['senha'];
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc, cpf, user, filial) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssiss", $nome, $email, $senha, $data_nasc, $cpf, $user, $filial);
-    $stmt->execute();
+    $mysqli->query("INSERT INTO usuarios (nome, email, senha, data_nasc, cpf, user, filial) VALUES ('$nome', '$email', '$senha', '$data_nasc', '$cpf', '$user', '$filial')");
+    // $stmt = $mysqli->prepare($sql);
+    // $stmt->bind_param("ssssiss", $nome, $email, $senha, $data_nasc, $cpf, $user, $filial);
+    // $stmt->execute();
 
     header ("Location: index.php");   
     exit();
 }
-$conn->close();
+// $mysqli->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +27,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logoHBGLD.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logos/3.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.php">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

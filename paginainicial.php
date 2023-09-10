@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/main.js"></script>
+    <link rel="shortcut icon" href="img/logos/3.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -25,7 +25,7 @@
 
 <body>
     <nav>
-        <img id="logo" src="img/LOGOG.png" alt="Logo">
+        <img id="logo" src="img/logos/1.png" alt="Logo">
         <div id="divBusca">
             <img src="img/2x/round_search_black_24dp.png" alt="">
             <input type="text" id="txtBusca" placeholder="Buscar por itens" />
@@ -48,17 +48,22 @@
     </div>
     <h1 class="grid-title">LANCHES</h1>
     <div class="grid-container">
-        <?php
-            
-        ?>
         <div class="mpedidos">
+            <?php
+                include 'includes/conexao.php';
+
+                $sql = "SELECT * FROM lanches";
+                $sql_exec = $mysqli->query($sql) or die($mysqli->error);
+                while($lanches = $sql_exec->fetch_assoc()){
+            ?>
             <div class="fild">
                 <fieldset class="box">
-                    <img class="produto" src="img/xtudo.png" alt="Lanche Xtudo">
-                    <h3>X-Tudão</h3>
-                    <p>R$28,09</p>
+                    <?php echo '<img class="produto" src="'.$lanches['imagem'].'" alt="'.$lanches['nome'].'">
+                    <h3>'.$lanches['nome'].'</h3>
+                    <p>'.$lanches['preco'].'</p>';?>
                 </fieldset>
             </div>
+            <?php } ?>
             <!-- <div class="fild">
                 <fieldset class="box">
                     <img class="produto" src="img/xburguer.png" alt="Lanche xburguer">
