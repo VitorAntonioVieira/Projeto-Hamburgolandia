@@ -14,7 +14,7 @@
 
 <body>
     <nav>
-        <img id="logo" src="img/logos/5.png" alt="Logo">
+        <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
             <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch" class="search-button"><span class="material-symbols-outlined">search</span></button></input>
             <button id="pc-sch" class="search-button"><span>Buscar</span></button>
@@ -56,9 +56,22 @@
         </div>
         <div class="pedido">
             <fieldset class="pedido1">
-                <img class="pedidopreparo1"src="img/xveg.png" alt="simpleslândia">
+                <img class="pedidopreparo1"src="img/xbacon.png" alt="simpleslândia">
                 <div class="descricao">
-                    <h2>Vegslândia</h2>
+                    <h2>Baconlândia</h2>
+                    <p>Mesa: 4</p>
+                    <p>Observação: Nenhuma</p>
+                </div>
+                <div class="botaofinalizar">
+                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                </div>
+            </fieldset>
+        </div>
+        <div class="pedido">
+            <fieldset class="pedido1">
+                <img class="pedidopreparo1"src="img/xsalada.png" alt="simpleslândia">
+                <div class="descricao">
+                    <h2>salalândia</h2>
                     <p>Mesa: 4</p>
                     <p>Observação: Nenhuma</p>
                 </div>
@@ -71,5 +84,6 @@
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>
+    
 </body>
 </html>
