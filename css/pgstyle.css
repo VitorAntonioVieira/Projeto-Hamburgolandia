@@ -72,8 +72,10 @@ footer {
 
 .containerpedidos {
     display: flex;
-    width: 70%;
+    width: 80%;
     margin: auto;
+    justify-content: space-between;
+    gap: 60px;
 }
 
 .encaminhamentos ul {
@@ -176,7 +178,11 @@ footer {
     height: 30px;
     box-shadow: 5px 5px 5px #ccc;
 }
-
+.centro{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+}
 #sobremesa {
     margin-left: 100px;
     padding: 10px;
@@ -186,8 +192,11 @@ footer {
 .pedidopreparo1 {
     /*imagem do lanche*/
     margin-left: 5px;
-    width: 100px;
+    width: 190px;
     justify-content: center;
+    align-items: center;
+    float: left; /* Alinha a imagem à esquerda */
+    margin-right: 10px
 
 }
 
@@ -398,10 +407,6 @@ footer {
     } */
 
     .pedido1 {  
-        /* width: 40px;
-        border-radius: 25px;
-        border-color: #FFB67B;
-        border-style: bold solid; */
         flex-direction: column;
     }
 
