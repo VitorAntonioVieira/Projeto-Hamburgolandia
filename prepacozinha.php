@@ -15,7 +15,7 @@
 <body>
     <nav>
         
-        <img id="logo" src="img/LOGOG.png" alt="Logo">
+        <img id="logo" src="img/logos/1.png" alt="Logo">
         
     <div class="search-container">
         <input type="text" placeholder="Pesquisar" class="search-box">

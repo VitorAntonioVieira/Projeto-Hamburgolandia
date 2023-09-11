@@ -1,21 +1,4 @@
-<?php 
-    session_start();
 
-    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
-        session_destroy();
-        header('Location: index.php');
-        exit;
-    }
-?>
-<?php 
-    session_start();
-
-    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
-        session_destroy();
-        header('Location: index.php');
-        exit;
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,7 +17,7 @@
 <body>
 <nav>
         
-        <img id="logo" src="img/LOGOG.png" alt="Logo">
+        <img id="logo" src="img/logos/1.png" alt="Logo">
         
     <div class="search-container">
         <input type="text" placeholder="Pesquisar" class="search-box">
