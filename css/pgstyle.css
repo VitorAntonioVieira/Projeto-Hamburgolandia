@@ -11,8 +11,10 @@ nav {
 }
 
 footer {
+    position: sticky;
     text-align: center;
-    margin: 70px;
+    margin-top: 70px;
+    margin-bottom: -30px;
     color: #ccc;
 }
 

@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
+    session_destroy();
+    header('Location: index.php');
+    exit;
+}
 
 include 'includes/conexao.php';
 
@@ -29,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logos/3.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.php">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/main.js"></script>
     
@@ -64,12 +71,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
                 <div class="label-float">
                     <select id="filial" name="filial" placeholder=" " required>
+                        <option value="" disabled>Selecione uma opção...</option>
                         <option value="cacapava">Caçapava</option>
                         <option value="taubate">Taubaté</option>
                         <option value="sanja">São José do Campos</option>
                         <option value="lagoinha">Lagoinha</option>
                     </select>
-                    <label>Escolha a filial</label>
                 </div>
                 <div class="label-float">
                     <input name="email" type="email" placeholder=" " required>
