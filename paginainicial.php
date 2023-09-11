@@ -107,7 +107,10 @@
     <div id="fade"></div>
     <div id="modal">
         <div class="modal-header">
-            
+            <?php echo?>
+            <div class='modal-img'>
+                <img src="<?php $" alt="">
+            </div>
         </div>
     </div>
     <footer>
