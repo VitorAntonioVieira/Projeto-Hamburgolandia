@@ -1,19 +1,36 @@
 <?php
-    $user1 = ['wesleydaVA', 'fiorezinsantista@hotmail.com', 'cacapava', 'euamoomestreyoda123'];
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    include 'includes/conexao.php';
 
-        $usuario = [$_POST['user'], $_POST['email'], $_POST['filial'], $_POST['senha']];
+    $login_err = 0;
 
-        if($usuario[0]==$user1[0] && $usuario[1]==$user1[1] && $usuario[2]==$user1[2] && $usuario[3]==$user1[3]){
-            session_start();
-            $_SESSION['usuario_logado'] = $usuario[0];
+    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] )){
+        session_destroy();
+        header('Location: index.php');
+        exit;
+    } else {
 
-            sleep(1);
-            header('Location: paginaInicial.php');
-        } else {
-            sleep(1);
-            header('Location: index.php');
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $user = $_POST['user'];
+            $email = $_POST['email'];
+            $filial = $_POST['filial'];
+
+            $sql = "SELECT * FROM usuarios WHERE user = '$user' AND email = '$email' AND filial = '$filial' LIMIT 1";
+            $sql_exec = $mysqli->query($sql) or die($mysqli->error);
+
+            $usuario = $sql_exec->fetch_assoc();
+            if(password_verify($_POST['senha'], $usuario['senha'])){
+                session_start();
+                $_SESSION['usuario_logado'] = true;
+
+                sleep(1);
+                header('Location: paginaInicial.php');
+            } else {
+                sleep(1);
+                header('Location: index.php');
+            }
         }
+
     }
 ?>

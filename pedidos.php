@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,12 +35,12 @@
     <div class="encaminhamentos">
         <ul>
             <li><a href="paginainicial.php">Produtos</a></li>
-            <li><a href="pedidos.php">Pedidos</a></li>
+            <li><a href="pedidos.php" >Pedidos</a></li>
             <li><a href="prepagarcom.php">Em preparo</a></li>
             <!-- <li><a href="prepacozinha.php">Cozinha</a></li>            -->
         </ul>
     </div>
-    <h1 class="grid-title no-select">Em Preparo</h1>
+    <h1 class="grid-title no-select">Pedidos</h1>
 
     <div class="containerpedidos">   
         <div class="pedido">
@@ -50,7 +52,7 @@
                     <p>Observação: Retirar cebola</p>
                 </div>
                 <div class="botaofinalizar">
-                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                <button id="bfp" onclick=""><span id="pc-done">Editar</span><span class="material-symbols-outlined" id="mobile-done">edit</span></button>
                 </div>
             </fieldset>
         </div>
@@ -63,7 +65,7 @@
                     <p>Observação: Nenhuma</p>
                 </div>
                 <div class="botaofinalizar">
-                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                <button id="bfp" onclick=""><span id="pc-done">Editar</span><span class="material-symbols-outlined" id="mobile-done">edit</span></button>
                 </div>
             </fieldset>
         </div>

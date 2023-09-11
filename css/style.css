@@ -124,7 +124,7 @@ input {
 #botaologin {
     position: relative;
     top: 40%;
-    left: 37%;
+    left: 17%;
     margin-top: 20px;
     background-color: #00D128;
     border-radius: 30px;
@@ -146,10 +146,10 @@ select option[value="lagoinha"] {
 #filial {
     border: 1px solid lightgrey;
     border-radius: 5px;
-    height: 30px;
-    padding: 15px 20px;
+    height: 40px;
+    padding-left: 7%;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     width: 290px;
     transition: all .1s linear;
     -webkit-transition: all .1s linear;
@@ -164,11 +164,6 @@ select option[value="lagoinha"] {
     background-position: center;
     color: white;
     text-align: center;
-<<<<<<< HEAD
     padding:30px 0; 
   }
 
-=======
-    padding: 30px 0;
-}
->>>>>>> cc05540d9698770f43c8a6e601f801c061feeafe
