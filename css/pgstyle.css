@@ -157,4 +157,558 @@ nav {
     border-color: #FFB67B;
     border-style: bold solid;
 }
+/*
+dialog::backdrop{
+background-color: rgb(0 0 0 / .3);
+}
+dialog{
+    border:none;
+    border-radius: 20px;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    width: 80%;
+}
+*/
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hambu {
+    /* color: #5e4242; */
+    margin-left: 20px;
+    font-family: 'Medula One', cursive;
+    letter-spacing: 15px;
+    font-size: 20px;
+}
+
+.mpedidos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10%;
+    justify-items: center;
+    margin-left: 100px;
+}
+
+.grid-title {
+    margin-left: 100px;
+    padding: 10px;
+    margin-top: 70px;
+}
+
+/* .fild {} */
+
+.produto {
+    height: 130px;
+}
+
+.bebi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.porço {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.encaminhamentos ul {
+    display: flex;
+    list-style: none;
+}
+
+.encaminhamentos a {
+    color: #5e4242;
+    text-decoration: none;
+    text-align: center;
+    background-color: #e7e1e1;
+    height: 5000px;
+
+}
+
+.sobre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fildfinal {
+    margin-right: 30px;
+    margin-bottom: 90px;
+}
+
+.box {
+    border: 3px solid;
+    width: 140px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 40px;
+    border-color: #FFB67B;
+    background-color: #efefef;
+    align-items: center;
+    text-align: center;
+}
+
+#logo {
+    width: 64px;
+}
+
+#divBusca {
+    display: flex;
+    width: 80%;
+    height: 10%;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 2px;
+}
+
+#divBusca img {
+    width: 24px;
+}
+
+#divBusca input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+#divBusca input:focus {
+    outline: 0;
+}
+
+#logout a {
+    text-decoration: none;
+    color: #5e4242;
+}
+
+#cores {
+    width: 100%;
+    height: 30px;
+    box-shadow: 5px 5px 5px #ccc;
+}
+
+
+
+#sobremesa {
+    margin-left: 100px;
+    padding: 10px;
+    margin-top: 70px;
+}
+
+#pedidopreparo1 {
+    /*imagem do lanche*/
+    margin-left: 5px;
+    height: 180px;
+    justify-content: center;
+
+}
+
+#logout {
+    height: 50px;
+}
+
+#pedido1 {
+    height: 400px;
+    width: 200px;
+    border-radius: 25px;
+    border-color: #FFB67B;
+    border-style: bold solid;
+}
+
+.hambu {
+    margin-left: 10px;
+    font-size: 30px;
+    /**/
+
+}
+
+#h1preparo {
+
+    margin-left: 9px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+#pedidopreparo1 {
+    /*imagem do lanche*/
+    margin-left: 5px;
+    height: 180px;
+    justify-content: center;
+
+}
+
+#logout {
+    height: 50px;
+}
+
+#pedido1 {
+    height: 400px;
+    width: 200px;
+    border-radius: 25px;
+    border-color: #FFB67B;
+    border-style: bold solid;
+}
+
+
+#bfp {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+
+}
+
+#bap {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    width: 80px;
+    font-weight: bold;
+    border: none;
+
+}
+
+#bup {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    width: 80px;
+    font-weight: bold;
+    border: none;
+
+}
+
+.containerpedidos {
+    display: flex;
+}
+
+
+.encaminhamentos ul {
+    display: flex;
+    list-style: none;
+}
+
+.encaminhamentos a {
+
+    color: #5e4242;
+    text-decoration: none;
+    background-color: #e7e1e1;
+    /* Cor de fundo da barra de navegação */
+    padding: 10px;
+    /* Espaçamento interno */
+    height: 500px;
+
+}
+
+#divBusca img {
+    width: 24px;
+}
+
+#divBusca input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+#divBusca input:focus {
+    outline: 0;
+}
+
+#logout a {
+    text-decoration: none;
+    color: #5e4242;
+    height: 500%;
+}
+
+#cores {
+    width: 100%;
+    height: 30px;
+    box-shadow: 5px 5px 5px #ccc;
+}
+
+#logo {
+    width: 80px;
+    justify-items: center;
+
+}
+
+#divBusca {
+    display: flex;
+    width: 50%;
+    height: 10%;
+    margin-left: 190px;
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 2px;
+}
+
+/* Estilize a barra de pesquisa e o botão aqui */
+.search-container {
+    display: flex;
+    margin-right: 900px;
+    height: 40px;
+
+}
+
+.search-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    /* Remove a borda de foco padrão */
+}
+
+.search-button {
+    background-color: #05a828;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Estilize o botão quando o mouse estiver sobre ele */
+.search-button:hover {
+    background-color: #dadada;
+}
+
+
+
+
+@media (max-width: 1023px) {
+/* Estilize a barra de pesquisa e o botão aqui */
+.search-container {
+display: flex;
+
+
+align-items: center;
+width: 400px; /* Defina o comprimento desejado aqui */
+margin: 0 auto; /* Centralize o contêiner */
+}
+
+.search-box {
+flex: 1; /* A caixa de pesquisa preenche o espaço disponível */
+padding: 10px;
+border: 1px solid #ccc;
+
+
+border-radius: 5px;
+
+
+outline: none; /* Remove a borda de foco padrão */
+}
+
+.search-button {
+background-color: #007213;
+color: #fff;
+border: none;
+
+
+border-radius: 5px;
+
+
+padding: 10px 15px;
+margin-left: 5px;
+cursor: pointer;
+}
+
+/* Estilize o botão quando o mouse estiver sobre ele */
+.search-button:hover {
+background-color: #00b300;
+}
+
+}
+
+.hambu {
+    margin-left: 10px;
+    font-size: 30px;
+    /**/
+
+}
+
+#h1preparo {
+
+    margin-left: 9px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+#pedidopreparo1 {
+    /*imagem do lanche*/
+    margin-left: 5px;
+    height: 180px;
+    justify-content: center;
+
+}
+
+#logout {
+    height: 50px;
+}
+
+#pedido1 {
+    height: 400px;
+    width: 200px;
+    border-radius: 25px;
+    border-color: #FFB67B;
+    border-style: bold solid;
+}
+
+
+#bfp {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+
+}
+
+#bap {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    width: 80px;
+    font-weight: bold;
+    border: none;
+
+}
+
+#bup {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    width: 80px;
+    font-weight: bold;
+    border: none;
+
+}
+
+.containerpedidos {
+    display: flex;
+}
+
+
+.encaminhamentos ul {
+    display: flex;
+    list-style: none;
+}
+
+.encaminhamentos a {
+
+    color: #5e4242;
+    text-decoration: none;
+    background-color: #e7e1e1;
+    /* Cor de fundo da barra de navegação */
+    padding: 10px;
+    /* Espaçamento interno */
+    height: 5000px;
+}
+
+
+
+#logout a {
+    text-decoration: none;
+    color: #5e4242;
+    height: 500%;
+}
+
+#cores {
+    width: 100%;
+    height: 30px;
+    box-shadow: 5px 5px 5px #ccc;
+}
+
+#logo {
+    width: 70px;
+    justify-items: center;
+
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+.hambu {
+    height: 10px;
+    width: 10px;
+}
+
+#h1preparo {
+    margin-left: 50px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+#pedidopreparo1 {
+    height: 155px
+}
+
+#pedido1 {
+    height: 400px;
+    width: 40px;
+    border-radius: 25px;
+    border-color: #FFB67B;
+    border-style: bold solid;
+}
+
+.encaminhamentos ul {
+    display: flex;
+    list-style: none;
+}
+
+.encaminhamentos a {
+    color: #5e4242;
+    text-decoration: none;
+}
+
+
+#logout a {
+    text-decoration: none;
+    color: #5e4242;
+}
+
+#cores {
+    width: 100%;
+    height: 30px;
+    box-shadow: 5px 5px 5px #ccc;
+}
+
+#logo {
+    width: 34px;
+}
+
+
 }

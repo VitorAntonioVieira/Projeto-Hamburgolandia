@@ -1,47 +1,48 @@
-<?php 
-    session_start();
-
-    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
-        session_destroy();
-        header('Location: index.php');
-        exit;
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logos/3.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="pginicial/pgstyle.css">
     <script src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/pgstyle.css">
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
 
 <body>
     <nav>
-        <div class="logo">
-            <img src="img/logoHBGLD.png" alt="Logo">
-        </div>
-        <div class="hambu">
-            <h1>HAMBURGOLÂNDIA</h1>
+        
+        <img id="logo" src="img/LOGOG.png" alt="Logo">
+        
+    <div class="search-container">
+        <input type="text" placeholder="Pesquisar" class="search-box">
+        <button class="search-button">Buscar</button>
+      </div>
+      <div id="logout">
+            <a href="logout.php"><span class="material-symbols-outlined">
+                logout
+            </span></a>
         </div>
     </nav>
     <div class="cores">
-        <img id="cores" src="css/FOOTER.jpg" alt="cores">
+        <img id="cores" src="img/cores.png" alt="cores">
     </div>
-    <div>
-        <ul id="encaminhamentos">
-            <li><a href="paginainicial.html">Produtos</a></li>
+    <div class="encaminhamentos">
+        <ul>
+    
+            <li><a href="paginainicial.php">Produtos</a></li>
             <li><a href="#">Pedidos</a></li>
-            <li><a href="prepagarçom.html">Em preparo</a></li>
+            <li><a href="prepagarcom.php">Em preparo</a></li>
+            <li><a href="prepacozinha.php">Cozinha</a></li>
+            <li><a href=>Os mais pedidos</a></li>
+            <li><a href=>Novidades</a></li>
+          
         </ul>
-    </div>
-
-    <h1 id="h1preparo">Em Preparo</h1>
+</div>
+    <h1 id="h1preparo">Em Preparo Cozinha</h1>
 
     <div class="containerpedidos">
         
@@ -55,46 +56,14 @@
                 <p>Tempo: 38m21s</p>
             </div>
             <div class="botaofinalizar">
-                <button id="bap" onclick="">Aceitar pedido</button>
-                <button id="bep" onclick="">Entregar pedido</button>
+               <button id="bup" onclick="">Iniciar </button>
+               <button id="bap" onclick="">Finalizar</button>
             </div>
+            
         </fieldset>
     </div>
-
-    <div class="pedido">
-        <fieldset id="pedido1">
-            <img id="pedidopreparo1"src="img/xbacon.png" alt="baconlândia">
-            <div class="descricao">
-                <h2>Baconlândia</h2>
-                <p>Mesa: 2</p>
-                <p>Observação: Retirar tomate</p>
-                <p>Tempo: 38m21s</p>
-            </div>
-            <div class="botaofinalizar">
-                <button id="bap" onclick="">Aceitar pedido</button>
-                <button id="bep" onclick="">Entregar pedido</button>
-            </div>
-        </fieldset>
-    </div>
-</div>
-<div class="containerpedidos">
-    <div class="pedido">
-        <fieldset id="pedido1">
-            <img id="pedidopreparo"src="img/xveg.png" alt="Vegslândia">
-            <div class="descricao">
-                <h2>Vegslândia</h2>
-                <p>Mesa: 4</p>
-                <p>Observação: </p>
-                <p>Tempo: 45m04s</p>
-            </div>
-            <div class="botaofinalizar">
-               <button id="bap" onclick="">Aceitar pedido</button>
-               <button id="bep" onclick="">Entregar pedido</button>
-            </div>
-        </fieldset>
-
-    </div>
-    </div>
+    
 </body>
-
+</html>
+          
 </html>
