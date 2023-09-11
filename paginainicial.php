@@ -26,14 +26,16 @@
 <body>
     <nav>
         <img id="logo" src="img/logos/5.png" alt="Logo">
-        <div id="divBusca">
-            <img src="img/2x/round_search_black_24dp.png" alt="">
-            <input type="text" id="txtBusca" placeholder="Buscar por itens" />
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch" class="search-button"><span class="material-symbols-outlined">search</span></button></input>
+            <button id="pc-sch" class="search-button"><span>Buscar</span></button>
         </div>
         <div id="logout">
-            <a href="logout.php"><span class="material-symbols-outlined">
+            <a href="logout.php">
+                <span class="material-symbols-outlined">
                 logout
-            </span></a>
+                </span>
+            </a>
         </div>
     </nav>
     <div class="cores">
@@ -46,9 +48,9 @@
             <li><a href="prepagarcom.php">Em preparo</a></li>
         </ul>
     </div>
-    <h1 class="grid-title">LANCHES</h1>
-    <div class="grid-container">
-        <div class="mpedidos">
+    <h1 class="grid-title no-select">LANCHES</h1>
+    <div class="container-wraper">
+        <div class="container no-select">
             <?php
                 include 'includes/conexao.php';
 
@@ -63,12 +65,12 @@
                     <p>'.$lanches['preco'].'</p>';?>
                 </fieldset>
             </div>
-            <?php } ?>
+            <?php } ?> 
         </div>
     </div>
-    <h1 class="grid-title">BEBIDAS</h1>
-    <div class="grid-container">
-        <div class="bebi">
+    <h1 class="grid-title no-select">BEBIDAS</h1>
+    <div class="container-wraper">
+        <div class="container no-select">
             <?php
                 $sql_b = "SELECT * FROM bebidas";
                 $query_bebidas = $mysqli->query($sql_b) or die($mysqli->error);
@@ -84,9 +86,9 @@
             <?php } ?>
         </div>
     </div>
-    <h1 class="grid-title">PORÇÕES</h1>
-    <div class="grid-container">
-        <div class="porço">
+    <h1 class="grid-title no-select">PORÇÕES</h1>
+    <div class="container-wraper">
+        <div class="container no-select">
             <?php
                 $sql_p = "SELECT * FROM porcoes";
                 $query_porcoes = $mysqli->query($sql_p) or die($mysqli->error);
@@ -102,5 +104,8 @@
             <?php } ?>
         </div>
     </div>
+    <footer>
+        ©HAMBURGOLÂNDIA · 2023
+    </footer>
 </body>
 </html>

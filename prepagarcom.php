@@ -15,55 +15,63 @@
 </head>
 
 <body>
-<nav>
-        
-        <img id="logo" src="img/logos/1.png" alt="Logo">
-        
-    <div class="search-container">
-        <input type="text" placeholder="Pesquisar" class="search-box">
-        <button class="search-button">Buscar</button>
-      </div>
-      <div id="logout">
-            <a href="logout.php"><span class="material-symbols-outlined">
+    <nav>
+        <img id="logo" src="img/logos/5.png" alt="Logo">
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch" class="search-button"><span class="material-symbols-outlined">search</span></button></input>
+            <button id="pc-sch" class="search-button"><span>Buscar</span></button>
+        </div>
+        <div id="logout">
+            <a href="logout.php">
+                <span class="material-symbols-outlined">
                 logout
-            </span></a>
+                </span>
+            </a>
         </div>
     </nav>
-  
     <div class="cores">
         <img id="cores" src="img/cores.png" alt="cores">
     </div>
     <div class="encaminhamentos">
         <ul>
-      
             <li><a href="paginainicial.php">Produtos</a></li>
-            <li><a href="#">Pedidos</a></li>
+            <li><a href="pedidos.php">Pedidos</a></li>
             <li><a href="prepagarcom.php">Em preparo</a></li>
-            <li><a href="prepacozinha.php">Cozinha</a></li>
-            <li><a href=>Os mais pedidos</a></li>
-            <li><a href=>Novidades</a></li>
-            
+            <!-- <li><a href="prepacozinha.php">Cozinha</a></li>            -->
         </ul>
-</div>
-    <h1 id="h1preparo">Em Preparo</h1>
-
-    <div class="containerpedidos">
-        
-    <div class="pedido">
-        <fieldset id="pedido1">
-            <img id="pedidopreparo1"src="img/xburguer.png" alt="simpleslândia">
-            <div class="descricao">
-                <h2>Simpleslândia</h2>
-                <p>Mesa: 1</p>
-                <p>Observação: Retirar cebola</p>
-               
-            </div>
-            <div class="botaofinalizar">
-               <button id="bfp" onclick="">Finalizar pedido</button>
-            </div>
-            
-        </fieldset>
     </div>
-    
+    <h1 class="grid-title no-select">Em Preparo</h1>
+
+    <div class="containerpedidos">   
+        <div class="pedido">
+            <fieldset class="pedido1">
+                <img class="pedidopreparo1"src="img/xburguer.png" alt="simpleslândia">
+                <div class="descricao">
+                    <h2>X-Burger</h2>
+                    <p>Mesa: 1</p>
+                    <p>Observação: Retirar cebola</p>
+                </div>
+                <div class="botaofinalizar">
+                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                </div>
+            </fieldset>
+        </div>
+        <div class="pedido">
+            <fieldset class="pedido1">
+                <img class="pedidopreparo1"src="img/xveg.png" alt="simpleslândia">
+                <div class="descricao">
+                    <h2>Vegslândia</h2>
+                    <p>Mesa: 4</p>
+                    <p>Observação: Nenhuma</p>
+                </div>
+                <div class="botaofinalizar">
+                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <footer>
+        ©HAMBURGOLÂNDIA · 2023
+    </footer>
 </body>
 </html>
