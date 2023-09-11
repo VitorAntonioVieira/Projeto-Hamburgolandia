@@ -67,9 +67,22 @@
         </div>
         <div class="pedido">
             <fieldset class="pedido1">
-                <img class="pedidopreparo1"src="img/xveg.png" alt="simpleslândia">
+                <img class="pedidopreparo1"src="img/xbacon.png" alt="simpleslândia">
                 <div class="descricao">
-                    <h2>Vegslândia</h2>
+                    <h2>Baconlândia</h2>
+                    <p>Mesa: 4</p>
+                    <p>Observação: Nenhuma</p>
+                </div>
+                <div class="botaofinalizar">
+                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                </div>
+            </fieldset>
+        </div>
+        <div class="pedido">
+            <fieldset class="pedido1">
+                <img class="pedidopreparo1"src="img/xsalada.png" alt="simpleslândia">
+                <div class="descricao">
+                    <h2>salalândia</h2>
                     <p>Mesa: 4</p>
                     <p>Observação: Nenhuma</p>
                 </div>
@@ -82,5 +95,6 @@
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>
+    
 </body>
 </html>
