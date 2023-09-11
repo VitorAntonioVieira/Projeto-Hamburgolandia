@@ -1,0 +1,190 @@
+nav {
+    display: flex;
+    background: #ece6e6;
+    padding: 20px;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 70px;
+    vertical-align: middle;
+}
+
+.hambu {
+    color: #5e4242;
+  margin-left: 20px;
+  font-family: 'Medula One', cursive;
+  letter-spacing: 15px; 
+  font-size: 20px;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#cores{
+  width:100%;
+  height: 30px;
+}
+.encaminhamentos{
+    text-decoration:none;
+
+}
+#maispedidos{
+    margin-left:100px ;
+    padding: 10px;
+}
+#bebidas{
+    margin-left:100px ;
+    padding: 10px;
+    margin-top: 70px;
+}
+#box {
+    border: 3px solid;
+    width: 140px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 40px;
+    border-color: #FFB67B;
+    background-color: #efefef;
+    align-items: center;
+    text-align: center;;
+}
+#produto{
+    height: 130px;
+}
+.mpedidos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    justify-items: center;
+    margin-left: 100px;
+  }
+  .fild{
+    margin-right: 30px;
+  }
+   .bebi{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.porço{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#porçoes{
+    margin-left:100px ;
+    padding: 10px;
+    margin-top: 70px;
+}
+#sobremesa{
+    margin-left:100px ;
+    padding: 10px;
+    margin-top: 70px; 
+}
+.sobre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.fildfinal{
+    margin-right: 30px;
+    margin-bottom: 90px;
+  }
+#h1preparo{
+    margin-left:50px ;
+    padding: 10px;
+    margin-top: 50px;
+}
+#pedidopreparo{
+    height: 200px
+}
+#pedidopreparo1{
+    height: 200px;
+    width: 180px;
+}
+#pedido1{
+    width: 610px;
+    border-radius: 25px;
+    border-color: #FFB67B;
+    border-style:bold solid;
+    margin-left: 60px;
+    display:flex;
+    margin-bottom: 60px;
+}
+.descricao{
+    margin-left: 50px;
+    margin-top: 15px;
+}
+#bfp{
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    width: 150px;
+    margin-left: 52px;
+    margin-top: 140px;
+}
+.containerpedidos{
+    display: flex;
+}
+#bap{
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    width: 150px;
+    margin-left: 52px;
+    margin-top: 100px;
+}
+#bep{
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    width: 150px;
+    margin-left: 52px;
+    margin-top:10px;
+}
+
+.minha-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;}
+  
+  .minha-lista li {
+    padding: 10px; 
+    border-right: 1px solid #ccc;
+    
+  }
+  
+  
+  .minha-lista li a {
+    text-decoration: none; 
+    color: #333; 
+  }
+  
+ 
+  .minha-lista li a:hover {
+    color: #fff; 
+    background-color: #5e4242;
+    border-radius: 30px;
+  }
+  .encaminhamentos{
+    margin-left: 30px;
+  }
+  
