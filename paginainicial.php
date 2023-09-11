@@ -104,6 +104,12 @@
             <?php } ?>
         </div>
     </div>
+    <div id="fade"></div>
+    <div id="modal">
+        <div class="modal-header">
+            
+        </div>
+    </div>
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>
