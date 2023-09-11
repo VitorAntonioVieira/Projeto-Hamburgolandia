@@ -25,7 +25,7 @@
 
 <body>
     <nav>
-        <img id="logo" src="img/logos/5.png" alt="Logo">
+        <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
             <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch" class="search-button"><span class="material-symbols-outlined">search</span></button></input>
             <button id="pc-sch" class="search-button"><span>Buscar</span></button>
