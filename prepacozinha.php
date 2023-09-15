@@ -1,4 +1,12 @@
+<?php 
+    session_start();
 
+    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
+        session_destroy();
+        header('Location: index.php');
+        exit;
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,6 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/main.js"></script>
+    <link rel="shortcut icon" href="img/logos/3.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -16,7 +25,7 @@
 
 <body>
     <nav>
-        <img id="logo" src="img/logos/5.png" alt="Logo">
+        <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
             <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch" class="search-button"><span class="material-symbols-outlined">search</span></button></input>
             <button id="pc-sch" class="search-button"><span>Buscar</span></button>
@@ -50,6 +59,19 @@
                     <h2>X-Burger</h2>
                     <p>Mesa: 1</p>
                     <p>Observação: Retirar cebola</p>
+                </div>
+                <div class="botaofinalizar">
+                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                </div>
+            </fieldset>
+        </div>
+        <div class="pedido">
+            <fieldset class="pedido1">
+                <img class="pedidopreparo1"src="img/bacon.png" alt="simpleslândia">
+                <div class="descricao">
+                    <h2>Baconlândia</h2>
+                    <p>Mesa: 4</p>
+                    <p>Observação: Nenhuma</p>
                 </div>
                 <div class="botaofinalizar">
                 <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>

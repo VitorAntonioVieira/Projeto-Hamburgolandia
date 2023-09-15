@@ -44,7 +44,7 @@
     <div class="encaminhamentos">
         <ul>
             <li><a href="paginainicial.php">Produtos</a></li>
-            <li><a href="#">Pedidos</a></li>
+            <li><a href="pedidos.php">Pedidos</a></li>
             <li><a href="prepagarcom.php">Em preparo</a></li>
         </ul>
     </div>

@@ -1,6 +1,6 @@
 <?php
     $hostname = 'localhost';
-    $bancodedados = 'hamburgolandia';
+    $bancodedados = 'bd_hamburgolandia';
     $usuario = 'root';
     $senha = '';
 
