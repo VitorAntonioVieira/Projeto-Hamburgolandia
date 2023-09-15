@@ -57,12 +57,18 @@
                 $sql_l = "SELECT * FROM lanches";
                 $query_lanches = $mysqli->query($sql_l) or die($mysqli->error);
                 while($lanches = $query_lanches->fetch_assoc()){
+                    if ($lanches['imagem' !== '']){
             ?>
             <div class="fild">
                 <fieldset class="box">
                     <?php echo '<img class="produto" src="'.$lanches['imagem'].'" alt="'.$lanches['nome'].'">
                     <h3>'.$lanches['nome'].'</h3>
-                    <p>'.$lanches['preco'].'</p>';?>
+                    <p>'.$lanches['preco'].'</p>';}
+                    else {
+                        echo '<img class="produto" src="/img/notdisp.png" alt="'.$lanches['nome'].'">
+                        <h3>'.$lanches['nome'].'</h3>
+                        <p>'.$lanches['preco'].'</p>';
+                    }?>
                 </fieldset>
             </div>
             <?php } ?> 
