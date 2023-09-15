@@ -48,27 +48,7 @@
             <li><a href="prepagarcom.php">Em preparo</a></li>
         </ul>
     </div>
-    <div id="myModal" class="modal">
-        <div class="corpo">
-            <fieldset>
-                <div>
-                    <img id="produto" src="img/xburguer.png" alt="xburguer">
-                </div>
-                <div class="quadrado">
-                    <h1 id="lanche">Simpleslândia</h1>
-                    <div>
-                        <p>Serve 1 pessoa.Pão italiano com gergilin, hamburguer artesanal (90g), queijo cheddar e ketchup
-                        </p>
-                        <div class="contador">
-                            <button class="botao" id="decremento">-</button>
-                            <div class="valor" id="contador">0</div>
-                            <button class="botao" id="incremento">+</button>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </div>
-    </div>
+    
     <h1 class="grid-title no-select">LANCHES</h1>
     <div class="container-wraper">
         <div class="container no-select">
