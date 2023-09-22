@@ -70,6 +70,23 @@
                         <h3>'.$lanches['nome'].'</h3>
                         <p>'.$lanches['preco'].'</p>';
                     }?>
+
+<button id="openModal">Abrir Modal</button>
+
+<!-- A modal -->
+<div id="myModal" class="modal">
+
+  <!-- Conteúdo da modal -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <?php
+        // Aqui você pode incluir o conteúdo PHP que deseja exibir na modal
+        echo "Conteúdo da modal gerado pelo PHP";
+    ?>
+  </div>
+
+</div>
+
                 </fieldset>
             </div>
             <?php } ?> 
