@@ -1,23 +1,16 @@
+function abrirModal(imagem, nome, preco) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("imagemModal");
+    var captionText = document.getElementById("caption");
 
+    modal.style.display = "block";
+    modalImg.src = imagem;
+    captionText.innerHTML = "<h3>" + nome + "</h3><p>" + preco + "</p>";
 
-var modal = document.getElementById('myModal');
-    var btn = document.getElementsByClassName("produto");
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("fechar")[0];
 
-    // Abre a modal quando o botão é clicado
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // Fecha a modal quando o 'x' é clicado
     span.onclick = function() {
         modal.style.display = "none";
     }
-
-    // Fecha a modal quando se clica fora dela
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+}
     

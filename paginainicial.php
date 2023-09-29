@@ -70,23 +70,6 @@
                         <h3>'.$lanches['nome'].'</h3>
                         <p>'.$lanches['preco'].'</p>';
                     }?>
-
-<button id="openModal">Abrir Modal</button>
-
-<!-- A modal -->
-<div id="myModal" class="modal">
-
-  <!-- Conteúdo da modal -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <?php
-        // Aqui você pode incluir o conteúdo PHP que deseja exibir na modal
-        echo "Conteúdo da modal gerado pelo PHP";
-    ?>
-  </div>
-
-</div>
-
                 </fieldset>
             </div>
             <?php } ?> 
@@ -103,28 +86,17 @@
             <div class="fild">
                 <fieldset class="box">
                     <?php echo '<img class="produto" src="'.$bebidas['imagem'].'" alt="'.$bebidas['nome'].'">
-                     <h3>'.$bebidas['nome'].'</h3>
+                    <h3>'.$bebidas['nome'].'</h3>
                     <p>'.$bebidas['preco'].'</p>';?>
                 </fieldset>
-                    <div id="myModal" class="modal">
-                      <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <div id="conteudo">
-                            <div id="foto">
-                        <img id="imgg"src="modalimg.jpg">
-                        </div>
-                        <div id="descricao">
-                            <h2>presente</h2>
-                            <h3>descrição</h3>
-                            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore facere in dolorum rem exercitationem, porro veritatis illum animi aspernatur quo repellat aliquid nemo ratione delectus doloremque accusamus inventore libero perspiciatis.]</p>
-                            <button id="add"> Adicionar item </button>
-                            </div>
-                        </div>
-                      </div>
-                    
-                    </div>
-                   
             </div>
+
+            <!-- Modal -->
+<div id="myModal" class="modal">
+    <span class="fechar">&times;</span>
+    <img id="imagemModal" class="modal-content">
+    <div id="caption"></div>
+</div>
             <?php } ?>
         </div>
     </div>
