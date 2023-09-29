@@ -103,9 +103,27 @@
             <div class="fild">
                 <fieldset class="box">
                     <?php echo '<img class="produto" src="'.$bebidas['imagem'].'" alt="'.$bebidas['nome'].'">
-                    <h3>'.$bebidas['nome'].'</h3>
+                     <h3>'.$bebidas['nome'].'</h3>
                     <p>'.$bebidas['preco'].'</p>';?>
                 </fieldset>
+                    <div id="myModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div id="conteudo">
+                            <div id="foto">
+                        <img id="imgg"src="modalimg.jpg">
+                        </div>
+                        <div id="descricao">
+                            <h2>presente</h2>
+                            <h3>descrição</h3>
+                            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore facere in dolorum rem exercitationem, porro veritatis illum animi aspernatur quo repellat aliquid nemo ratione delectus doloremque accusamus inventore libero perspiciatis.]</p>
+                            <button id="add"> Adicionar item </button>
+                            </div>
+                        </div>
+                      </div>
+                    
+                    </div>
+                   
             </div>
             <?php } ?>
         </div>
