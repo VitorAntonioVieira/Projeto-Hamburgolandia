@@ -1,0 +1,639 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer {
+    position: sticky;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: -30px;
+    color: #ccc;
+}
+
+.no-select {
+
+    -webkit-user-select:none;  
+    -moz-user-select:none;     
+    -ms-user-select:none;      
+    user-select:none;  
+  
+  }
+  
+.container-wraper {
+    overflow-x: auto;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    margin-left: 100px;
+}
+
+.grid-title {
+    margin-left: 100px;
+    padding: 10px;
+    margin-top: 70px;
+}
+
+/* .fild {} */
+
+.produto {
+    width: 80%;
+    height: 120px;
+}
+
+.sobre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fildfinal {
+    margin-right: 30px;
+    margin-bottom: 90px;
+}
+
+.box {
+    border: 3px solid;
+    width: 140px;
+    border-radius: 20px;
+    border-color: #FFB67B;
+    background-color: #efefef;
+    align-items: center;
+    text-align: center;
+}
+    .containerpedidos {
+        display: flex;
+        flex-direction: column; /* Organiza o conteúdo na vertical */
+        align-items: center; /* Centraliza horizontalmente */
+        justify-content: center; /* Centraliza verticalmente */
+        gap: 60px;
+        border: 3px solid;
+        width: 400px;
+        margin: auto;
+        border-radius: 20px;
+        margin-top: 90px;
+        border-color: #FFB67B;
+    }
+
+.encaminhamentos ul {
+    display: flex;
+    list-style: none;
+}
+
+.encaminhamentos a {
+    color: #5e4242;
+    text-decoration: none;
+    background-color: #e7e1e1;
+    text-align: center;
+    /* Cor de fundo da barra de navegação */
+    padding: 10px;
+    /* Espaçamento interno */
+    height: 500px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 80%; /* Defina o comprimento desejado aqui */
+    }
+
+/* Estilize a barra de pesquisa e o botão aqui */
+.search-box {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    /* Remove a borda de foco padrão */
+}
+
+.search-button {
+    background-color: #05a828;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Estilize o botão quando o mouse estiver sobre ele */
+.search-button:hover {
+    background-color: #dadada;
+}
+
+.descricao {
+    font-size: 90%;
+    color: #5e4242;
+}
+
+.botaofinalizar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#logo {
+    width: 7%;
+}
+
+#divBusca {
+    display: flex;
+    width: 80%;
+    height: 10%;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 2px;
+}
+
+#divBusca img {
+    width: 24px;
+}
+
+#divBusca input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+#divBusca input:focus {
+    outline: 0;
+}
+
+#logout a {
+    text-decoration: none;
+    color: #5e4242;
+    margin-top: 4px;
+}
+
+#cores {
+    width: 100%;
+    height: 30px;
+    box-shadow: 5px 5px 5px #ccc;
+}
+.centro{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+}
+#sobremesa {
+    margin-left: 100px;
+    padding: 10px;
+    margin-top: 70px;
+}
+
+.pedidopreparo1 {
+    /*imagem do lanche*/
+    margin-left: 5px;
+    width: 190px;
+    justify-content: center;
+    align-items: center;
+    float: left; /* Alinha a imagem à esquerda */
+    margin-right: 10px
+
+}
+
+#h1preparo {
+
+    margin-left: 9px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.pedido1 {
+    display: flex;
+    /* width: 45%; */
+    height: 100%;
+    border-radius: 25px;
+    border-color: #FFB67B;
+    border-style: bold solid;
+}
+
+#bfp {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+
+}
+
+#bap {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    width: 80px;
+    font-weight: bold;
+    border: none;
+
+}
+
+#bup {
+    color: #efefef;
+    background-color: #00D128;
+    border-radius: 30px;
+    height: 40px;
+    width: 80px;
+    font-weight: bold;
+    border: none;
+
+}
+
+#divBusca img {
+    width: 24px;
+}
+
+#divBusca input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+#divBusca input:focus {
+    outline: 0;
+}
+
+#mbl-sch {
+    display: none;
+}
+
+#mobile-done {
+    display: none;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Estilize a barra de pesquisa e o botão aqui */
+    .search-container {
+    display: flex;
+    align-items: center;
+    width: 60%; /* Defina o comprimento desejado aqui */
+    margin: 10px;
+    }
+
+    .search-box {
+    flex: 1; /* A caixa de pesquisa preenche o espaço disponível */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none; /* Remove a borda de foco padrão */
+    }
+
+    .search-button {
+    background-color: #007213;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    }
+
+    /* Estilize o botão quando o mouse estiver sobre ele */
+    .search-button:hover {
+    background-color: #00b300;
+    }
+
+    #divBusca {
+        width: 60%;
+    }
+
+    #h1preparo {
+        margin-left: 9px;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    #bfp {
+        color: #efefef;
+        background-color: #00D128;
+        border-radius: 30px;
+        height: 40px;
+        font-weight: bold;
+        border: none;
+
+    }
+
+    #bap {
+        color: #efefef;
+        background-color: #00D128;
+        border-radius: 30px;
+        height: 40px;
+        width: 80px;
+        font-weight: bold;
+        border: none;
+
+    }
+
+    #bup {
+        color: #efefef;
+        background-color: #00D128;
+        border-radius: 30px;
+        height: 40px;
+        width: 80px;
+        font-weight: bold;
+        border: none;
+
+    }
+
+    .containerpedidos {
+        display: flex;
+        width: 80%;
+        margin: auto;
+    }
+
+    .encaminhamentos ul {
+        display: flex;
+        list-style: none;
+    }
+
+    .encaminhamentos a {
+
+        color: #5e4242;
+        text-decoration: none;
+        background-color: #e7e1e1;
+        /* Cor de fundo da barra de navegação */
+        padding: 10px;
+        /* Espaçamento interno */
+        /* height: 5000px; */
+    }
+
+    #cores {
+        width: 100%;
+        height: 30px;
+        box-shadow: 5px 5px 5px #ccc;
+    }
+
+    #logo {
+        width: 70px;
+        justify-items: center;
+
+    }
+
+    #mbl-sch {
+        display: none;
+    }
+
+    #mobile-done {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .search-container {
+        display: flex;
+        align-items: center;
+        width: 60%; /* Defina o comprimento desejado aqui */
+        padding: 10px;
+        }
+
+    #h1preparo {
+        margin-left: 50px;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    /* .pedidopreparo1 {
+        height: 155px;
+    } */
+
+    .pedido1 {  
+        flex-direction: column;
+    }
+
+    .encaminhamentos ul {
+        display: flex;
+        list-style: none;
+    }
+
+    .encaminhamentos a {
+        color: #5e4242;
+        text-decoration: none;
+    }
+    .containerpedidos {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #cores {
+        width: 100%;
+        height: 30px;
+        box-shadow: 5px 5px 5px #ccc;
+    }
+
+    #logo {
+        width: 10%;
+    }
+
+    #mbl-sch {
+        display: none;
+    }
+
+    #pc-done {
+        display: none;
+    }
+
+    #mobile-done {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .search-container {
+        display: flex;
+        align-items: center;
+        width: 45%; /* Defina o comprimento desejado aqui */
+        padding: 10px;
+    }
+
+    .search-box {
+        width: 70%;
+    }
+
+    .search-button {
+        background-color: none;
+        color: #007213;
+        border: none;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    .encaminhamentos {
+        display: flex;
+        justify-content: center;
+        margin-left: -25px;
+    }
+
+    .grid-title {
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    .containerpedidos {
+         display: flex; /* Adicione display: flex; para tornar o container de pedidos um flex container */
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center; /* Centraliza horizontalmente */
+        }
+        
+
+    .container {
+        gap: 1rem;
+        margin-left: 2rem;
+    }
+
+    .pedido1 {  
+        /* width: 40px;
+        border-radius: 25px;
+        border-color: #FFB67B;
+        border-style: bold solid; */
+        flex-direction: column;
+    }
+
+    #pc-sch {
+        display: none;
+    }
+
+    #pc-done {
+        display: none;
+    }
+
+    #mobile-done {
+        display: block;
+    }
+
+    #logo {
+        width: 15%;
+    }
+}
+.login {
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+textarea {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    height: 10px;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+}
+
+.label-float textarea:focus {
+    border: 2px solid #FFB67B;
+}
+
+.label-float textarea::placeholder {
+    color: transparent;
+}
+
+.label-float textarea:required:invalid+label {
+    color: #5e4242;
+}
+
+
+.label-float textarea:focus+label,
+.label-float textarea:not(:placeholder-shown)+label {
+    font-size: 13px;
+    font-weight: bold;
+    top: 0;
+    color: #5e4242;
+}
+
+.label-float {
+    position: relative;
+    padding-top: 13px;
+    margin: auto;
+}
+
+input {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    height: 10px;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+
+}
+
+.label-float input:focus {
+    border: 2px solid #FFB67B;
+}
+
+.label-float input::placeholder {
+    color: transparent;
+}
+
+.label-float label {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 15px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    color: #5e4242;
+}
+
+.label-float input:required:invalid+label {
+    color: #5e4242;
+}
+
+
+.label-float input:focus+label,
+.label-float input:not(:placeholder-shown)+label {
+    font-size: 13px;
+    font-weight: bold;
+    top: 0;
+    color: #5e4242;
+}
+
+#botaologin {
+    position: relative;
+    top: 40%;
+    left: 17%;
+    margin-top: 20px;
+    background-color: #00D128;
+    border-radius: 30px;
+    border: #fff;
+    color: #fff;
+    height: 40px;
+    width: 90px;
+    font-weight: bold;
+
+}
