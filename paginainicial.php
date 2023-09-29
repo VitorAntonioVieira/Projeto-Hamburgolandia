@@ -55,10 +55,10 @@
             <?php
                 include 'includes/conexao.php';
 
-                $sql_l = "SELECT * FROM lanches";
+                $sql_l = "SELECT * FROM produtos WHERE cat = 'lanche'";
                 $query_lanches = $mysqli->query($sql_l) or die($mysqli->error);
                 while($lanches = $query_lanches->fetch_assoc()){
-                    if ($lanches['imagem' !== '']){
+                    if ($lanches['imagem'] !== ''){
             ?>
             <div class="fild">
                 <fieldset class="box">
@@ -96,7 +96,7 @@
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-                $sql_b = "SELECT * FROM bebidas";
+                $sql_b = "SELECT * FROM produtos WHERE cat = 'bebida'";
                 $query_bebidas = $mysqli->query($sql_b) or die($mysqli->error);
                 while($bebidas = $query_bebidas->fetch_assoc()){
             ?>
@@ -114,7 +114,7 @@
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-                $sql_p = "SELECT * FROM porcoes";
+                $sql_p = "SELECT * FROM produtos WHERE cat = 'porcoe'";
                 $query_porcoes = $mysqli->query($sql_p) or die($mysqli->error);
                 while($porcoes = $query_porcoes->fetch_assoc()){
             ?>
