@@ -6,7 +6,22 @@
         header('Location: index.php');
         exit;
     }
+
+    $ = $_POST['nome_paciente'];
+$cpf_paciente = $_POST['cpf_paciente'];
+$convenio_paciente = $_POST['convenio_paciente'];
+
+$sql = "INSERT INTO produtos (nome, descricao, preco, imagem) VALUES ('$nome_paciente', '$cpf_paciente', '$convenio_paciente')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Paciente cadastrado com sucesso!";
+} else {
+    echo "Erro ao cadastrar o paciente: " . $conn->error;
+}
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -48,7 +63,6 @@
             <li><a href="pedidos.php">Pedidos</a></li>
             <li><a href="prepagarcom.php">Em preparo</a></li>
             <li><a href="cadastro_produtos.php">Cadastro de Produtos</a></li>
-            <!-- <li><a href="prepacozinha.php">Cozinha</a></li>            -->
         </ul>
     </div>
     <h1 class="grid-title no-select">Cadastro de Pedidos</h1>
