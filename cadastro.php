@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </nav>
     <div class="corpo">
-        <fieldset>
+        <div class="field">
             <form action='<?php $_SERVER["PHP_SELF"]; ?>' method="post" class="login">
                 <h2 id="h2login">Cadastro de colaboradores:</h2>
                 <div class="label-float">
@@ -91,10 +91,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <label>Senha</label>
                 </div>
                 <div class="botao">
-                    <input type="submit" value="LOGIN" id="botaologin">
+                    <input type="submit" value="CADASTRAR" id="botaologin">
                 </div>
             </form>
-        </fieldset>
+        </div>
     </div>
 </body>
 
