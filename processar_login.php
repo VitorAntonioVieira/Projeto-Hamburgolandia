@@ -25,10 +25,10 @@
                 $_SESSION['usuario_logado'] = true;
 
                 sleep(1);
-                header('Location: paginaInicial.php');
+                header('Location: index.php');
             } else {
                 sleep(1);
-                header('Location: index.php');
+                header('Location: login.php');
             }
         }
 

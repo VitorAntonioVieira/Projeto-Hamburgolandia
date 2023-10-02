@@ -1,11 +1,11 @@
-<?php 
-    session_start();
+<?php
+session_start();
 
-    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
-        session_destroy();
-        header('Location: index.php');
-        exit;
-    }
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME']) && $_SESSION['usuario_logado'] !== true) {
+    session_destroy();
+    header('Location: index.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,8 @@
     <link rel="shortcut icon" href="img/logos/3.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/pgstyle.css">
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
@@ -27,13 +28,14 @@
     <nav>
         <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
-            <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch" class="search-button"><span class="material-symbols-outlined">search</span></button></input>
+            <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
+                class="search-button"><span class="material-symbols-outlined">search</span></button></input>
             <button id="pc-sch" class="search-button"><span>Buscar</span></button>
         </div>
         <div id="logout">
             <a href="logout.php">
                 <span class="material-symbols-outlined">
-                logout
+                    logout
                 </span>
             </a>
         </div>
@@ -43,51 +45,54 @@
     </div>
     <div class="encaminhamentos">
         <ul>
-            <li><a href="paginainicial.php">Produtos</a></li>
+            <li><a href="index.php">Produtos</a></li>
             <li><a href="pedidos.php">Pedidos</a></li>
             <li><a href="prepagarcom.php">Em preparo</a></li>
-            <!-- <li><a href="prepacozinha.php">Cozinha</a></li>            -->
+            <li><a href="cadastro_pedidos.php">Cadastro de Pedidos</a></li>
         </ul>
     </div>
     <h1 class="grid-title no-select">Em Preparo</h1>
 
-    <div class="containerpedidos">   
+    <div class="containerpedidos">
         <div class="pedido">
             <fieldset class="pedido1">
-                <img class="pedidopreparo1"src="img/xburguer.png" alt="simpleslândia">
+                <img class="pedidopreparo1" src="img/xburguer.png" alt="simpleslândia">
                 <div class="descricao">
                     <h2>X-Burger</h2>
                     <p>Mesa: 1</p>
                     <p>Observação: Retirar cebola</p>
                 </div>
                 <div class="botaofinalizar">
-                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                    <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span
+                            class="material-symbols-outlined" id="mobile-done">done</span></button>
                 </div>
             </fieldset>
         </div>
         <div class="pedido">
             <fieldset class="pedido1">
-                <img class="pedidopreparo1"src="img/xbacon.png" alt="simpleslândia">
+                <img class="pedidopreparo1" src="img/xbacon.png" alt="simpleslândia">
                 <div class="descricao">
                     <h2>Baconlândia</h2>
                     <p>Mesa: 4</p>
                     <p>Observação: Nenhuma</p>
                 </div>
                 <div class="botaofinalizar">
-                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                    <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span
+                            class="material-symbols-outlined" id="mobile-done">done</span></button>
                 </div>
             </fieldset>
         </div>
         <div class="pedido">
             <fieldset class="pedido1">
-                <img class="pedidopreparo1"src="img/xsalada.png" alt="simpleslândia">
+                <img class="pedidopreparo1" src="img/xsalada.png" alt="simpleslândia">
                 <div class="descricao">
                     <h2>salalândia</h2>
                     <p>Mesa: 4</p>
                     <p>Observação: Nenhuma</p>
                 </div>
                 <div class="botaofinalizar">
-                <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span class="material-symbols-outlined" id="mobile-done">done</span></button>
+                    <button id="bfp" onclick=""><span id="pc-done">Finalizar pedido</span><span
+                            class="material-symbols-outlined" id="mobile-done">done</span></button>
                 </div>
             </fieldset>
         </div>
@@ -95,6 +100,7 @@
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>
-    
+
 </body>
+
 </html>
