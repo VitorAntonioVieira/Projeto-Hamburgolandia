@@ -1,24 +1,24 @@
 <?php 
+    include 'includes/conexao.php';
     session_start();
 
-    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) && $_SESSION['usuario_logado'] !== true){
-        session_destroy();
-        header('Location: index.php');
-        exit;
+    if ($_SERVER["REQUEST_METHOD"] === "POST"){
+        $nome= $_POST["nome"];
+        $descricao= $_POST["descricao"];
+        $categoria= $_POST["categoria"];
+        $preco= $_POST["valor"];
+        $status= $_POST["status"];
+
+        $sql = "INSERT INTO produtos (nome,descricao,cat,preco,status_produto) VALUES ('$nome', '$descricao', '$categoria', '$preco', '$status')";
+        
+        if ($mysqli->query($sql) === TRUE) {
+            echo "Novo produto criado com sucesso";
+            header("Location: cadastro_produtos.php");
+        } else {
+            echo "Erro: " . $sql . "<br>" . $mysqli->error;
+        }
     }
-
-    $ = $_POST['nome_paciente'];
-$cpf_paciente = $_POST['cpf_paciente'];
-$convenio_paciente = $_POST['convenio_paciente'];
-
-$sql = "INSERT INTO produtos (nome, descricao, preco, imagem) VALUES ('$nome_paciente', '$cpf_paciente', '$convenio_paciente')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Paciente cadastrado com sucesso!";
-} else {
-    echo "Erro ao cadastrar o paciente: " . $conn->error;
-}
-
+    
 ?>
 
 
@@ -65,13 +65,13 @@ if ($conn->query($sql) === TRUE) {
             <li><a href="cadastro_produtos.php">Cadastro de Produtos</a></li>
         </ul>
     </div>
-    <h1 class="grid-title no-select">Cadastro de Pedidos</h1>
+    <h1 class="grid-title no-select">Cadastro de Produtos</h1>
 
     <div class="containerpedidos">   
         <div class="corpo">
-        <fieldset>
+        <form method="POST" action="">
             <div class="label-float">
-                    <input name="nomepedido" type="text" placeholder=" " required>
+                    <input name="nome" type="text" placeholder=" " required>
                     <label>Nome do Pedido</label>
                 </div>
                 <div class="label-float">
@@ -81,14 +81,26 @@ if ($conn->query($sql) === TRUE) {
                     <input name="valor" type="number" step="0.01" placeholder=" " required>
                     <label>Preço</label>
                 </div><br>
-                <div>
-                <input type="file" name="imagem" accept="image/*" placeholder="Insira aqui a imagem">
-                </div>
+                <div class="label-float">
+                <select class="select-estilizado" name="status" required>
+                    <option value="" disabled selected>Selecione o Status</option>
+                    <option value="ativo">Produto Disponível no Cardápio</option>
+                    <option value="inativo">Produto Insdisponível no Cardápio</option>
+                </select>
+            </div>
+            <div class="label-float">
+                <select class="select-estilizado" name="categoria" required>
+                    <option value="" disabled selected>Selecione a Categoria</option>
+                    <option value="lache">Lanche</option>
+                    <option value="bebida">Bebida</option>
+                    <option value="porcao">Porção</option>
+                </select>
+            </div>
                 <div class="botao">
                     <input type="submit" value="Cadastrar Pedido" id="botaologin">
                 </div>
-            </form>
-        </fieldset>
+</div>
+        </form>
         </div>
     </div>
     <footer>
