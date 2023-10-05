@@ -1,9 +1,5 @@
 <?php
     session_start();
-
-    if ($_SESSION['usuario_logado'] == true){
-        header('Location: paginainicial.php');
-    }
 ?>
 
 <!DOCTYPE html>
