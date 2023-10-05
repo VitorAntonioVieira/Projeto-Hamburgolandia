@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 nav {
     display: flex;
     align-items: center;
@@ -276,6 +275,27 @@ footer {
 
 #mobile-done {
     display: none;
+}
+select option[value="inativo"],
+select option[value="lanche"],
+select option[value="bebida"],
+select option[value="porcao"],
+select option[value="ativo"] {
+    background: rgba(225, 131, 16, 0.103);
+}
+
+.select-estilizado {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 7%;
+    font-size: 16px;
+    font-weight: 400;
+    width: 290px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance: none;
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
