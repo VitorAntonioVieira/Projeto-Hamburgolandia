@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/pgstyle.css">
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
 
@@ -64,9 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             $sql_l = "SELECT * FROM produtos WHERE cat = 'lanche'";
             $query_lanches = $mysqli->query($sql_l) or die($mysqli->error);
             while ($lanches = $query_lanches->fetch_assoc()) {
-                if ($lanches['imagem' !== '']) {
+                if ($lanches['imagem'] !== '') {
                     ?>
-                    <div class="fild">
+                    <div class="fild" onclick="mostrarDetalhes('<?php echo$lanches['nome'] ?>', '<?php echo$lanches['descricao'] ?>', <?php echo$lanches['preco'] ?>, '<?php echo$lanches['imagem'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
                     <h3>' . $lanches['nome'] . '</h3>
@@ -89,7 +89,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             $query_bebidas = $mysqli->query($sql_b) or die($mysqli->error);
             while ($bebidas = $query_bebidas->fetch_assoc()) {
                 ?>
-                <div class="fild">
+                <div class="fild"
+                    onclick="mostrarDetalhes('<?php $bebidas['nome'] ?>', '<?php $bebidas['descricao'] ?>', '<?php $lanches['preco'] ?>', '<?php $bebidas['imagem'] ?>')">
                     <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $bebidas['imagem'] . '" alt="' . $bebidas['nome'] . '">
                     <h3>' . $bebidas['nome'] . '</h3>
@@ -107,7 +108,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             $query_porcoes = $mysqli->query($sql_p) or die($mysqli->error);
             while ($porcoes = $query_porcoes->fetch_assoc()) {
                 ?>
-                <div class="fild">
+                <div class="fild"
+                    onclick="mostrarDetalhes('<?php $porcoes['nome'] ?>', '<?php $porcoes['descricao'] ?>', '<?php $porcoes['preco'] ?>', '<?php $porcoes['imagem'] ?>')">
                     <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $porcoes['imagem'] . '" alt="' . $porcoes['nome'] . '">
                     <h3>' . $porcoes['nome'] . '</h3>
