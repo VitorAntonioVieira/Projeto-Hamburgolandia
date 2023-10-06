@@ -75,8 +75,8 @@ include 'includes/conexao.php';
                 <div class="botao">
                     <input type="submit" value="LOGIN" id="botaologin">
                 </div>
+                <br>
             </form>
-            <span class="fgt-pss">Esqueceu sua senha?<a href="redefinir.php"> Redefina Aqui</a></span>
         </div>
     </div>
 </body>
