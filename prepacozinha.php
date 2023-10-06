@@ -43,7 +43,7 @@
     </div>
     <div class="encaminhamentos">
         <ul>
-            <li><a href="paginainicial.php">Produtos</a></li>
+            <li><a href="index.php">Produtos</a></li>
             <li><a href="pedidos.php">Pedidos</a></li>
             <li><a href="prepagarcom.php">Em preparo</a></li>
             <li><a href="cadastro_produtos.php">Cadastro de Produtos</a></li>
