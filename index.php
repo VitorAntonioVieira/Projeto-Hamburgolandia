@@ -66,7 +66,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             while ($lanches = $query_lanches->fetch_assoc()) {
                 if ($lanches['imagem'] !== '') {
                     ?>
+<<<<<<< HEAD
                     <div class="fild" onclick="<?php $lanches['id'] ?>">
+=======
+<<<<<<< HEAD
+                    <div class="fild"
+                        onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
+=======
+                    <div class="fild" onclick="mostrarDetalhes('<?php echo$lanches['nome'] ?>', '<?php echo$lanches['descricao'] ?>', <?php echo$lanches['preco'] ?>, '<?php echo$lanches['imagem'] ?>')">
+>>>>>>> ddc1b48bfa11d44e204308b98f35b9a02da418a6
+>>>>>>> 0a95030dfab5bd36bc9e5f5a313717c7f9e2b4ae
                         <fieldset class="box">
                             <?php echo '<img id="openModal" class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
                             <h3>' . $lanches['nome'] . '</h3>
@@ -131,6 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     </div>
     <h1 class="grid-title no-select">BEBIDAS</h1>
     <div class="container-wraper">
+        
         <div class="container no-select">
             <?php
             $sql_b = "SELECT * FROM produtos WHERE cat = 'bebida'";
@@ -144,6 +154,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <h3>' . $bebidas['nome'] . '</h3>
                     <p>' . $bebidas['preco'] . '</p>'; ?>
                     </fieldset>
+                   
+                        </div>
+                    
+                    </div>
                 </div>
             <?php } ?>
         </div>
