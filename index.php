@@ -66,15 +66,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             while ($lanches = $query_lanches->fetch_assoc()) {
                 if ($lanches['imagem'] !== '') {
                     ?>
-                    <div class="fild" onclick="mostrarDetalhes('<?php echo$lanches['nome'] ?>', '<?php echo$lanches['descricao'] ?>', <?php echo$lanches['preco'] ?>, '<?php echo$lanches['imagem'] ?>')">
+                    <div class="fild"
+                        onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', <?php echo $lanches['preco'] ?>, '<?php echo $lanches['imagem'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
                     <h3>' . $lanches['nome'] . '</h3>
-                    <p>' . $lanches['preco'] . '</p>';
+                    <p>R$' . $lanches['preco'] . '</p>';
                 } else {
                     echo '<img class="produto" src="/img/notdisp.png" alt="' . $lanches['nome'] . '">
                         <h3>' . $lanches['nome'] . '</h3>
-                        <p>' . $lanches['preco'] . '</p>';
+                        <p>R$' . $lanches['preco'] . '</p>';
                 } ?>
                     </fieldset>
                 </div>
@@ -94,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $bebidas['imagem'] . '" alt="' . $bebidas['nome'] . '">
                     <h3>' . $bebidas['nome'] . '</h3>
-                    <p>' . $bebidas['preco'] . '</p>'; ?>
+                    <p>R$' . $bebidas['preco'] . '</p>'; ?>
                     </fieldset>
                 </div>
             <?php } ?>
@@ -113,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $porcoes['imagem'] . '" alt="' . $porcoes['nome'] . '">
                     <h3>' . $porcoes['nome'] . '</h3>
-                    <p>' . $porcoes['preco'] . '</p>'; ?>
+                    <p>R$' . $porcoes['preco'] . '</p>'; ?>
                     </fieldset>
                 </div>
             <?php } ?>
