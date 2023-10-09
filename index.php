@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME']) && $_SESSION['usuario_logado'] !== true) {
     session_destroy();
     header('Location: login.php');
@@ -21,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/pgstyle.css">
     <script src="js/main.js" defer></script>
+    <script src="js/barrapesquisa.js"></script>
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
 
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     logout
                 </span>
             </a>
-            <span onclick="modal();" class="material-symbols-outlined">
+            <span id="cart" onclick="modal();" class="material-symbols-outlined">
                 shopping_cart_checkout
             </span>
         </div>
@@ -67,18 +67,84 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                 if ($lanches['imagem'] !== '') {
                     ?>
                     <div class="fild"
+<<<<<<< HEAD
                         onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
+=======
+                        onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', <?php echo $lanches['preco'] ?>, '<?php echo $lanches['imagem'] ?>')">
+>>>>>>> a7452feee5f18830580967dd6467e49b6ff3b947
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
                     <h3>' . $lanches['nome'] . '</h3>
-                    <p>' . $lanches['preco'] . '</p>';
+                    <p>R$' . $lanches['preco'] . '</p>';
                 } else {
                     echo '<img class="produto" src="/img/notdisp.png" alt="' . $lanches['nome'] . '">
                         <h3>' . $lanches['nome'] . '</h3>
-                        <p>' . $lanches['preco'] . '</p>';
+                        <p>R$' . $lanches['preco'] . '</p>';
                 } ?>
+=======
+<<<<<<< HEAD
+                    <div class="fild" onclick="<?php $lanches['id'] ?>">
+=======
+<<<<<<< HEAD
+                    <div class="fild"
+                        onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
+=======
+                    <div class="fild" onclick="mostrarDetalhes('<?php echo$lanches['nome'] ?>', '<?php echo$lanches['descricao'] ?>', <?php echo$lanches['preco'] ?>, '<?php echo$lanches['imagem'] ?>')">
+                        <fieldset class="box">
+                            <?php echo '<img id="openModal" class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
+                            <h3>' . $lanches['nome'] . '</h3>
+                            <p>' . $lanches['preco'] . '</p>';
+                        }?>
                     </fieldset>
                 </div>
+                <div id="myModal" class="modal">
+                    <!-- Conteúdo da modal -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div id="conteudo">
+                            <div id="foto">
+                                <img id="imgg" src="">
+                            </div>
+                        <div id="descricao">
+                            <h2>presente</h2>
+                            <h3>descrição</h3>
+                            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore facere in dolorum rem exercitationem, porro veritatis illum animi aspernatur quo repellat aliquid nemo ratione delectus doloremque accusamus inventore libero perspiciatis.]</p>
+                            <button id="add"> Adicionar item </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var modal = document.getElementById('myModal');
+                    var btn = document.getElementById("openModal");
+                    var span = document.getElementsByClassName("close")[0];
+                    btn.onclick = function() {
+                        modal.style.display = "block";
+                    }
+
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+
+                    // Fecha a modal quando se clica fora dela
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+    <!-- <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="conteudo"> 
+            <div id="descricao">
+                <h2>presente</h2>
+                <h3>descrição</h3>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore facere in dolorum rem exercitationem, porro veritatis illum animi aspernatur quo repellat aliquid nemo ratione delectus doloremque accusamus inventore libero perspiciatis.]</p>
+                <button id="add"> Adicionar item </button>
+            </div>
+        </div>
+    </div> -->
+
             <?php } ?>
 
         </div>
@@ -97,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $bebidas['imagem'] . '" alt="' . $bebidas['nome'] . '">
                     <h3>' . $bebidas['nome'] . '</h3>
-                    <p>' . $bebidas['preco'] . '</p>'; ?>
+                    <p>R$' . $bebidas['preco'] . '</p>'; ?>
                     </fieldset>
 
                 </div>
@@ -120,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $porcoes['imagem'] . '" alt="' . $porcoes['nome'] . '">
                     <h3>' . $porcoes['nome'] . '</h3>
-                    <p>' . $porcoes['preco'] . '</p>'; ?>
+                    <p>R$' . $porcoes['preco'] . '</p>'; ?>
                     </fieldset>
                 </div>
             <?php } ?>
