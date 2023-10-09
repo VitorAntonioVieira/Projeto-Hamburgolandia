@@ -67,11 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                 if ($lanches['imagem'] !== '') {
                     ?>
                     <div class="fild"
-<<<<<<< HEAD
-                        onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
-=======
                         onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', <?php echo $lanches['preco'] ?>, '<?php echo $lanches['imagem'] ?>')">
->>>>>>> a7452feee5f18830580967dd6467e49b6ff3b947
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
                     <h3>' . $lanches['nome'] . '</h3>
@@ -81,14 +77,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                         <h3>' . $lanches['nome'] . '</h3>
                         <p>R$' . $lanches['preco'] . '</p>';
                 } ?>
-=======
-<<<<<<< HEAD
+
                     <div class="fild" onclick="<?php $lanches['id'] ?>">
-=======
-<<<<<<< HEAD
-                    <div class="fild"
-                        onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
-=======
+
+                    <div class="fild">
+
                     <div class="fild" onclick="mostrarDetalhes('<?php echo$lanches['nome'] ?>', '<?php echo$lanches['descricao'] ?>', <?php echo$lanches['preco'] ?>, '<?php echo$lanches['imagem'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img id="openModal" class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
@@ -145,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
         </div>
     </div> -->
 
-            <?php } ?>
+           
 
         </div>
     </div>
