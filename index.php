@@ -66,12 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             while ($lanches = $query_lanches->fetch_assoc()) {
                 if ($lanches['imagem'] !== '') {
                     ?>
-<<<<<<< HEAD
                     <div class="fild"
                         onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
-=======
-                    <div class="fild" onclick="mostrarDetalhes('<?php echo$lanches['nome'] ?>', '<?php echo$lanches['descricao'] ?>', <?php echo$lanches['preco'] ?>, '<?php echo$lanches['imagem'] ?>')">
->>>>>>> ddc1b48bfa11d44e204308b98f35b9a02da418a6
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
                     <h3>' . $lanches['nome'] . '</h3>
@@ -84,11 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     </fieldset>
                 </div>
             <?php } ?>
+
         </div>
     </div>
     <h1 class="grid-title no-select">BEBIDAS</h1>
     <div class="container-wraper">
-        
+
         <div class="container no-select">
             <?php
             $sql_b = "SELECT * FROM produtos WHERE cat = 'bebida'";
@@ -102,13 +99,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <h3>' . $bebidas['nome'] . '</h3>
                     <p>' . $bebidas['preco'] . '</p>'; ?>
                     </fieldset>
-                   
-                        </div>
-                    
-                    </div>
+
                 </div>
-            <?php } ?>
+
+            </div>
         </div>
+    <?php } ?>
+    </div>
     </div>
     <h1 class="grid-title no-select">PORÇÕES</h1>
     <div class="container-wraper">
@@ -133,5 +130,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
         ©HAMBURGOLÂNDIA · 2023
     </footer>
 </body>
+<script>
+    var search = document.getElementById('mbl-sch');
+
+    search.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") 
+        {
+            searchData();
+        }
+    });
+
+    function searchData()
+    {
+        window.location = 'index.php?search='+search.value;
+    }
+</script>
 
 </html>
