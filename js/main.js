@@ -29,3 +29,22 @@ var modal = document.getElementById('myModal');
             modal.style.display = "none";
         }
     }
+
+
+    var carrinho = document.getElementById('myModal');
+    var btn = document.getElementsByClassName("carrinho");
+    var span = document.getElementsByClassName("close");
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Fecha a modal quando se clica fora dela
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
