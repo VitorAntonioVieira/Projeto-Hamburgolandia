@@ -66,10 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             while ($lanches = $query_lanches->fetch_assoc()) {
                 if ($lanches['imagem'] !== '') {
                     ?>
-
-                    <div class="fild" onclick="<?php $lanches['id'] ?>">
-                    <div class="fild"
-                        onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
                     <div class="fild" onclick="mostrarDetalhes('<?php echo$lanches['nome'] ?>', '<?php echo$lanches['descricao'] ?>', <?php echo$lanches['preco'] ?>, '<?php echo$lanches['imagem'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img id="openModal" class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
