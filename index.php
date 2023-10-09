@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     logout
                 </span>
             </a>
-            <span onclick="modal();" class="material-symbols-outlined">
+            <span id="cart" onclick="modal();" class="material-symbols-outlined">
                 shopping_cart_checkout
             </span>
         </div>

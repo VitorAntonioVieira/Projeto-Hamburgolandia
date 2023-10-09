@@ -189,6 +189,10 @@ footer {
     margin-top: 70px;
 }
 
+#cart {
+    cursor: pointer;
+}
+
 .pedidopreparo1 {
     /*imagem do lanche*/
     margin-left: 5px;
