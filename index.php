@@ -28,7 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     <nav>
         <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
-            <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
+            <form action= "busca.php" method="GET">
+            <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
                 class="search-button"><span class="material-symbols-outlined">search</span></button></input>
             <button id="pc-sch" class="search-button"><span>Buscar</span></button>
         </div>
@@ -67,11 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                 if ($lanches['imagem'] !== '') {
                     ?>
                     <div class="fild"
-<<<<<<< HEAD
                         onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', <?php echo $lanches['preco'] ?>, '<?php echo $lanches['imagem'] ?>')">
-=======
-                        onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
->>>>>>> c2209913c7bca75e4f055236caf867097615719a
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
                     <h3>' . $lanches['nome'] . '</h3>
@@ -81,25 +78,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                         <h3>' . $lanches['nome'] . '</h3>
                         <p>R$' . $lanches['preco'] . '</p>';
                 } ?>
-<<<<<<< HEAD
-
-                    <div class="fild" onclick="<?php $lanches['id'] ?>">
-
-                    <div class="fild">
-
-=======
                     <div class="fild"
                         onclick="mostrarDetalhes('<?php echo $lanches['nome'] ?>', '<?php echo $lanches['descricao'] ?>', '<?php echo $lanches['preco'] ?>', '<?php echo $lanches['imagem'] ?>')">
->>>>>>> c2209913c7bca75e4f055236caf867097615719a
                     <div class="fild" onclick="mostrarDetalhes('<?php echo$lanches['nome'] ?>', '<?php echo$lanches['descricao'] ?>', <?php echo$lanches['preco'] ?>, '<?php echo$lanches['imagem'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img id="openModal" class="produto" src="' . $lanches['imagem'] . '" alt="' . $lanches['nome'] . '">
                             <h3>' . $lanches['nome'] . '</h3>
                             <p>' . $lanches['preco'] . '</p>';
-                        } else {  
-                            echo '<img class="openModal" src="/img/notdisp.png" alt="' . $lanches['nome'] . '">
-                                <h3>' . $lanches['nome'] . '</h3>
-                                <p>' . $lanches['preco'] . '</p>';
+                        
                         } ?>
                     </fieldset>
                 </div>
