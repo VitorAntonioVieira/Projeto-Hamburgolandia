@@ -16,6 +16,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 ?>
  
 <!DOCTYPE html>
+<link rel="stylesheet" href="css/pgstyle.css">
 <html>
 <style>
 		body {
@@ -26,7 +27,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 		}
 
 		h2 {
-			background-color: #e47f21; 
+			background-color:#F4E7E7; 
 			padding: 10px;
 		}
 
@@ -52,6 +53,36 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 	<title>Resultado da busca</title>
 </head>
 <body>
+<nav>
+        <img id="logo" src="img/logos/1.png" alt="Logo">
+        <div class="search-container">
+            <form action= "busca.php" method="GET">
+            <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
+                class="search-button"><span class="material-symbols-outlined">search</span></button></input>
+            <button id="pc-sch" class="search-button"><span>Buscar</span></button>
+        </div>
+        <div id="logout">
+            <a href="logout.php">
+                <span class="material-symbols-outlined">
+                 
+                </span>
+            </a>
+            <span onclick="modal();" class="material-symbols-outlined">
+               
+            </span>
+        </div>
+    </nav>
+    <div class="cores">
+        <img id="cores" src="img/cores.png" alt="cores">
+    </div>
+    <div class="encaminhamentos">
+        <ul>
+            <li><a href="index.php">Produtos</a></li>
+            <li><a href="pedidos.php">Pedidos</a></li>
+            <li><a href="prepagarcom.php">Em preparo</a></li>
+            <li><a href="cadastro_pedidos.php">Cadastro de Pedidos</a></li>
+        </ul>
+    </div>
 <h2>Resultado da busca</h2>
 <?php
 if (count($resultados)) {
