@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <form method="POST" action="">
                 <div class="label-float">
                     <input name="nome" type="text" placeholder=" " required>
-                    <label>Nome do Pedido</label>
+                    <label>Nome do Produto</label>
                 </div>
                 <div class="label-float">
                     <textarea style="resize: none" name="descricao" type="text" placeholder=" " required> </textarea>
@@ -98,6 +98,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <option value="bebida">Bebida</option>
                             <option value="porcao">Porção</option>
                         </select>
+                    </div>
+                    <div class="label-float">
+                    <input type="file" id="imagem" name="imagem" accept="image/*">
                     </div>
                     <div class="botao">
                         <input type="submit" value="Cadastrar Pedido" id="botaologin">
