@@ -81,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="label-float">
                     <textarea style="resize: none" name="descricao" type="text" placeholder=" " required> </textarea>
                     <label>Descrição</label>
-<<<<<<< HEAD
                     <div class="label-float">
                         <input name="valor" type="number" step="0.01" placeholder=" " required>
                         <label>Preço</label>
@@ -107,8 +106,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="botao">
                         <input type="submit" value="Cadastrar Pedido" id="botaologin">
                     </div>
-=======
->>>>>>> 13202940fbd0882e3301c6464fda89fd89c83c7a
                 </div>
                 <div class="label-float">
                     <input name="valor" type="number" step="0.01" placeholder=" " required>

@@ -5,6 +5,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     header('Location: login.php');
     exit;
 }
+
+include 'includes/conexao.php';
+
+$sql_del = "DELETE FROM "
+
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     logout
                 </span>
             </a>
-            <span onclick="modal();" class="material-symbols-outlined">
+            <span onclick="" class="material-symbols-outlined">
                 shopping_cart_checkout
             </span>
         </div>
@@ -54,6 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <p id="modal-desc"></h3>
                     <p id="modal-preco"></p>
                     <button class="add_cart" id="bap"> Adicionar item </button>
+                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+                        <input type="submit" id="r-btn" value="Deletar item">
+                    </form>
                 </div>
                 <div  id="modal-img">
                     <img id="mdlIMG" src="" alt="">
@@ -77,8 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-            include 'includes/conexao.php';
-
             $sql_l = "SELECT * FROM produtos WHERE cat_produto = 'lanche'";
             $query_lanches = $mysqli->query($sql_l) or die($mysqli->error);
             while ($lanches = $query_lanches->fetch_assoc()) {
@@ -117,15 +123,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <h3>' . $bebidas['nome_produto'] . '</h3>
                     <p>R$' . $bebidas['preco_produto'] . '</p>'; ?>
                     </fieldset>
+
                 </div>
-            <?php } ?>
-        </div>
+            </div>
+        <?php } ?>
+    </div>
     </div>
     <h1 class="grid-title no-select">PORÇÕES</h1>
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-            $sql_p = "SELECT * FROM produtos WHERE cat_produto = 'porcoe'";
+            $sql_p = "SELECT * FROM produtos WHERE cat_produto = 'porcoes'";
             $query_porcoes = $mysqli->query($sql_p) or die($mysqli->error);
             while ($porcoes = $query_porcoes->fetch_assoc()) {
                 ?>
