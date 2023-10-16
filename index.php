@@ -116,11 +116,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     <h3>' . $bebidas['nome_produto'] . '</h3>
                     <p>' . $bebidas['preco_produto'] . '</p>'; ?>
                     </fieldset>
-
                 </div>
-            </div>
-        <?php } ?>
-    </div>
+            <?php } ?>
+        </div>
     </div>
     <h1 class="grid-title no-select">PORÇÕES</h1>
     <div class="container-wraper">
