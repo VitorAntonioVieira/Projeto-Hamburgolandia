@@ -260,7 +260,10 @@ footer {
     width: 80px;
     font-weight: bold;
     border: none;
+}
 
+#bap:hover {
+    cursor: pointer;
 }
 
 #bup {
@@ -620,8 +623,22 @@ footer {
     }
 }
 
-#conteudo {
-    display: flex;
+.conteudo {
+    display: grid;
+    grid-template-areas: "sidenav content";
+    grid-template-columns: 50% 50%;
+}
+
+#descricao {
+    grid-area: sidenav;
+}
+
+#modal-img {
+    grid-area: content;
+}
+
+#mdlIMG {
+    width: 80%;
 }
 
 .modal {

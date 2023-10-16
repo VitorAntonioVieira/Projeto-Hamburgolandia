@@ -29,5 +29,30 @@
     <div class="cores">
         <img id="cores" src="img/cores.png" alt="cores">
     </div>
-    <H1 id="pedido">Seu Pedido</h1>
+    <h1 id="pedido">Seu Pedido</h1>
     <h3 id="pedido-desc">Aqui estão os produtos selecionados, você pode excluí-los e edita-los.</h3>
+    <div class="itens">
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+            <?php foreach ($productsInCart as $product): ?>
+                <div class="cart-img">
+                    <img src="<?php echo $product->getImage(); ?>" alt="<?php echo $product->getName(); ?>">
+                </div>
+                <div class="info">
+                    <h2>
+                        <?php echo $product->getName(); ?>
+                    </h2>
+                    <p>
+                        <?php echo $product->getPrice(); ?>
+                    </p>
+                    <div class="label-float">
+                        <input type="text" placeholder=" " required>
+                        <label>Observações</label>
+                    </div>
+                    
+                </div>
+            <?php endforeach; ?>
+        </form>
+    </div>
+</body>
+
+</html>
