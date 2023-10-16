@@ -3,33 +3,49 @@
 //     detalhes.style.display = "none";
 // }
 
-function contarCliques() {
-    contadorCliques++;
-    document.getElementById("contador").innerHTML = contadorCliques + " cliques";
+// function contarCliques() {
+//     contadorCliques++;
+//     document.getElementById("contador").innerHTML = contadorCliques + " cliques";
+// }
+
+// function resetarContagem() {
+//     contadorCliques = 0;
+//     document.getElementById("contador").innerHTML = contadorCliques + " cliques";
+// }
+
+var modal = document.querySelector('.modal');
+var modalIMG = document.querySelector('#mdlIMG');
+var modalTlt = document.querySelector('#modal-title');
+var modalDesc = document.querySelector('#modal-desc');
+var modalPreco = document.querySelector('#modal-preco');
+
+function mostrarDetalhes(nome, descricao, preco, imagem) {
+    modalIMG.src = imagem;
+    modalTlt.textContent = nome
+    modalDesc.textContent = descricao;
+    modalPreco.textContent = 'R$'+preco.toFixed(2);
+    modal.style.display = "block";
+}
+var btn = document.getElementsByClassName("openModal");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function () {
+    modal.style.display = "block";
 }
 
-function resetarContagem() {
-    contadorCliques = 0;
-    document.getElementById("contador").innerHTML = contadorCliques + " cliques";
+span.onclick = function () {
+    modal.style.display = "none";
 }
-    
-function mostrarDetalhes (nome, descricao, preco, imagem){
-    
-}
-var modal = document.getElementById('myModal');
-    var btn = document.getElementsByClassName("openModal");
-    var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
 
-    span.onclick = function() {
+// Fecha a modal quando se clica fora dela
+window.onclick = function (event) {
+    if (event.target == modal) {
         modal.style.display = "none";
     }
+}
 
-    // Fecha a modal quando se clica fora dela
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+var cartItens = [];
+
+function addToCart(nome, preco) {
+    cartItens.push({nomee: nome, precoo: preco})
+    console.log(cartItens);
+}

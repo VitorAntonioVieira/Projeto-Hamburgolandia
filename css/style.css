@@ -1,20 +1,14 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: url('');;
 }
 
 nav {
     display: flex;
-    background: #F4EADC;
-    /* padding: 20px; */
     align-items: center;
-    width: 100%;
-}
-
-.logo img {
-    margin-left: 40px;
-    max-height: 80px;
-    vertical-align: middle;
+    justify-content: space-evenly;
+    background-color: #f8c7924b;
 }
 
 .hambu {

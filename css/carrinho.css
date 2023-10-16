@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#logo {
+    width: 7%;
+    margin-left: 10px;
+}
+#cores {
+    width: 100%;
+    height: 30px;
+    box-shadow: 5px 5px 5px #ccc;
+}
+.material-symbols-outlined{
+    margin-right:25px ;
+}
+#pedido{
+    margin-top:50px;
+    margin-left: 70px;
+    color: #5e4242 ;
+}
+#pedido-desc{
+    margin-top: 10px;
+    margin-left: 75px;
+    color:#696969;
+}

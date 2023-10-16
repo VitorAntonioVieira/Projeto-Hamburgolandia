@@ -7,9 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $descricao = $_POST["descricao"];
     $categoria = $_POST["categoria"];
     $preco = $_POST["valor"];
+    $imagem = $_POST["imagem"];
     $status = $_POST["status"];
 
-    $sql = "INSERT INTO produtos (nome,descricao,cat,preco,status_produto) VALUES ('$nome', '$descricao', '$categoria', '$preco', '$status')";
+    $sql = "INSERT INTO produtos (nome_produto,descricao_produto,cat_produto,preco_produto,imagem_produto,status_produto) VALUES ('$nome', '$descricao', '$categoria', '$preco', '$imagem', '$status')";
 
     if ($mysqli->query($sql) === TRUE) {
         echo "Novo produto criado com sucesso";
@@ -80,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="label-float">
                     <textarea style="resize: none" name="descricao" type="text" placeholder=" " required> </textarea>
                     <label>Descrição</label>
+<<<<<<< HEAD
                     <div class="label-float">
                         <input name="valor" type="number" step="0.01" placeholder=" " required>
                         <label>Preço</label>
@@ -105,9 +107,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="botao">
                         <input type="submit" value="Cadastrar Pedido" id="botaologin">
                     </div>
+=======
+>>>>>>> 13202940fbd0882e3301c6464fda89fd89c83c7a
                 </div>
-            </form>
+                <div class="label-float">
+                    <input name="valor" type="number" step="0.01" placeholder=" " required>
+                    <label>Preço</label>
+                </div><br>
+                <div class="label-float">
+                    <select class="select-estilizado" name="status" required>
+                        <option value="" disabled selected>Selecione o Status</option>
+                        <option value="ativo">Produto Disponível no Cardápio</option>
+                        <option value="inativo">Produto Insdisponível no Cardápio</option>
+                    </select>
+                </div>
+                <div class="label-float">
+                    <select class="select-estilizado" name="categoria" required>
+                        <option value="" disabled selected>Selecione a Categoria</option>
+                        <option value="lache">Lanche</option>
+                        <option value="bebida">Bebida</option>
+                        <option value="porcao">Porção</option>
+                    </select>
+                </div>
+                <div class="lable-float">
+                    <input type="text" placeholder=" " required>
+                    <label>Insira o endereço da imagem</label>
+                </div>
+                <div class="botao">
+                    <input type="submit" value="Cadastrar Pedido" id="botaologin">
+                </div>
         </div>
+        </form>
+    </div>
     </div>
     <footer>
         ©HAMBURGOLÂNDIA · 2023
