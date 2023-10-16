@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
         <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
             <form action="busca.php" method="GET">
-                <input type="text" name=nome_produto_hamburguer placeholder="Pesquisar" class="search-box"><button
+                <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button
                     id="mbl-sch" class="search-button"><span
                         class="material-symbols-outlined">search</span></button></input>
                 <button id="pc-sch" class="search-button"><span>Buscar</span></button>

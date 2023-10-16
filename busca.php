@@ -3,22 +3,76 @@ if (!isset($_GET['nome_hamburguer'])) {
 	header("Location: index.php");
 	exit;
 }
- 
-$nome = "%".trim($_GET['nome_hamburguer'])."%";
- 
-$dbh = new PDO('mysql:host=127.0.0.1;dbname=bd_hamburgolandia', 'root', '');
- 
-$sth = $dbh->prepare('SELECT * FROM `usuarios` WHERE `nome` LIKE :nome');
-$sth->bindParam(':nome', $nome, PDO::PARAM_STR);
-$sth->execute();
- 
-$resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+$nome = "%" . trim($_GET['nome_hamburguer']) . "%";
+
+include "includes/conexao.php";
+
+$sth = $mysqli->query("SELECT * FROM `produtos` WHERE `nome_produto` LIKE '$nome'") or die($mysqli->error);
+
 ?>
- 
+
 <!DOCTYPE html>
 <link rel="stylesheet" href="css/pgstyle.css">
 <html>
-<style>
+
+<head>
+	<title>Resultado da busca</title>
+</head>
+
+<body>
+	<nav>
+		<img id="logo" src="img/logos/1.png" alt="Logo">
+		<div class="search-container">
+			<form action="busca.php" method="GET">
+				<input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
+					class="search-button"><span class="material-symbols-outlined">search</span></button></input>
+				<button id="pc-sch" class="search-button"><span>Buscar</span></button>
+		</div>
+		<div id="logout">
+			<a href="logout.php">
+				<span class="material-symbols-outlined">
+
+				</span>
+			</a>
+			<span onclick="modal();" class="material-symbols-outlined">
+
+			</span>
+		</div>
+	</nav>
+	<div class="cores">
+		<img id="cores" src="img/cores.png" alt="cores">
+	</div>
+	<div class="encaminhamentos">
+		<ul>
+			<li><a href="index.php">Produtos</a></li>
+			<li><a href="pedidos.php">Pedidos</a></li>
+			<li><a href="prepagarcom.php">Em preparo</a></li>
+			<li><a href="cadastro_pedidos.php">Cadastro de Pedidos</a></li>
+		</ul>
+	</div>
+	<h2>Resultado da busca</h2>
+	<div class="conteudo">
+		<?php
+		while ($resultados = $sth->fetch_assoc()) {
+			if ($resultados['imagem_produto'] !== '') {
+				?>
+				<div class="fild"
+					onclick="mostrarDetalhes('<?php echo $resultados['nome_produto'] ?>', '<?php echo $resultados['descricao_produto'] ?>', <?php echo $resultados['preco_produto'] ?>, '<?php echo $resultados['imagem_produto'] ?>')">
+					<fieldset class="box">
+						<?php echo '<img class="produto" src="' . $resultados['imagem_produto'] . '" alt="' . $resultados['nome_produto'] . '">
+                <h3>' . $resultados['nome_produto'] . '</h3>
+                <p>R$' . $resultados['preco_produto'] . '</p>';
+			} else {
+				echo "<div class='fild'>";
+				echo "<p>'Produto não encontrado...'</p>";
+			}
+			?>
+				</fieldset>
+			</div>
+		<?php } ?>
+	</div>
+	<style>
 		body {
 			font-family: Arial, sans-serif;
 			background-size: cover;
@@ -26,8 +80,28 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 			padding: 0;
 		}
 
+
+
+		.fild {
+			background-color: #efefef;
+			box-shadow: 0px 1px 12px 3px #cecece;
+			border-radius: 20px;
+			padding: 10px;
+			width: 200px;
+			height: 250px;
+			margin: 40px;
+
+
+		}
+
+		.conteudo {
+			display: grid;
+			grid-template-areas: "sidenav content";
+			grid-template-columns: 50% 50%;
+		}
+
 		h2 {
-			background-color:#F4E7E7; 
+			background-color: #F4E7E7;
 			padding: 10px;
 		}
 
@@ -45,57 +119,9 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 		}
 
 		#no-results {
-			color: #e47f21; 
+			color: #e47f21;
 		}
 	</style>
-<head>
-    
-	<title>Resultado da busca</title>
-</head>
-<body>
-<nav>
-        <img id="logo" src="img/logos/1.png" alt="Logo">
-        <div class="search-container">
-            <form action= "busca.php" method="GET">
-            <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
-                class="search-button"><span class="material-symbols-outlined">search</span></button></input>
-            <button id="pc-sch" class="search-button"><span>Buscar</span></button>
-        </div>
-        <div id="logout">
-            <a href="logout.php">
-                <span class="material-symbols-outlined">
-                 
-                </span>
-            </a>
-            <span onclick="modal();" class="material-symbols-outlined">
-               
-            </span>
-        </div>
-    </nav>
-    <div class="cores">
-        <img id="cores" src="img/cores.png" alt="cores">
-    </div>
-    <div class="encaminhamentos">
-        <ul>
-            <li><a href="index.php">Produtos</a></li>
-            <li><a href="pedidos.php">Pedidos</a></li>
-            <li><a href="prepagarcom.php">Em preparo</a></li>
-            <li><a href="cadastro_pedidos.php">Cadastro de Pedidos</a></li>
-        </ul>
-    </div>
-<h2>Resultado da busca</h2>
-<?php
-if (count($resultados)) {
-	foreach($resultados as $Resultado) {
-?>
-<label><?php echo $Resultado['id']; ?> - <?php echo $Resultado['nome']; ?></label>
-<br>
-<?php
-} } else {
-?>
-<label>Não foram encontrados resultados pelo termo buscado.</label>
-<?php
-}
-?>
 </body>
+
 </html>
