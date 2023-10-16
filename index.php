@@ -8,9 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
 
 include 'includes/conexao.php';
 
-$sql_del = "DELETE FROM "
-
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,9 +32,8 @@ $sql_del = "DELETE FROM "
         <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
             <form action="busca.php" method="GET">
-                <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button
-                    id="mbl-sch" class="search-button"><span
-                        class="material-symbols-outlined">search</span></button></input>
+                <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
+                    class="search-button"><span class="material-symbols-outlined">search</span></button></input>
                 <button id="pc-sch" class="search-button"><span>Buscar</span></button>
         </div>
         <div id="logout">
@@ -56,14 +53,16 @@ $sql_del = "DELETE FROM "
             <div class="conteudo">
                 <div id="descricao">
                     <h2 id="modal-title"></h2>
-                    <p id="modal-desc"></h3>
+                    <p id="modal-desc">
+                        </h3>
                     <p id="modal-preco"></p>
                     <button class="add_cart" id="bap"> Adicionar item </button>
                     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+                        <input type="hidden" name="id_modal" id="id_modal">
                         <input type="submit" id="r-btn" value="Deletar item">
                     </form>
                 </div>
-                <div  id="modal-img">
+                <div id="modal-img">
                     <img id="mdlIMG" src="" alt="">
                 </div>
             </div>
@@ -91,7 +90,7 @@ $sql_del = "DELETE FROM "
                 if ($lanches['imagem_produto'] !== '') {
                     ?>
                     <div class="fild"
-                        onclick="mostrarDetalhes('<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
+                        onclick="mostrarDetalhes('<?php echo $lanches['id_produto'] ?>', '<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem_produto'] . '" alt="' . $lanches['nome_produto'] . '">
                     <h3>' . $lanches['nome_produto'] . '</h3>
