@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-            $sql_p = "SELECT * FROM produtos WHERE cat_produto = 'porcoes'";
+            $sql_p = "SELECT * FROM produtos WHERE cat_produto = 'porcoe'";
             $query_porcoes = $mysqli->query($sql_p) or die($mysqli->error);
             while ($porcoes = $query_porcoes->fetch_assoc()) {
                 ?>
