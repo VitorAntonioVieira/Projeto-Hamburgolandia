@@ -7,9 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $descricao = $_POST["descricao"];
     $categoria = $_POST["categoria"];
     $preco = $_POST["valor"];
+    $imagem = $_POST["imagem"];
     $status = $_POST["status"];
 
-    $sql = "INSERT INTO produtos (nome,descricao,cat,preco,status_produto) VALUES ('$nome', '$descricao', '$categoria', '$preco', '$status')";
+    $sql = "INSERT INTO produtos (nome_produto,descricao_produto,cat_produto,preco_produto,imagem_produto,status_produto) VALUES ('$nome', '$descricao', '$categoria', '$preco', '$imagem','$status')";
 
     if ($mysqli->query($sql) === TRUE) {
         echo "Novo produto criado com sucesso";
@@ -101,11 +102,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </select>
                 </div>
                 <div class="lable-float">
-                    <input type="text" placeholder=" " required>
-                    <label>Insira o endereço da imagem</label>
+                    <input name="imagem" type="text" placeholder=" " required>
+                    <label>Endereço da imagem</label>
                 </div>
                 <div class="botao">
-                    <input type="submit" value="Cadastrar Pedido" id="botaologin">
+                    <input type="submit" value="Cadastrar Produto" id="botaologin">
                 </div>
         </div>
         </form>

@@ -1,18 +1,3 @@
-// function esconderDetalhes(id) {
-//     var detalhes = document.getElementById('mdl1');
-//     detalhes.style.display = "none";
-// }
-
-// function contarCliques() {
-//     contadorCliques++;
-//     document.getElementById("contador").innerHTML = contadorCliques + " cliques";
-// }
-
-// function resetarContagem() {
-//     contadorCliques = 0;
-//     document.getElementById("contador").innerHTML = contadorCliques + " cliques";
-// }
-
 var modal = document.querySelector('.modal');
 var modalIMG = document.querySelector('#mdlIMG');
 var modalTlt = document.querySelector('#modal-title');
