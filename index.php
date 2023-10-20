@@ -106,12 +106,9 @@ include 'includes/conexao.php';
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-            include 'includes/conexao.php';
-
             $sql_b = "SELECT * FROM produtos WHERE cat_produto = 'bebida'";
             $query_bebidas = $mysqli->query($sql_b) or die($mysqli->error);
             while ($bebidas = $query_bebidas->fetch_assoc()) {
-                if ($bebidas['imagem_produto'] !== '') {
                 ?>
                 <div class="fild"
                     onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $lanches['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
