@@ -88,11 +88,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem_produto'] . '" alt="' . $lanches['nome_produto'] . '">
                     <h3>' . $lanches['nome_produto'] . '</h3>
-                    <p>R$' . $lanches['preco_produto'] . '</p>';
+                    <p>R$ ' . $lanches['preco_produto'] . '</p>';
                 } else {
                     echo '<img class="produto" src="/img/notdisp.png" alt="' . $lanches['nome_produto'] . '">
                         <h3>' . $lanches['nome_produto'] . '</h3>
-                        <p>R$' . $lanches['preco_produto'] . '</p>';
+                        <p>R$ ' . $lanches['preco_produto'] . '</p>';
                 }
                 ?>
                     </fieldset>
@@ -105,16 +105,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
 
         <div class="container no-select">
             <?php
+            include 'includes/conexao.php';
+
             $sql_b = "SELECT * FROM produtos WHERE cat_produto = 'bebida'";
             $query_bebidas = $mysqli->query($sql_b) or die($mysqli->error);
             while ($bebidas = $query_bebidas->fetch_assoc()) {
+                if ($bebidas['imagem_produto'] !== '') {
                 ?>
                 <div class="fild"
-                    onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $lanches['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
+                    onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $bebidas['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
                     <fieldset class="box">
-                        <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
+                    <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
                     <h3>' . $bebidas['nome_produto'] . '</h3>
-                    <p>' . $bebidas['preco_produto'] . '</p>'; ?>
+                    <p>R$ ' . $bebidas['preco_produto'] . '</p>';
+                } else {
+                    echo '<img class="produto" src="/img/notdisp.png" alt="' . $bebidas['nome_produto'] . '">
+                        <h3>' . $bebidas['nome_produto'] . '</h3>
+                        <p>R$ ' . $bebidas['preco_produto'] . '</p>';
+                }
+                ?>
                     </fieldset>
                 </div>
             <?php } ?>
@@ -124,19 +133,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     <div class="container-wraper">
         <div class="container no-select">
             <?php
+            
             $sql_p = "SELECT * FROM produtos WHERE cat_produto = 'porcoe'";
             $query_porcoes = $mysqli->query($sql_p) or die($mysqli->error);
             while ($porcoes = $query_porcoes->fetch_assoc()) {
-                ?>
-                <div class="fild"
-                    onclick="mostrarDetalhes('<?php $porcoes['nome_produto'] ?>', '<?php $porcoes['descricao_produto'] ?>', '<?php $porcoes['preco_produto'] ?>', '<?php $porcoes['imagem_produto'] ?>')">
-                    <fieldset class="box">
+                if ($porcoes['imagem_produto'] !== '') {
+                    ?>
+                    <div class="fild"
+                        onclick="mostrarDetalhes('<?php $porcoes['nome_produto'] ?>', '<?php $porcoes['descricao_produto'] ?>', '<?php $porcoes['preco_produto'] ?>', '<?php $porcoes['imagem_produto'] ?>')">
+                        <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $porcoes['imagem_produto'] . '" alt="' . $porcoes['nome_produto'] . '">
-                    <h3>' . $porcoes['nome_produto'] . '</h3>
-                    <p>' . $porcoes['preco_produto'] . '</p>'; ?>
-                    </fieldset>
-                </div>
-            <?php } ?>
+                        <h3>' . $porcoes['nome_produto'] . '</h3>
+                        <p>R$ ' . $porcoes['preco_produto'] . '</p>';
+                    } else {
+                        echo '<img class="produto" src="/img/notdisp.png" alt="' . $porcoes['nome_produto'] . '">
+                            <h3>' . $porcoes['nome_produto'] . '</h3>
+                            <p>R$ ' . $porcoes['preco_produto'] . '</p>';
+                    }
+                    ?>
+                        </fieldset>
+                    </div>
+                <?php } ?>
         </div>
     </div>
     <footer>
