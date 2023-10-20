@@ -4,11 +4,13 @@ var modalTlt = document.querySelector('#modal-title');
 var modalDesc = document.querySelector('#modal-desc');
 var modalPreco = document.querySelector('#modal-preco');
 
-function mostrarDetalhes(nome, descricao, preco, imagem) {
+function mostrarDetalhes(id, nome, descricao, preco, imagem) {
+    modalID.value = id;
     modalIMG.src = imagem;
     modalTlt.textContent = nome
     modalDesc.textContent = descricao;
-    modalPreco.textContent = 'R$'+preco.toFixed(2);
+    modalPreco.textContent = 'R$'+Number(preco).toFixed(2);
+    modalIMG.src = imagem;
     modal.style.display = "block";
 }
 var btn = document.getElementsByClassName("openModal");

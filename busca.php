@@ -97,7 +97,7 @@ $sth = $mysqli->query("SELECT * FROM `produtos` WHERE `nome_produto` LIKE '$nome
 		.conteudo {
 			display: grid;
 			grid-template-areas: "sidenav content";
-			grid-template-columns: 50% 50%;
+			grid-template-columns: repeat(3,1fr);
 		}
 
 		h2 {
