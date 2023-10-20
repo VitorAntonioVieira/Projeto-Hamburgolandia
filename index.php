@@ -1,15 +1,14 @@
+
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME']) && $_SESSION['usuario_logado'] !== true) {
-    session_destroy();
+
+if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true) {
     header('Location: login.php');
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,18 +21,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     <script src="js/main.js" defer></script>
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
-
 <body>
-    <nav>
-        <img id="logo" src="img/logos/1.png" alt="Logo">
-        <div class="search-container">
-            <form action="busca.php" method="GET">
-                <input type="text" name=nome_produto_hamburguer placeholder="Pesquisar" class="search-box"><button
-                    id="mbl-sch" class="search-button"><span
-                        class="material-symbols-outlined">search</span></button></input>
-                <button id="pc-sch" class="search-button"><span>Buscar</span></button>
-        </div>
-        <div id="logout">
+<nav>
+    <img id="logo" src="img/logos/1.png" alt="Logo">
+    <div class="search-container">
+        <!-- Seu código de pesquisa aqui -->
+    </div>
+    <div id="logout">
+            <span class="material-symbols-outlined">
+                Bem Vindo, <?php echo $_SESSION['usuario_logado']; ?>
+            </span>
             <a href="logout.php">
                 <span class="material-symbols-outlined">
                     logout
@@ -43,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                 shopping_cart_checkout
             </span>
         </div>
-    </nav>
+</nav>
     <div class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
