@@ -81,6 +81,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="label-float">
                     <textarea style="resize: none" name="descricao" type="text" placeholder=" " required> </textarea>
                     <label>Descrição</label>
+                    <div class="label-float">
+                        <input name="valor" type="number" step="0.01" placeholder=" " required>
+                        <label>Preço</label>
+                    </div><br>
+                    <div class="label-float">
+                        <select class="select-estilizado" name="status" required>
+                            <option value="" disabled selected>Selecione o Status</option>
+                            <option value="ativo">Produto Disponível no Cardápio</option>
+                            <option value="inativo">Produto Insdisponível no Cardápio</option>
+                        </select>
+                    </div>
+                    <div class="label-float">
+                        <select class="select-estilizado" name="categoria" required>
+                            <option value="" disabled selected>Selecione a Categoria</option>
+                            <option value="lache">Lanche</option>
+                            <option value="bebida">Bebida</option>
+                            <option value="porcao">Porção</option>
+                        </select>
+                    </div>
+                    <div class="label-float">
+                    <input type="file" id="imagem" name="imagem" accept="image/*">
+                    </div>
+                    <div class="botao">
+                        <input type="submit" value="Cadastrar Pedido" id="botaologin">
+                    </div>
                 </div>
                 <div class="label-float">
                     <input name="valor" type="number" step="0.01" placeholder=" " required>
@@ -102,11 +127,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </select>
                 </div>
                 <div class="lable-float">
-                    <input type="text" placeholder=" " required>
-                    <label>Insira o endereço da imagem</label>
+                    <input name="imagem" type="text" placeholder=" " required>
+                    <label>Endereço da imagem</label>
                 </div>
                 <div class="botao">
-                    <input type="submit" value="Cadastrar Pedido" id="botaologin">
+                    <input type="submit" value="Cadastrar Produto" id="botaologin">
                 </div>
         </div>
         </form>

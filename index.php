@@ -5,7 +5,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     header('Location: login.php');
     exit;
 }
-?>
+
+include 'includes/conexao.php';
+
+    ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/pgstyle.css">
     <script src="js/main.js" defer></script>
+    <script async src="js/pd.js"></script>
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
 
@@ -28,9 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
         <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
             <form action="busca.php" method="GET">
-                <input type="text" name=nome_produto_hamburguer placeholder="Pesquisar" class="search-box"><button
-                    id="mbl-sch" class="search-button"><span
-                        class="material-symbols-outlined">search</span></button></input>
+                <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
+                    class="search-button"><span class="material-symbols-outlined">search</span></button></input>
                 <button id="pc-sch" class="search-button"><span>Buscar</span></button>
         </div>
         <div id="logout">
@@ -39,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                     logout
                 </span>
             </a>
-            <span onclick="modal();" class="material-symbols-outlined">
+            <span onclick="" class="material-symbols-outlined">
                 shopping_cart_checkout
             </span>
         </div>
@@ -50,11 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
             <div class="conteudo">
                 <div id="descricao">
                     <h2 id="modal-title"></h2>
-                    <p id="modal-desc"></h3>
+                    <p id="modal-desc">
+                        </h3>
                     <p id="modal-preco"></p>
-                    <button onclick="addToCart(modalTlt.textContent, modalPreco.textContent).preventDefault(addToCart())" id="bap"> Adicionar item </button>
+                    <button class="add_cart" id="bap"> Adicionar item </button>
+                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+                        <input type="hidden" name="id_modal" id="id_modal">
+                        <input type="submit" id="r-btn" value="Deletar item">
+                    </form>
                 </div>
-                <div  id="modal-img">
+                <div id="modal-img">
                     <img id="mdlIMG" src="" alt="">
                 </div>
             </div>
@@ -76,15 +84,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-            include 'includes/conexao.php';
-
             $sql_l = "SELECT * FROM produtos WHERE cat_produto = 'lanche'";
             $query_lanches = $mysqli->query($sql_l) or die($mysqli->error);
             while ($lanches = $query_lanches->fetch_assoc()) {
                 if ($lanches['imagem_produto'] !== '') {
                     ?>
                     <div class="fild"
-                        onclick="mostrarDetalhes('<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
+                        onclick="mostrarDetalhes('<?php echo $lanches['id_produto'] ?>', '<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem_produto'] . '" alt="' . $lanches['nome_produto'] . '">
                     <h3>' . $lanches['nome_produto'] . '</h3>
@@ -113,47 +119,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
                 if ($bebidas['imagem_produto'] !== '') {
                 ?>
                 <div class="fild"
-                    onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $bebidas['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
+                    onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $lanches['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
                     <fieldset class="box">
                     <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
                     <h3>' . $bebidas['nome_produto'] . '</h3>
-                    <p>R$ ' . $bebidas['preco_produto'] . '</p>';
-                } else {
-                    echo '<img class="produto" src="/img/notdisp.png" alt="' . $bebidas['nome_produto'] . '">
-                        <h3>' . $bebidas['nome_produto'] . '</h3>
-                        <p>R$ ' . $bebidas['preco_produto'] . '</p>';
-                }
-                ?>
+                    <p>' . $bebidas['preco_produto'] . '</p>'; ?>
                     </fieldset>
+
                 </div>
-            <?php } ?>
-        </div>
+            </div>
+        <?php } ?>
+    </div>
     </div>
     <h1 class="grid-title no-select">PORÇÕES</h1>
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-            
             $sql_p = "SELECT * FROM produtos WHERE cat_produto = 'porcoe'";
             $query_porcoes = $mysqli->query($sql_p) or die($mysqli->error);
             while ($porcoes = $query_porcoes->fetch_assoc()) {
-                if ($porcoes['imagem_produto'] !== '') {
-                    ?>
-                    <div class="fild"
-                        onclick="mostrarDetalhes('<?php $porcoes['nome_produto'] ?>', '<?php $porcoes['descricao_produto'] ?>', '<?php $porcoes['preco_produto'] ?>', '<?php $porcoes['imagem_produto'] ?>')">
-                        <fieldset class="box">
+                ?>
+                <div class="fild"
+                    onclick="mostrarDetalhes('<?php $porcoes['nome_produto'] ?>', '<?php $porcoes['descricao_produto'] ?>', '<?php $porcoes['preco_produto'] ?>', '<?php $porcoes['imagem_produto'] ?>')">
+                    <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $porcoes['imagem_produto'] . '" alt="' . $porcoes['nome_produto'] . '">
-                        <h3>' . $porcoes['nome_produto'] . '</h3>
-                        <p>R$ ' . $porcoes['preco_produto'] . '</p>';
-                    } else {
-                        echo '<img class="produto" src="/img/notdisp.png" alt="' . $porcoes['nome_produto'] . '">
-                            <h3>' . $porcoes['nome_produto'] . '</h3>
-                            <p>R$ ' . $porcoes['preco_produto'] . '</p>';
-                    }
-                    ?>
-                        </fieldset>
-                    </div>
-                <?php } ?>
+                    <h3>' . $porcoes['nome_produto'] . '</h3>
+                    <p>' . $porcoes['preco_produto'] . '</p>'; ?>
+                    </fieldset>
+                </div>
+            <?php } ?>
         </div>
     </div>
     <footer>
