@@ -6,6 +6,9 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     header('Location: login.php');
     exit;
 }
+
+include 'includes/conexao.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,16 +22,20 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/pgstyle.css">
     <script src="js/main.js" defer></script>
+    <script async src="js/pd.js"></script>
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
 <body>
-<nav>
-    <img id="logo" src="img/logos/1.png" alt="Logo">
-    <div class="search-container">
-        <!-- Seu código de pesquisa aqui -->
-    </div>
-    <div id="logout">
-            <span class="material-symbols-outlined">
+    <nav>
+        <img id="logo" src="img/logos/1.png" alt="Logo">
+        <div class="search-container">
+            <form action="busca.php" method="GET">
+                <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
+                    class="search-button"><span class="material-symbols-outlined">search</span></button></input>
+                <button id="pc-sch" class="search-button"><span>Buscar</span></button>
+        </div>
+        <div id="logout">
+        <span class="material-symbols-outlined">
                 Bem Vindo, <?php echo $_SESSION['usuario_logado']; ?>
             </span>
             <a href="logout.php">
@@ -36,7 +43,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
                     logout
                 </span>
             </a>
-            <span onclick="modal();" class="material-symbols-outlined">
+            <span onclick="" class="material-symbols-outlined">
                 shopping_cart_checkout
             </span>
         </div>
@@ -47,11 +54,12 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
             <div class="conteudo">
                 <div id="descricao">
                     <h2 id="modal-title"></h2>
-                    <p id="modal-desc"></h3>
+                    <p id="modal-desc">
+                        </h3>
                     <p id="modal-preco"></p>
-                    <button onclick="addToCart(modalTlt.textContent, modalPreco.textContent).preventDefault(addToCart())" id="bap"> Adicionar item </button>
+                    <button class="add_cart" id="bap"> Adicionar item </button>
                 </div>
-                <div  id="modal-img">
+                <div id="modal-img">
                     <img id="mdlIMG" src="" alt="">
                 </div>
             </div>
@@ -73,8 +81,6 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-            include 'includes/conexao.php';
-
             $sql_l = "SELECT * FROM produtos WHERE cat_produto = 'lanche'";
             $query_lanches = $mysqli->query($sql_l) or die($mysqli->error);
             while ($lanches = $query_lanches->fetch_assoc()) {
@@ -85,11 +91,11 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem_produto'] . '" alt="' . $lanches['nome_produto'] . '">
                     <h3>' . $lanches['nome_produto'] . '</h3>
-                    <p>R$' . $lanches['preco_produto'] . '</p>';
+                    <p>R$ ' . $lanches['preco_produto'] . '</p>';
                 } else {
                     echo '<img class="produto" src="/img/notdisp.png" alt="' . $lanches['nome_produto'] . '">
                         <h3>' . $lanches['nome_produto'] . '</h3>
-                        <p>R$' . $lanches['preco_produto'] . '</p>';
+                        <p>R$ ' . $lanches['preco_produto'] . '</p>';
                 }
                 ?>
                     </fieldset>
@@ -99,7 +105,6 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     </div>
     <h1 class="grid-title no-select">BEBIDAS</h1>
     <div class="container-wraper">
-
         <div class="container no-select">
             <?php
             $sql_b = "SELECT * FROM produtos WHERE cat_produto = 'bebida'";
@@ -109,7 +114,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
                 <div class="fild"
                     onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $lanches['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
                     <fieldset class="box">
-                        <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
+                    <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
                     <h3>' . $bebidas['nome_produto'] . '</h3>
                     <p>' . $bebidas['preco_produto'] . '</p>'; ?>
                     </fieldset>

@@ -7,7 +7,7 @@ body {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: #f8c7924b;
 }
 
@@ -38,7 +38,7 @@ body {
     border-radius: 20px;
     margin-top: 90px;
     border-color: #FFB67B;
-    width: auto;
+    width: 30%;
 
 }
 
@@ -131,6 +131,10 @@ input {
     color: #5e4242;
 }
 
+#logo {
+    width: 10%;
+}
+
 #h2login {
     display: flex;
     justify-content: center;
@@ -182,25 +186,22 @@ select option[value="lagoinha"] {
 
   @media screen and (min-width: 769px) {
     .field {
-        width: 50%;
+        width: 30%;
     }
   }
 
   @media screen and (min-width: 481px) and (max-width: 768px) {
     .field {
-        width: 50%;
+        width: 30%;
     }
   }
 
   @media screen and (max-width: 480px) {
-    nav {
-        display: flex;
-        justify-content: center;
-        padding: 0;
+    input {
+        height: 30px;
     }
-
-    .logo img {
-        margin: 0;
+    img {
+        width: 25%;
     }
 
     .hambu {
@@ -209,6 +210,19 @@ select option[value="lagoinha"] {
     .field {
         border: none;
         margin-top: 30px;
+    }
+    .fgt-pss {
+        font-size: large;
+    }
+    #h2login {
+        font-size: xx-large;
+    }
+    #botaologin {
+        height: 10%;
+        width: 75%;
+    }
+    #filial {
+        height: 60px;
     }
   }
 
