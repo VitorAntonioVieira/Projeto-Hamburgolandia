@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERV
 
 include 'includes/conexao.php';
 
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -57,10 +57,6 @@ include 'includes/conexao.php';
                         </h3>
                     <p id="modal-preco"></p>
                     <button class="add_cart" id="bap"> Adicionar item </button>
-                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
-                        <input type="hidden" name="id_modal" id="id_modal">
-                        <input type="submit" id="r-btn" value="Deletar item">
-                    </form>
                 </div>
                 <div id="modal-img">
                     <img id="mdlIMG" src="" alt="">
@@ -90,7 +86,7 @@ include 'includes/conexao.php';
                 if ($lanches['imagem_produto'] !== '') {
                     ?>
                     <div class="fild"
-                        onclick="mostrarDetalhes('<?php echo $lanches['id_produto'] ?>', '<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
+                        onclick="mostrarDetalhes('<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem_produto'] . '" alt="' . $lanches['nome_produto'] . '">
                     <h3>' . $lanches['nome_produto'] . '</h3>
@@ -108,7 +104,6 @@ include 'includes/conexao.php';
     </div>
     <h1 class="grid-title no-select">BEBIDAS</h1>
     <div class="container-wraper">
-
         <div class="container no-select">
             <?php
             $sql_b = "SELECT * FROM produtos WHERE cat_produto = 'bebida'";
@@ -122,17 +117,15 @@ include 'includes/conexao.php';
                     <h3>' . $bebidas['nome_produto'] . '</h3>
                     <p>R$' . $bebidas['preco_produto'] . '</p>'; ?>
                     </fieldset>
-
                 </div>
-            </div>
-        <?php } ?>
-    </div>
+            <?php } ?>
+        </div>
     </div>
     <h1 class="grid-title no-select">PORÇÕES</h1>
     <div class="container-wraper">
         <div class="container no-select">
             <?php
-            $sql_p = "SELECT * FROM produtos WHERE cat_produto = 'porcoes'";
+            $sql_p = "SELECT * FROM produtos WHERE cat_produto = 'porcoe'";
             $query_porcoes = $mysqli->query($sql_p) or die($mysqli->error);
             while ($porcoes = $query_porcoes->fetch_assoc()) {
                 ?>

@@ -3,10 +3,8 @@ var modalIMG = document.querySelector('#mdlIMG');
 var modalTlt = document.querySelector('#modal-title');
 var modalDesc = document.querySelector('#modal-desc');
 var modalPreco = document.querySelector('#modal-preco');
-var modalID = document.querySelector('#id_modal');
 
-function mostrarDetalhes(id, nome, descricao, preco, imagem) {
-    modalID.value = id;
+function mostrarDetalhes(nome, descricao, preco, imagem) {
     modalIMG.src = imagem;
     modalTlt.textContent = nome
     modalDesc.textContent = descricao;

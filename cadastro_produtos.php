@@ -11,18 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $status = $_POST["status"];
 
     $sql = "INSERT INTO produtos (nome_produto,descricao_produto,cat_produto,preco_produto,imagem_produto,status_produto) VALUES ('$nome', '$descricao', '$categoria', '$preco', '$imagem', '$status')";
-
-    if ($mysqli->query($sql) === TRUE) {
-        echo "Novo produto criado com sucesso";
-        header("Location: cadastro_produtos.php");
-    } else {
-        echo "Erro: " . $sql . "<br>" . $mysqli->error;
-    }
+    $mysqli->query($sql);
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -73,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <div class="containerpedidos">
         <div class="corpo">
-            <form method="POST" action="">
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
                 <div class="label-float">
                     <input name="nome" type="text" placeholder=" " required>
                     <label>Nome do Produto</label>
@@ -81,36 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="label-float">
                     <textarea style="resize: none" name="descricao" type="text" placeholder=" " required> </textarea>
                     <label>Descrição</label>
-                    <div class="label-float">
-                        <input name="valor" type="number" step="0.01" placeholder=" " required>
-                        <label>Preço</label>
-                    </div><br>
-                    <div class="label-float">
-                        <select class="select-estilizado" name="status" required>
-                            <option value="" disabled selected>Selecione o Status</option>
-                            <option value="ativo">Produto Disponível no Cardápio</option>
-                            <option value="inativo">Produto Insdisponível no Cardápio</option>
-                        </select>
-                    </div>
-                    <div class="label-float">
-                        <select class="select-estilizado" name="categoria" required>
-                            <option value="" disabled selected>Selecione a Categoria</option>
-                            <option value="lache">Lanche</option>
-                            <option value="bebida">Bebida</option>
-                            <option value="porcao">Porção</option>
-                        </select>
-                    </div>
-                    <div class="label-float">
-                    <input type="file" id="imagem" name="imagem" accept="image/*">
-                    </div>
-                    <div class="botao">
-                        <input type="submit" value="Cadastrar Pedido" id="botaologin">
-                    </div>
                 </div>
                 <div class="label-float">
                     <input name="valor" type="number" step="0.01" placeholder=" " required>
                     <label>Preço</label>
-                </div><br>
+                </div>
                 <div class="label-float">
                     <select class="select-estilizado" name="status" required>
                         <option value="" disabled selected>Selecione o Status</option>
@@ -123,19 +90,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <option value="" disabled selected>Selecione a Categoria</option>
                         <option value="lache">Lanche</option>
                         <option value="bebida">Bebida</option>
-                        <option value="porcao">Porção</option>
+                        <option value="porcoe">Porção</option>
                     </select>
                 </div>
-                <div class="lable-float">
+                <div class="label-float">
                     <input name="imagem" type="text" placeholder=" " required>
-                    <label>Endereço da imagem</label>
+                    <label>URL da Imagem</label>
                 </div>
                 <div class="botao">
                     <input type="submit" value="Cadastrar Produto" id="botaologin">
                 </div>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
     <footer>
         ©HAMBURGOLÂNDIA · 2023
