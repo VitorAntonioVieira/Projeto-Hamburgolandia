@@ -22,7 +22,7 @@
             $usuario = $sql_exec->fetch_assoc();
             if(password_verify($_POST['senha'], $usuario['senha'])){
                 session_start();
-                $_SESSION['usuario_logado'] = true;
+                $_SESSION['usuario_logado'] = $user;
 
                 sleep(1);
                 header('Location: index.php');
