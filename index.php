@@ -35,6 +35,7 @@ include 'includes/conexao.php';
                 <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
                     class="search-button"><span class="material-symbols-outlined">search</span></button></input>
                 <button id="pc-sch" class="search-button"><span>Buscar</span></button>
+            </form>
         </div>
         <div id="logout">
             <a href="logout.php">
@@ -42,9 +43,6 @@ include 'includes/conexao.php';
                     logout
                 </span>
             </a>
-            <span onclick="" class="material-symbols-outlined">
-                shopping_cart_checkout
-            </span>
         </div>
     </nav>
     <div class="modal">
@@ -113,7 +111,7 @@ include 'includes/conexao.php';
                 <div class="fild"
                     onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $lanches['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
                     <fieldset class="box">
-                    <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
+                        <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
                     <h3>' . $bebidas['nome_produto'] . '</h3>
                     <p>' . $bebidas['preco_produto'] . '</p>'; ?>
                     </fieldset>
@@ -139,6 +137,22 @@ include 'includes/conexao.php';
                 </div>
             <?php } ?>
         </div>
+    </div>
+    <div class="cart-box">
+        <div>
+            <div>
+                <span class="material-symbols-outlined">
+                    shopping_bag
+                </span>
+            </div>
+            <div>
+                <?php echo $_SESSION['itens_sacola'] ?>
+            </div>
+        </div>
+        <div>
+            <span>Ver sacola</span>
+        </div>
+        <span></span>
     </div>
     <footer>
         ©HAMBURGOLÂNDIA · 2023
