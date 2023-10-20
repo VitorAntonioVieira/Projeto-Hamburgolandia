@@ -72,7 +72,7 @@ footer {
 }
     .containerpedidos {
         display: flex;
-        flex-direction: column; /* Organiza o conteúdo na vertical */
+        flex-direction: row; /* Organiza o conteúdo na vertical */
         align-items: center; /* Centraliza horizontalmente */
         justify-content: center; /* Centraliza verticalmente */
         gap: 60px;
@@ -82,6 +82,7 @@ footer {
         border-radius: 20px;
         margin-top: 90px;
         border-color: #FFB67B;
+        text-align: center;
     }
 
 .encaminhamentos ul {
@@ -591,6 +592,7 @@ textarea {
     position: relative;
     padding-top: 13px;
     margin: auto;
+    text-align: center;
 }
 
 input {

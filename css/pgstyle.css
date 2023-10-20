@@ -116,7 +116,7 @@ footer {
 .search-container {
     display: flex;
     align-items: center;
-    width: 80%;
+    width: 65%;
     /* Defina o comprimento desejado aqui */
 }
 
@@ -191,6 +191,10 @@ footer {
     text-decoration: none;
     color: #5e4242;
     margin-top: 4px;
+}
+
+#textologin {
+    margin-right: 30px
 }
 
 #cores {
