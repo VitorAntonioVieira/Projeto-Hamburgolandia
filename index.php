@@ -1,8 +1,7 @@
-
 <?php
 session_start();
 
-if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true) {
+if (!isset($_SESSION['usuario_logado'])) {
     header('Location: login.php');
     exit;
 }
@@ -12,6 +11,7 @@ include 'includes/conexao.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,7 @@ include 'includes/conexao.php';
     <script async src="js/pd.js"></script>
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
+
 <body>
     <nav>
         <img id="logo" src="img/logos/1.png" alt="Logo">
@@ -35,8 +36,9 @@ include 'includes/conexao.php';
                 <button id="pc-sch" class="search-button"><span>Buscar</span></button>
         </div>
         <div id="logout">
-        <span class="material-symbols-outlined">
-                Bem Vindo, <?php echo $_SESSION['usuario_logado']; ?>
+            <span id="textologin">
+                Bem Vindo,
+                <?php echo $_SESSION['usuario_logado']; ?>
             </span>
             <a href="logout.php">
                 <span class="material-symbols-outlined">
@@ -47,7 +49,7 @@ include 'includes/conexao.php';
                 shopping_cart_checkout
             </span>
         </div>
-</nav>
+    </nav>
     <div class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -114,7 +116,7 @@ include 'includes/conexao.php';
                 <div class="fild"
                     onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $lanches['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
                     <fieldset class="box">
-                    <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
+                        <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
                     <h3>' . $bebidas['nome_produto'] . '</h3>
                     <p>' . $bebidas['preco_produto'] . '</p>'; ?>
                     </fieldset>
