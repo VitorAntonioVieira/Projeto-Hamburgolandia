@@ -13,11 +13,8 @@ function mostrarDetalhes(id, nome, descricao, preco, imagem) {
     modalIMG.src = imagem;
     modal.style.display = "block";
 }
-var btn = document.getElementsByClassName("openModal");
+
 var span = document.getElementsByClassName("close")[0];
-btn.onclick = function () {
-    modal.style.display = "block";
-}
 
 span.onclick = function () {
     modal.style.display = "none";
