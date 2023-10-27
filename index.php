@@ -47,9 +47,6 @@ include 'includes/conexao.php';
                     logout
                 </span>
             </a>
-            <span onclick="" class="material-symbols-outlined">
-                shopping_cart_checkout
-            </span>
         </div>
     </nav>
     <div class="modal">
@@ -155,6 +152,22 @@ include 'includes/conexao.php';
                 </div>
             <?php } ?>
         </div>
+    </div>
+    <div class="cart-box">
+        <div>
+            <div>
+                <span class="material-symbols-outlined">
+                    shopping_bag
+                </span>
+            </div>
+            <div>
+                <?php echo $_SESSION['itens_sacola'] ?>
+            </div>
+        </div>
+        <div>
+            <span>Ver sacola</span>
+        </div>
+        <span></span>
     </div>
     <footer>
         ©HAMBURGOLÂNDIA · 2023

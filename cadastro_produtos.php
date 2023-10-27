@@ -38,9 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <nav>
         <img id="logo" src="img/logos/1.png" alt="Logo">
         <div class="search-container">
-            <input type="text" placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
-                class="search-button"><span class="material-symbols-outlined">search</span></button></input>
-            <button id="pc-sch" class="search-button"><span>Buscar</span></button>
+            <form action="busca.php" method="GET">
+                <input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
+                    class="search-button"><span class="material-symbols-outlined">search</span></button></input>
+                <button id="pc-sch" class="search-button"><span>Buscar</span></button>
+            </form>
         </div>
         <div id="logout">
             <a href="logout.php">
@@ -48,6 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     logout
                 </span>
             </a>
+            <span onclick="" class="material-symbols-outlined">
+                shopping_cart_checkout
+            </span>
         </div>
     </nav>
     <div class="cores">
@@ -65,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <div class="containerpedidos">
         <div class="corpo">
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                 <div class="label-float">
                     <input name="nome" type="text" placeholder=" " required>
                     <label>Nome do Produto</label>

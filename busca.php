@@ -28,15 +28,16 @@ $sth = $mysqli->query("SELECT * FROM `produtos` WHERE `nome_produto` LIKE '$nome
 				<input type="text" name=nome_hamburguer placeholder="Pesquisar" class="search-box"><button id="mbl-sch"
 					class="search-button"><span class="material-symbols-outlined">search</span></button></input>
 				<button id="pc-sch" class="search-button"><span>Buscar</span></button>
+			</form>
 		</div>
 		<div id="logout">
 			<a href="logout.php">
 				<span class="material-symbols-outlined">
-
+					logout
 				</span>
 			</a>
-			<span onclick="modal();" class="material-symbols-outlined">
-
+			<span onclick="" class="material-symbols-outlined">
+				shopping_cart_checkout
 			</span>
 		</div>
 	</nav>
@@ -44,13 +45,13 @@ $sth = $mysqli->query("SELECT * FROM `produtos` WHERE `nome_produto` LIKE '$nome
 		<img id="cores" src="img/cores.png" alt="cores">
 	</div>
 	<div class="encaminhamentos">
-		<ul>
-			<li><a href="index.php">Produtos</a></li>
-			<li><a href="pedidos.php">Pedidos</a></li>
-			<li><a href="prepagarcom.php">Em preparo</a></li>
-			<li><a href="cadastro_pedidos.php">Cadastro de Pedidos</a></li>
-		</ul>
-	</div>
+        <ul>
+            <li><a href="index.php">Produtos</a></li>
+            <li><a href="pedidos.php">Pedidos</a></li>
+            <li><a href="prepagarcom.php">Em preparo</a></li>
+            <li><a href="cadastro_produtos.php">Cadastro de Produtos</a></li>
+        </ul>
+    </div>
 	<h2>Resultado da busca</h2>
 	<div class="conteudo">
 		<?php
@@ -97,7 +98,7 @@ $sth = $mysqli->query("SELECT * FROM `produtos` WHERE `nome_produto` LIKE '$nome
 		.conteudo {
 			display: grid;
 			grid-template-areas: "sidenav content";
-			grid-template-columns: repeat(3,1fr);
+			grid-template-columns: repeat(3, 1fr);
 		}
 
 		h2 {
