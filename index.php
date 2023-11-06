@@ -59,20 +59,18 @@ include 'includes/conexao.php';
                         </h3>
                     <p id="modal-preco"></p>
                     <button class="add_cart" id="bap"> Adicionar item </button>
-                    <input type="hidden" name="id_modal" id="id_modal" value="">
-                    <input type="submit" id="r-btn" value="Delete" data-id="item_id">
+                    <!-- <input type="hidden" name="id_modal" id="id_modal" value="">
+                    <input type="submit" id="r-btn" value="Delete" data-id="item_id"> -->
                 </div>
 
-                <script>
+                <!-- <script>
                     document.getElementById("r-btn").addEventListener("click", function () {
                         if (confirm("Tem certeza de que deseja excluir este item?")) {
                             var idModal = document.getElementById("id_modal").value;
                             window.location.href = "delete_item.php?id=" + idModal;
                         }
-                    });
-
-                    
-                </script>
+                    });                    
+                </script> -->
                 <div id="modal-img">
                     <img id="mdlIMG" src="" alt="">
                 </div>
@@ -101,7 +99,7 @@ include 'includes/conexao.php';
                 if ($lanches['imagem_produto'] !== '') {
                     ?>
                     <div class="fild"
-                        onclick="mostrarDetalhes('<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
+                        onclick="mostrarDetalhes('<?php echo $lanches['id_produto'] ?>'','<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem_produto'] . '" alt="' . $lanches['nome_produto'] . '">
                     <h3>' . $lanches['nome_produto'] . '</h3>
