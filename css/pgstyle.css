@@ -120,8 +120,13 @@ footer {
     /* Defina o comprimento desejado aqui */
 }
 
+.search-container form {
+    width: 100%;
+}
+
 /* Estilize a barra de pesquisa e o botão aqui */
 .search-box {
+    width: 86%;
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
@@ -185,6 +190,11 @@ footer {
 
 #divBusca input:focus {
     outline: 0;
+}
+
+#logout {
+    display: flex;
+    align-items: center;
 }
 
 #logout a {
@@ -342,6 +352,15 @@ footer {
     cursor: pointer;
 }
 
+.cart-box {
+    display: flex;
+    position: fixed;
+    top: 91.5%;
+    background-color: red;
+    width: 100%;
+    z-index: 1;
+}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
     /* Estilize a barra de pesquisa e o botão aqui */
@@ -351,16 +370,6 @@ footer {
         width: 60%;
         /* Defina o comprimento desejado aqui */
         margin: 10px;
-    }
-
-    .search-box {
-        flex: 1;
-        /* A caixa de pesquisa preenche o espaço disponível */
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        outline: none;
-        /* Remove a borda de foco padrão */
     }
 
     .search-button {

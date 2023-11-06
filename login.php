@@ -27,8 +27,6 @@ session_start();
     <div class="corpo">
         <div class="field">
             <form action="processar_login.php" method="post" class="login">
-
-
                 <h2 id="h2login">Inicie sua Sessão</h2>
                 <div class="label-float">
                     <input name="user" type="text" placeholder=" " required>

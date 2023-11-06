@@ -9,10 +9,6 @@ if (!isset($_SESSION['usuario_logado'])) {
 include 'includes/conexao.php';
 
 ?>
-<<<<<<< HEAD
-
-=======
->>>>>>> da7a3f8264272504416f2d177a93b2740874ecfa
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -43,7 +39,7 @@ include 'includes/conexao.php';
         </div>
         <div id="logout">
             <span id="textologin">
-                Bem Vindo,
+                Bem-vindo,
                 <?php echo $_SESSION['usuario_logado']; ?>
             </span>
             <a href="logout.php">
