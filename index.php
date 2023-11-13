@@ -61,9 +61,8 @@ include 'includes/conexao.php';
                     <p id="modal-desc">
                         </h3>
                     <p id="modal-preco"></p>
-                    <button onclick="" class="add_cart" id="bap"> Adicionar item </button>
-                    <!-- <input type="hidden" name="id_modal" id="id_modal" value="">
-                    <input type="submit" id="r-btn" value="Delete" data-id="item_id"> -->
+                    <input type="text" name="observacao" id="observacao-modal">
+                    <button onclick="addToCart(modalTlt.textContent, modalPreco.textContent, modalObs.value)" class="add_cart" id="bap"> Adicionar item </button>
                 </div>
 
                 <!-- <script>
