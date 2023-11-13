@@ -85,21 +85,21 @@ footer {
         text-align: center;
     }
 
-.encaminhamentos ul {
-    display: flex;
-    list-style: none;
-}
-
-.encaminhamentos a {
-    color: #5e4242;
-    text-decoration: none;
-    background-color: #e7e1e1;
-    text-align: center;
-    /* Cor de fundo da barra de navegação */
-    padding: 10px;
-    /* Espaçamento interno */
-    height: 500px;
-}
+    .encaminhamentos ul {
+        display: flex;
+        list-style: none;
+    }
+    
+    .encaminhamentos a {
+        color: #5e4242;
+        text-decoration: none;
+        background-color: #e7e1e1;
+        text-align: center;
+        /* Cor de fundo da barra de navegação */
+        /* Espaçamento interno */
+        height: 500px;
+    }
+ 
 
 .search-container {
     display: flex;
