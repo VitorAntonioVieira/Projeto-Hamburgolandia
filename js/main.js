@@ -1,4 +1,5 @@
 var modal = document.querySelector('.modal');
+var modalID = document.querySelector('#id-modal');
 var modalIMG = document.querySelector('#mdlIMG');
 var modalTlt = document.querySelector('#modal-title');
 var modalDesc = document.querySelector('#modal-desc');

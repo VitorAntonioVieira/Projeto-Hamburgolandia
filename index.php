@@ -16,6 +16,9 @@ include 'includes/conexao.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logos/3.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet"
@@ -58,7 +61,7 @@ include 'includes/conexao.php';
                     <p id="modal-desc">
                         </h3>
                     <p id="modal-preco"></p>
-                    <button class="add_cart" id="bap"> Adicionar item </button>
+                    <button onclick="" class="add_cart" id="bap"> Adicionar item </button>
                     <!-- <input type="hidden" name="id_modal" id="id_modal" value="">
                     <input type="submit" id="r-btn" value="Delete" data-id="item_id"> -->
                 </div>
@@ -99,11 +102,12 @@ include 'includes/conexao.php';
                 if ($lanches['imagem_produto'] !== '') {
                     ?>
                     <div class="fild"
-                        onclick="mostrarDetalhes('<?php echo $lanches['id_produto'] ?>'','<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
+                        onclick="mostrarDetalhes('<?php echo $lanches['id_produto'] ?>','<?php echo $lanches['nome_produto'] ?>', '<?php echo $lanches['descricao_produto'] ?>', <?php echo $lanches['preco_produto'] ?>, '<?php echo $lanches['imagem_produto'] ?>')">
                         <fieldset class="box">
                             <?php echo '<img class="produto" src="' . $lanches['imagem_produto'] . '" alt="' . $lanches['nome_produto'] . '">
                     <h3>' . $lanches['nome_produto'] . '</h3>
-                    <p>R$ ' . $lanches['preco_produto'] . '</p>';
+                    <p>R$ ' . $lanches['preco_produto'] . '</p>
+                    <input type="hidden" id="id-modal" value="' . $lanches['id_produto'] . '">';
                 } else {
                     echo '<img class="produto" src="/img/notdisp.png" alt="' . $lanches['nome_produto'] . '">
                         <h3>' . $lanches['nome_produto'] . '</h3>
@@ -124,11 +128,11 @@ include 'includes/conexao.php';
             while ($bebidas = $query_bebidas->fetch_assoc()) {
                 ?>
                 <div class="fild"
-                    onclick="mostrarDetalhes('<?php $bebidas['nome_produto'] ?>', '<?php $bebidas['descricao_produto'] ?>', '<?php $lanches['preco_produto'] ?>', '<?php $bebidas['imagem_produto'] ?>')">
+                    onclick="mostrarDetalhes('<?php echo $bebidas['id_produto'] ?>', '<?php echo $bebidas['nome_produto'] ?>', '<?php echo $bebidas['descricao_produto'] ?>', '<?php echo $bebidas['preco_produto'] ?>', '<?php echo $bebidas['imagem_produto'] ?>')">
                     <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $bebidas['imagem_produto'] . '" alt="' . $bebidas['nome_produto'] . '">
                     <h3>' . $bebidas['nome_produto'] . '</h3>
-                    <p>' . $bebidas['preco_produto'] . '</p>'; ?>
+                    <p>R$' . $bebidas['preco_produto'] . '</p>'; ?>
                     </fieldset>
                 </div>
             <?php } ?>
@@ -143,11 +147,11 @@ include 'includes/conexao.php';
             while ($porcoes = $query_porcoes->fetch_assoc()) {
                 ?>
                 <div class="fild"
-                    onclick="mostrarDetalhes('<?php $porcoes['nome_produto'] ?>', '<?php $porcoes['descricao_produto'] ?>', '<?php $porcoes['preco_produto'] ?>', '<?php $porcoes['imagem_produto'] ?>')">
+                    onclick="mostrarDetalhes('<?php echo $porcoes['id_produto'] ?>', '<?php echo $porcoes['nome_produto'] ?>', '<?php echo $porcoes['descricao_produto'] ?>', '<?php echo $porcoes['preco_produto'] ?>', '<?php echo $porcoes['imagem_produto'] ?>')">
                     <fieldset class="box">
                         <?php echo '<img class="produto" src="' . $porcoes['imagem_produto'] . '" alt="' . $porcoes['nome_produto'] . '">
                     <h3>' . $porcoes['nome_produto'] . '</h3>
-                    <p>' . $porcoes['preco_produto'] . '</p>'; ?>
+                    <p>R$' . $porcoes['preco_produto'] . '</p>'; ?>
                     </fieldset>
                 </div>
             <?php } ?>
@@ -161,13 +165,13 @@ include 'includes/conexao.php';
                 </span>
             </div>
             <div>
-                <?php echo $_SESSION['itens_sacola'] ?>
+
             </div>
         </div>
         <div>
             <span>Ver sacola</span>
         </div>
-        <span></span>
+        <span id="modal-preço">R$00.00</span>
     </div>
     <footer>
         ©HAMBURGOLÂNDIA · 2023
