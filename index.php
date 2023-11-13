@@ -26,6 +26,7 @@ include 'includes/conexao.php';
     <link rel="stylesheet" href="css/pgstyle.css">
     <script src="js/main.js" defer></script>
     <script async src="js/pd.js"></script>
+    <script src="modalcarrinho.js"></script>
     <title>HAMBURGOLÂNDIA - Página Inicial</title>
 </head>
 
@@ -51,6 +52,17 @@ include 'includes/conexao.php';
                 </span>
             </a>
         </div>
+        <button id="openModalBtn">Abrir Carrinho</button>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h2>Carrinho de Compras</h2>
+            <ul id="cartItems">
+                <!-- Itens do carrinho serão exibidos aqui -->
+            </ul>
+        </div>
+    </div>
     </nav>
     <div class="modal">
         <div class="modal-content">
