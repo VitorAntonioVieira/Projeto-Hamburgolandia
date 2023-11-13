@@ -1,12 +1,6 @@
 <?php
 include 'includes/conexao.php';
 
-// if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-//     session_destroy();
-//     header('Location: index.php');
-//     exit;
-// } else {
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $user = $_POST['user'];
@@ -22,6 +16,10 @@ $mysqli->close();
 // }
 ?>
 
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +29,6 @@ $mysqli->close();
     <link rel="shortcut icon" href="img/logos/3.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pgstyle.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/main.js"></script>
 
@@ -40,9 +37,7 @@ $mysqli->close();
 
 <body>
     <nav>
-        <img id="logo" src="img/logos/1.png" alt="Logo">
-        <div class="search-container">
-
+        <img id="logo" src="img/logos/1.png" alt="Logo" onClick="document.location.href='login.php'">
     </nav>
     <div class="corpo">
         <div class="field">

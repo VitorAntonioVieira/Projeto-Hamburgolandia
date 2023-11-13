@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -29,6 +29,20 @@ footer {
 .container-wraper {
     overflow-x: auto;
 }
+
+.container-wraper::-webkit-scrollbar {
+    height: 7px;               /* width of the entire scrollbar */
+  }
+  
+  .container-wraper::-webkit-scrollbar-track {
+    background: none;        /* color of the tracking area */
+  }
+  
+  .container-wraper::-webkit-scrollbar-thumb {
+    background-color: #ccc;    /* color of the scroll thumb */
+    border-radius: 5px;       /* roundness of the scroll thumb */
+    border: 2px solid #ccc;  /* creates padding around scroll thumb */
+  }
 
 .container {
     display: flex;
@@ -120,8 +134,13 @@ footer {
     /* Defina o comprimento desejado aqui */
 }
 
+.search-container form {
+    width: 100%;
+}
+
 /* Estilize a barra de pesquisa e o botão aqui */
 .search-box {
+    width: 86%;
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
@@ -185,6 +204,11 @@ footer {
 
 #divBusca input:focus {
     outline: 0;
+}
+
+#logout {
+    display: flex;
+    align-items: center;
 }
 
 #logout a {
@@ -357,16 +381,6 @@ footer {
         width: 60%;
         /* Defina o comprimento desejado aqui */
         margin: 10px;
-    }
-
-    .search-box {
-        flex: 1;
-        /* A caixa de pesquisa preenche o espaço disponível */
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        outline: none;
-        /* Remove a borda de foco padrão */
     }
 
     .search-button {
@@ -549,6 +563,10 @@ footer {
         border: none;
         margin-left: 5px;
         cursor: pointer;
+    }
+
+    #mbl-sch {
+        display: flex;
     }
 
     .encaminhamentos {
