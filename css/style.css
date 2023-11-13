@@ -65,8 +65,6 @@ body {
     padding: 10px;
     display: flex;
     flex-direction: column;
-
-
 }
 
 .label-float {
@@ -213,6 +211,10 @@ select option[value="lagoinha"] {
     }
     .fgt-pss {
         font-size: large;
+    }
+    .login {
+        position: relative;
+    left: -90%;
     }
     #h2login {
         font-size: xx-large;
