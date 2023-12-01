@@ -1,7 +1,14 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['usuario_logado'])) {
+    header('Location: login.php');
+    exit;
+}
+
 include 'includes/conexao.php'
 
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -44,14 +51,14 @@ include 'includes/conexao.php'
         </ul>
     </div>
     <h1 class="grid-title no-select">Pedidos</h1>
-    <?php 
+    <?php
     $sql_l = "SELECT * FROM pedidos";
     $result = $mysqli->query($sql_l);
 
     if ($result->num_rows > 0) {
         echo "<table>";
-        echo "<th>Mesa</th><th>Garçom</th><th>Produto</th><th>Quantidade</th><th>Observações</th>";
-        
+        echo "<th>Mesa</th><th>Garçom</th><th>Produto</th><th>Quantidade</th><th>Observações</th><th>Editar</th><th>Excluir</th>";
+
         // Exibindo os dados
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
@@ -60,13 +67,19 @@ include 'includes/conexao.php'
             echo "<td>" . $row["produtopedido"] . "</td>";
             echo "<td>" . $row["quantidade_pedido"] . "</td>";
             echo "<td>" . $row["obs_pedido"] . "</td>";
+            echo "<td><button id='botao-editar-pedido'><span class='material-symbols-outlined'>
+            edit
+            </span></button></td>";
+            echo "<td><button id='botao-excluir-pedido'><span class='material-symbols-outlined'>
+            delete
+            </span></button></td>";
             echo "</tr>";
         }
 
         echo "</table>";
     }
     ?>
-    
+
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>

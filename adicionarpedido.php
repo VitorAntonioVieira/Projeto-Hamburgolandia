@@ -1,6 +1,12 @@
 <?php
-include 'includes/conexao.php';
 session_start();
+
+if (!isset($_SESSION['usuario_logado'])) {
+    header('Location: login.php');
+    exit;
+}
+
+include 'includes/conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mesa = $_POST["mesa"];

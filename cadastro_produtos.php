@@ -1,6 +1,12 @@
 <?php
-include 'includes/conexao.php';
 session_start();
+
+if (!isset($_SESSION['usuario_logado'])) {
+    header('Location: login.php');
+    exit;
+}
+
+include 'includes/conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST["nome"];
@@ -101,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="label-float">
                     <select class="select-estilizado" name="categoria" required>
                         <option value="" disabled selected>Selecione a Categoria</option>
-                        <option value="lache">Lanche</option>
+                        <option value="lnache">Lanche</option>
                         <option value="bebida">Bebida</option>
                         <option value="porcoe">Porção</option>
                     </select>
