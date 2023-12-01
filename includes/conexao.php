@@ -8,4 +8,4 @@
     if($mysqli->connect_error){
         die("Erro ao conectar: ".$mysqli->connect_error);
     }
-?>j
+?>
