@@ -96,6 +96,7 @@ footer {
         background-color: #e7e1e1;
         text-align: center;
         /* Cor de fundo da barra de navegação */
+        padding: 10px;
         /* Espaçamento interno */
         height: 500px;
     }
@@ -197,7 +198,7 @@ footer {
 }
 
 .pedidopreparo1 {
-    /*imagem do lanche*/
+    /imagem do lanche/
     margin-left: 5px;
     width: 190px;
     justify-content: center;
@@ -293,6 +294,26 @@ select option[value="ativo"] {
     font-size: 16px;
     font-weight: 400;
     width: 290px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance: none;
+}
+
+.centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-float input {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 7%;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
     transition: all .1s linear;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
@@ -639,7 +660,7 @@ input {
 
 .label-float input:focus+label,
 .label-float input:not(:placeholder-shown)+label {
-    font-size: 13px;
+    font-size: 10px;
     font-weight: bold;
     top: 0;
     color: #5e4242;
@@ -647,8 +668,8 @@ input {
 
 #botaologin {
     position: relative;
-    top: 40%;
-    left: 17%;
+    top: 0%;
+    left: -1%;
     margin-top: 20px;
     background-color: #00D128;
     border-radius: 30px;
@@ -657,5 +678,48 @@ input {
     height: 40px;
     width: 90px;
     font-weight: bold;
+    margin-bottom: 15px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #e9e7e7e2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 5%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #5e4242;
+}   
+
+th {
+    background-color: #e7e1e1;
+}
+
+h1 {
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Hover effect on table rows */
+tr:hover {
+    background-color: #f5f5f5
 }

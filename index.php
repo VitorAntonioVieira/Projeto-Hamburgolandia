@@ -37,7 +37,7 @@ include 'includes/conexao.php';
             <form action="busca.php" method="GET">
                 <input type="text" name="nome_hamburguer" placeholder="Pesquisar" class="search-box"><button
                     id="mbl-sch" class="search-button"><span
-                        class="material-symbols-outlined">search</span></button></input>
+                    class="search-button"><span class="material-symbols-outlined">search</span></button></input>
                 <button id="pc-sch" class="search-button"><span>Buscar</span></button>
             </form>
         </div>
@@ -52,19 +52,25 @@ include 'includes/conexao.php';
                 </span>
             </a>
         </div>
-        <button id="openModalBtn">Abrir Carrinho</button>
-
-    <div id="cartModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn">&times;</span>
-            <h2>Carrinho de Compras</h2>
-            <ul id="cartItems">
-                <!-- Itens do carrinho serão exibidos aqui -->
-            </ul>
-        </div>
-    </div>
+        <span onclick="openCartModal1()" class="material-symbols-outlined" id="openModalBtn" a href="carrinho.php">
+                shopping_cart_checkout
+            </span>
     </nav>
-    <div class="modal">
+   
+    <div class="cores">
+        <img id="cores" src="img/cores.png" alt="cores">
+    </div>
+    <div class="encaminhamentos">
+        <ul>
+            <li><a href="index.php">Produtos</a></li>
+            <li><a href="adicionarpedido.php">Fazer Pedido</a></li>
+            <li><a href="redefinir.php">Editar Conta</a></li>
+            <li><a href="cadastro_produtos.php">Cadastro de Produtos</a></li>
+            <li><a href="preparos.php">A Preparo</a></li>
+        </ul>
+    </div>
+
+ <!-- <div class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="conteudo">
@@ -77,32 +83,66 @@ include 'includes/conexao.php';
                     <button onclick="addToCart(modalTlt.textContent, modalPreco.textContent, modalObs.value)" class="add_cart" id="bap"> Adicionar item </button>
                 </div>
 
-                <!-- <script>
+                 <script>
                     document.getElementById("r-btn").addEventListener("click", function () {
                         if (confirm("Tem certeza de que deseja excluir este item?")) {
                             var idModal = document.getElementById("id_modal").value;
                             window.location.href = "delete_item.php?id=" + idModal;
                         }
                     });                    
-                </script> -->
+                </script>
                 <div id="modal-img">
                     <img id="mdlIMG" src="" alt="">
                 </div>
             </div>
+        </div> -->
+        <div class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="closeBtn">&times;</span>
+        <div class="conteudo">
+            <div id="descricao">
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+                <p id="modal-preco"></p>
+                <button onclick="showButtons()" class="show_image">Mostrar imagem</button>
+
+                <!-- Botões de enviar e editar (inicialmente escondidos) -->
+            
+              
+            </div>
+
+            <!-- Restante do seu conteúdo -->
+
+            <!-- Div para exibir a imagem -->
+            <div id="modal-img" style="display: none;">
+                <img id="mdlIMG" src="" alt="">
+            </div>
         </div>
     </div>
-    <div class="cores">
-        <img id="cores" src="img/cores.png" alt="cores">
-    </div>
-    <div class="encaminhamentos">
-        <ul>
-            <li><a href="index.php">Produtos</a></li>
-            <li><a href="pedidos.php">Pedidos</a></li>
-            <li><a href="prepagarcom.php">Em preparo</a></li>
-            <li><a href="cadastro_produtos.php">Cadastro de Produtos</a></li>
-        </ul>
-    </div>
+</div>
 
+<script>
+    document.getElementById("closeBtn").addEventListener("click", function() {
+        // Lógica para fechar o modal quando o "x" é clicado
+        document.querySelector(".modal").style.display = "none";
+    });
+
+    function showButtons() {
+        // Lógica para mostrar os botões quando o botão de imagem é clicado
+        document.getElementById("modal-img").style.display = "block";
+        document.getElementById("addButton").style.display = "inline-block";
+        document.getElementById("editButton").style.display = "block";
+    }
+
+    function addToCart() {
+        // Adicionar o item ao carrinho
+        window.location.href = "pedidos.php";
+    }
+</script>
+
+   
+</script>
+    </div>
     <h1 class="grid-title no-select">LANCHES</h1>
     <div class="container-wraper">
         <div class="container no-select">
@@ -168,25 +208,80 @@ include 'includes/conexao.php';
             <?php } ?>
         </div>
     </div>
-    <div class="cart-box">
-        <div>
-            <div>
-                <span class="material-symbols-outlined">
-                    shopping_bag
-                </span>
-            </div>
-            <div>
-
-            </div>
-        </div>
-        <div>
-            <span>Ver sacola</span>
-        </div>
-        <span id="modal-preço">R$00.00</span>
-    </div>
+</div>
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>
+    <style>
+    .modal {
+    display: none; /* O modal é oculto por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+    
+}
+
+.modal-content {
+    background-color: #e9e7e7e2;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    border-radius: 10px; /* Adicionando o border-radius */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.conteudo {
+    margin-top: 20px;
+}
+
+/* Estilos para o botão de imagem */
+.show_image {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.show_image:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para a exibição da imagem */
+#modal-img {
+    display: none;
+    margin-top: 15px;
+}
+
+#modal-img img {
+    max-width: 70%;
+    height: auto;
+}
+
+</style>
+
 </body>
 
 </html>

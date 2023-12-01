@@ -3,14 +3,13 @@ include 'includes/conexao.php';
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nome = $_POST["nome"];
+    $mesa = $_POST["mesa"];
+    $garcom = $_POST["garcom"];
+    $produto = $_POST["produto"];
+    $quantidade = $_POST["quantidade"];
     $descricao = $_POST["descricao"];
-    $categoria = $_POST["categoria"];
-    $preco = $_POST["valor"];
-    $imagem = $_POST["imagem"];
-    $status = $_POST["status"];
-
-    $sql = "INSERT INTO produtos (nome_produto,descricao_produto,cat_produto,preco_produto,imagem_produto,status_produto) VALUES ('$nome', '$descricao', '$categoria', '$preco', '$imagem', '$status')";
+   
+    $sql = "INSERT INTO pedidos (mesa_pedido,garcompedido,produtopedido,quantidade_pedido,obs_pedido) VALUES ('$mesa', '$garcom', '$produto', '$quantidade', '$descricao')";
     $mysqli->query($sql);
 }
 
@@ -59,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <img id="cores" src="img/cores.png" alt="cores">
     </div>
     <div class="encaminhamentos">
-    <div class="encaminhamentos">
         <ul>
             <li><a href="index.php">Produtos</a></li>
             <li><a href="adicionarpedido.php">Fazer Pedido</a></li>
@@ -68,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <li><a href="preparos.php">A Preparo</a></li>
         </ul>
     </div>
-    </div>
     <h1 class="grid-title no-select">Cadastro de Produtos</h1>
 
     <div class="containerpedidos centro">
@@ -76,45 +73,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                 <!-- Input para o nome do produto -->
                 <div class="label-float">
-                    <input name="nome" type="text" placeholder=" " required>
-                    <label>Nome do Produto</label>
+                    <input name="mesa" type="text" placeholder=" " required>
+                    <label>Mesa</label>
                 </div>
                 
                 <!-- Input para a descrição -->
                 <div class="label-float">
-                    <input style="resize: none" name="descricao" type="text" placeholder=" " required>
-                    <label>Descrição</label>
+                    <input style="resize: none" name="garcom" type="text" placeholder=" " required>
+                    <label>Garçom</label>
                 </div>
                 
                 <!-- Input para o preço -->
                 <div class="label-float">
-                    <input name="valor" type="number" step="0.01" placeholder=" " required>
-                    <label>Preço</label>
+                    <input name="produto" type="text" step="0.01" placeholder=" " required>
+                    <label>Produto</label>
                 </div>
-                
-                <!-- Seu código para os outros inputs aqui... -->
-                <div class="label-float">
-                    <select class="select-estilizado" name="status" required>
-                        <option value="" disabled selected>Selecione o Status</option>
-                        <option value="ativo">Produto Disponível no Cardápio</option>
-                        <option value="inativo">Produto Insdisponível no Cardápio</option>
-                    </select>
+               <div class="label-float">
+                    <input name="quantidade" type="number" placeholder=" " required>
+                    <label>Quantidade</label>
                 </div>
                 <div class="label-float">
-                    <select class="select-estilizado" name="categoria" required>
-                        <option value="" disabled selected>Selecione a Categoria</option>
-                        <option value="lache">Lanche</option>
-                        <option value="bebida">Bebida</option>
-                        <option value="porcoe">Porção</option>
-                    </select>
+                    <input name="descricao" type="text" step="0.01" placeholder=" " required>
+                    <label>Observações</label>
                 </div>
-                <div class="label-float">
-                    <input name="imagem" type="text" placeholder=" " required>
-                    <label>URL da Imagem</label>
-                </div>
-                <!-- Botão de enviar -->
                 <div class="botao">
-                    <input type="submit" value="Cadastrar Produto" id="botaologin">
+                    <input type="submit" value="Cadastrar Pedido" id="botaologin">
                 </div>
             </form>
         </div>

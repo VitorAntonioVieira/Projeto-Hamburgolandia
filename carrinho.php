@@ -37,3 +37,57 @@
 </body>
 
 </html>
+<?php
+include 'crudpedido.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["adicionar"])) {
+        $produto = $_POST["produto"];
+        $quantidade = $_POST["quantidade"];
+        $preco = $_POST["preco"];
+
+        adicionarPedido($produto, $quantidade, $preco);
+    }
+}
+
+$pedidos = obterPedidos();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Pedidos</title>
+</head>
+<body>
+    <h1>Carrinho de Pedidos</h1>
+
+    <form method="post" action="">
+        <label for="produto">Produto:</label>
+        <input type="text" name="produto" required>
+        <br>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" name="quantidade" required>
+        <br>
+
+        <label for="preco">Preço:</label>
+        <input type="text" name="preco" required>
+        <br>
+
+        <input type="submit" name="adicionar" value="Adicionar Pedido">
+    </form>
+
+    <h2>Pedidos</h2>
+    <ul>
+        <?php foreach ($pedidos as $pedido): ?>
+            <li>
+                <?= $pedido["produto"] ?> - Quantidade: <?= $pedido["quantidade"] ?> - Preço: R$<?= number_format($pedido["preco"], 2) ?>
+                <a href="editar.php?id=<?= $pedido["id"] ?>">Editar</a>
+                <a href="excluir.php?id=<?= $pedido["id"] ?>">Excluir</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</body>
+</html>
