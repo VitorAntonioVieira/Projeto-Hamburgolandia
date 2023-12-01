@@ -55,9 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     logout
                 </span>
             </a>
-            <span onclick="" class="material-symbols-outlined">
-                shopping_cart_checkout
-            </span>
+          
         </div>
     </nav>
     <div class="cores">

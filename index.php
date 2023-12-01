@@ -52,9 +52,7 @@ include 'includes/conexao.php';
                 </span>
             </a>
         </div>
-        <span onclick="openCartModal1()" class="material-symbols-outlined" id="openModalBtn" a href="carrinho.php">
-                shopping_cart_checkout
-            </span>
+        
     </nav>
    
     <div class="cores">
