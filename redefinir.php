@@ -37,7 +37,13 @@ session_start();
 
 <body>
     <nav>
-        <img id="logo" src="img/logos/1.png" alt="Logo" onClick="document.location.href='login.php'">
+        <?php
+        if (session_status() !== PHP_SESSION_ACTIVE){
+            echo `<img id="logo" src="img/logos/1.png" alt="Logo" onClick="document.location.href='login.php'">`;
+        } else {
+            echo `<img id="logo" src="img/logos/1.png" alt="Logo" onClick="document.location.href='index.php'">`;
+        }
+        ?>
     </nav>
     <div class="corpo">
         <div class="field">
