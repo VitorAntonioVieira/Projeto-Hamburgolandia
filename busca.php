@@ -36,9 +36,7 @@ $sth = $mysqli->query("SELECT * FROM `produtos` WHERE `nome_produto` LIKE '$nome
 					logout
 				</span>
 			</a>
-			<span onclick="" class="material-symbols-outlined">
-				shopping_cart_checkout
-			</span>
+			
 		</div>
 	</nav>
 	<div class="cores">
