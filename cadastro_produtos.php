@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="label-float">
                     <select class="select-estilizado" name="categoria" required>
                         <option value="" disabled selected>Selecione a Categoria</option>
-                        <option value="lnache">Lanche</option>
+                        <option value="lanche">Lanche</option>
                         <option value="bebida">Bebida</option>
                         <option value="porcoe">Porção</option>
                     </select>

@@ -51,35 +51,39 @@ include 'includes/conexao.php'
         </ul>
     </div>
     <h1 class="grid-title no-select">Pedidos</h1>
-    <?php
-    $sql_l = "SELECT * FROM pedidos";
-    $result = $mysqli->query($sql_l);
+    <section class="pedidos">
+        <table>
+            <th>Mesa</th>
+            <th>Garçom</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Observações</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+            <?php
+            $sql_l = "SELECT * FROM pedidos";
+            $result = $mysqli->query($sql_l);
 
-    if ($result->num_rows > 0) {
-        echo "<table>";
-        echo "<th>Mesa</th><th>Garçom</th><th>Produto</th><th>Quantidade</th><th>Observações</th><th>Editar</th><th>Excluir</th>";
-
-        // Exibindo os dados
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["mesa_pedido"] . "</td>";
-            echo "<td>" . $row["garcompedido"] . "</td>";
-            echo "<td>" . $row["produtopedido"] . "</td>";
-            echo "<td>" . $row["quantidade_pedido"] . "</td>";
-            echo "<td>" . $row["obs_pedido"] . "</td>";
-            echo "<td><button id='botao-editar-pedido'><span class='material-symbols-outlined'>
+            if ($result->num_rows > 0) {
+                // Exibindo os dados
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["mesa_pedido"] . "</td>";
+                    echo "<td>" . $row["garcompedido"] . "</td>";
+                    echo "<td>" . $row["produtopedido"] . "</td>";
+                    echo "<td>" . $row["quantidade_pedido"] . "</td>";
+                    echo "<td>" . $row["obs_pedido"] . "</td>";
+                    echo "<td><button id='botao-editar-pedido'><span class='material-symbols-outlined'>
             edit
             </span></button></td>";
-            echo "<td><button id='botao-excluir-pedido'><span class='material-symbols-outlined'>
+                    echo "<td><button id='botao-excluir-pedido'><span class='material-symbols-outlined'>
             delete
             </span></button></td>";
-            echo "</tr>";
-        }
-
-        echo "</table>";
-    }
-    ?>
-
+                }
+            }
+            ?>
+        </table>
+    </section>
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>
