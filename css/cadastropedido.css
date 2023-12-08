@@ -353,7 +353,7 @@ select option[value="ativo"] {
     -webkit-appearance: none;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) {
     /* Estilize a barra de pesquisa e o botão aqui */
     .search-container {
     display: flex;
@@ -429,7 +429,7 @@ select option[value="ativo"] {
 
     .containerpedidos {
         display: flex;
-        width: 100%;
+        width: 80vw;
         margin: auto;
     }
 

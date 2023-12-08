@@ -63,7 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <img id="cores" src="img/cores.png" alt="cores">
     </div>
     <div class="encaminhamentos">
-    <div class="encaminhamentos">
         <ul>
             <li><a href="index.php">Produtos</a></li>
             <li><a href="adicionarpedido.php">Fazer Pedido</a></li>
@@ -71,7 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <li><a href="cadastro_produtos.php">Cadastro de Produtos</a></li>
             <li><a href="preparos.php">A Preparo</a></li>
         </ul>
-    </div>
     </div>
     <h1 class="grid-title no-select">Cadastro de Produtos</h1>
 

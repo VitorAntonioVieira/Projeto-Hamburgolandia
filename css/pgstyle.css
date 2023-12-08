@@ -75,6 +75,36 @@ footer {
     align-items: center;
 
 }
+#menu{
+    display: none !important;
+}
+@media screen and (max-width: 580px) {
+  
+    .encaminhamentos{
+    display: none ;
+
+
+}
+.encaminhamentos ul{
+ display: block;
+
+}
+.encaminhamentos ul li{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#menu{
+    display: block !important;
+}
+
+}
+@media screen and (min-width: 580px) {
+  
+
+
+
+}
 
 .sobre {
     display: flex;

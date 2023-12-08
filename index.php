@@ -58,7 +58,8 @@ include 'includes/conexao.php';
     <div class="cores">
         <img id="cores" src="img/cores.png" alt="cores">
     </div>
-    <div class="encaminhamentos">
+    <button id="menu" onclick="menu()" >Menu</button>
+    <div id="encaminhamentos" class="encaminhamentos">
         <ul>
             <li><a href="index.php">Produtos</a></li>
             <li><a href="adicionarpedido.php">Fazer Pedido</a></li>

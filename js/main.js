@@ -57,3 +57,16 @@ function closeCartModal1() {
 }
 
 document.getElementById('cartModal1').style.display = 'none';
+
+
+function menu(){
+
+console.log("testeS")
+if(document.getElementById("encaminhamentos").style.display=="block"){
+
+    document.getElementById("encaminhamentos").style.display="none"
+}else{
+    document.getElementById("encaminhamentos").style.display="block"
+
+}
+}
