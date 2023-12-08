@@ -51,6 +51,63 @@ include 'includes/conexao.php'
         </ul>
     </div>
     <h1 class="grid-title no-select">Pedidos</h1>
+<<<<<<< HEAD
+    <?php
+
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['excluir']) && is_numeric($_GET['excluir'])) {
+    $idPedido = $_GET['excluir'];
+
+    // Executa a consulta DELETE para excluir o pedido com o ID especificado
+    $sql = "DELETE FROM pedidos WHERE id_pedido = $idPedido";
+
+    if ($mysqli->query($sql) === TRUE) {
+        echo "Pedido excluído com sucesso.";
+    } else {
+        echo "Erro ao excluir pedido: " . $mysqli->error;
+    }
+}
+$sql_l = "SELECT * FROM pedidos";
+$result = $mysqli->query($sql_l);
+
+// Exibe a tabela
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<th>Mesa</th><th>Garçom</th><th>Produto</th><th>Quantidade</th><th>Observações</th><th>Excluir</th>";
+
+    // Exibindo os dados
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["mesa_pedido"] . "</td>";
+        echo "<td>" . $row["garcompedido"] . "</td>";
+        echo "<td>" . $row["produtopedido"] . "</td>";
+        echo "<td>" . $row["quantidade_pedido"] . "</td>";
+        echo "<td>" . $row["obs_pedido"] . "</td>";
+        echo "<td><button class='botao-excluir-pedido' data-id='{$row['id_pedido']}'><span class='material-symbols-outlined'>delete</span></button></td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+}
+
+// Fecha a conexão
+$mysqli->close();
+?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.getElementsByClassName("botao-excluir-pedido");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+            var id = this.getAttribute("data-id");
+            var confirmacao = confirm("Tem certeza que deseja excluir este pedido?");
+            if (confirmacao) {
+                window.location.href = "delete_item.php?excluir=" + id;
+            }
+        });
+    }
+});
+</script>
+
+=======
     <section class="pedidos">
         <table>
             <th>Mesa</th>
@@ -84,6 +141,7 @@ include 'includes/conexao.php'
             ?>
         </table>
     </section>
+>>>>>>> b95b8de852e4f2a3970511792c62a81bbf07f80d
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>

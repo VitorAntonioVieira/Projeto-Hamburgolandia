@@ -1,32 +1,23 @@
 <?php
-session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
-    $id = $_GET['id'];
+// Conectar ao banco de dados e outras configurações, se necessário
 
-    include 'includes/conexao.php';
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $idPedido = $_GET['id'];
 
-    // Execute a consulta de exclusão
-    $sql = "DELETE FROM produtos WHERE id_produto = $id";
-    $mysqli->query($sql);
+    // Execute a consulta DELETE para excluir o pedido com o ID especificado
+    $sql = "DELETE FROM pedidos WHERE id_pedido = $idPedido";
 
-    
-    if (isset($_GET['id'])) {
-        // Aqui, você processa a exclusão do item com base no ID recebido, por exemplo, usando um banco de dados.
-        // Após a exclusão ser bem-sucedida, você pode exibir uma mensagem de confirmação como um alert.
-    
-        // Exemplo de código para exibir uma mensagem de confirmação como um alert:
-        echo "<script>alert('Item excluído com sucesso!'); window.location.href = 'index.php';</script>";
+    if ($mysqli->query($sql) === TRUE) {
+        echo "Pedido excluído com sucesso.";
     } else {
-        echo "<script>alert('Erro ao excluir o item.'); window.location.href = 'index.php';</script>";
+        echo "Erro ao excluir pedido: " . $mysqli->error;
     }
-  
-    
-    $mysqli->close();
 } else {
-    echo "ID não especificado na URL ou método de requisição inválido.";
+    echo "ID de pedido inválido.";
 }
-?>
 
+// Fechar a conexão, se necessário
+?>
 
 
 
