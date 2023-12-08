@@ -16,6 +16,54 @@ footer {
     margin-bottom: -30px;
     color: #ccc;
 }
+.containerpedidos {
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo na vertical */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    border: 3px solid;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 90px;
+    border-color: #FFB67B;
+    text-align: center;
+}
+
+.corpo {
+    margin-top: 20px; /* Adiciona um espaço superior */
+    width: 100%; /* Define a largura do formulário */
+    max-width: 400px; /* Defina a largura máxima do formulário */
+    padding: 0 20px; /* Adiciona um preenchimento interno */
+}
+
+/* Ajustes nos inputs e labels dentro da classe .label-float */
+.label-float {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-bottom: 20px; /* Espaçamento entre os campos */
+}
+
+.label-float input[type="text"],
+.label-float input[type="number"] {
+    width: 100%; /* Define a largura dos inputs */
+    margin-bottom: 10px; /* Espaçamento inferior dos inputs */
+    padding: 10px; /* Adiciona um preenchimento interno aos inputs */
+    border-radius: 5px; /* Arredonda as bordas dos inputs */
+    border: 1px solid #ccc; /* Adiciona uma borda aos inputs */
+}
+
+.label-float input[type="submit"] {
+    background-color: #00D128; /* Cor do botão */
+    color: #fff; /* Cor do texto no botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 30px; /* Arredonda as bordas do botão */
+    height: 40px; /* Altura do botão */
+    width: 150px; /* Largura do botão */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-bottom: 15px; /* Espaçamento inferior do botão */
+}
 
 .no-select {
 
@@ -38,7 +86,6 @@ footer {
 }
 
 .grid-title {
-    margin-left: 100px;
     padding: 10px;
     margin-top: 70px;
 }
@@ -70,20 +117,6 @@ footer {
     align-items: center;
     text-align: center;
 }
-    .containerpedidos {
-        display: flex;
-        flex-direction: row; /* Organiza o conteúdo na vertical */
-        align-items: center; /* Centraliza horizontalmente */
-        justify-content: center; /* Centraliza verticalmente */
-        gap: 60px;
-        border: 3px solid;
-        width: 400px;
-        margin: auto;
-        border-radius: 20px;
-        margin-top: 90px;
-        border-color: #FFB67B;
-        text-align: center;
-    }
 
     .encaminhamentos ul {
         display: flex;
@@ -198,7 +231,7 @@ footer {
 }
 
 .pedidopreparo1 {
-    /imagem do lanche/
+    /*imagem do lanche*/
     margin-left: 5px;
     width: 190px;
     justify-content: center;
@@ -313,7 +346,7 @@ select option[value="ativo"] {
     padding-left: 7%;
     font-size: 16px;
     font-weight: 400;
-    width: 100%;
+    width: 200%;
     transition: all .1s linear;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
@@ -396,7 +429,7 @@ select option[value="ativo"] {
 
     .containerpedidos {
         display: flex;
-        width: 80%;
+        width: 100%;
         margin: auto;
     }
 
@@ -445,6 +478,12 @@ select option[value="ativo"] {
         padding: 10px;
         }
 
+        .label-float {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin-bottom: 200%;
+        }
     #h1preparo {
         margin-left: 50px;
         padding: 10px;
@@ -715,7 +754,7 @@ th {
 }
 
 h1 {
-    margin: 20px 0;
+    text-align: center;
     color: #333;
 }
 
@@ -734,7 +773,7 @@ tr:hover {
     color: #fff;
 }
 #botao-excluir-pedido {
-    background-color: #ff3c3c;
+    background-color: #b6acac;
 }
 #botao-excluir-pedido:hover{
     cursor: pointer;
