@@ -52,33 +52,59 @@ include 'includes/conexao.php'
     </div>
     <h1 class="grid-title no-select">Pedidos</h1>
     <?php
-    $sql_l = "SELECT * FROM pedidos";
-    $result = $mysqli->query($sql_l);
 
-    if ($result->num_rows > 0) {
-        echo "<table>";
-        echo "<th>Mesa</th><th>Garçom</th><th>Produto</th><th>Quantidade</th><th>Observações</th><th>Editar</th><th>Excluir</th>";
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['excluir']) && is_numeric($_GET['excluir'])) {
+    $idPedido = $_GET['excluir'];
 
-        // Exibindo os dados
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["mesa_pedido"] . "</td>";
-            echo "<td>" . $row["garcompedido"] . "</td>";
-            echo "<td>" . $row["produtopedido"] . "</td>";
-            echo "<td>" . $row["quantidade_pedido"] . "</td>";
-            echo "<td>" . $row["obs_pedido"] . "</td>";
-            echo "<td><button id='botao-editar-pedido'><span class='material-symbols-outlined'>
-            edit
-            </span></button></td>";
-            echo "<td><button id='botao-excluir-pedido'><span class='material-symbols-outlined'>
-            delete
-            </span></button></td>";
-            echo "</tr>";
-        }
+    // Executa a consulta DELETE para excluir o pedido com o ID especificado
+    $sql = "DELETE FROM pedidos WHERE id_pedido = $idPedido";
 
-        echo "</table>";
+    if ($mysqli->query($sql) === TRUE) {
+        echo "Pedido excluído com sucesso.";
+    } else {
+        echo "Erro ao excluir pedido: " . $mysqli->error;
     }
-    ?>
+}
+$sql_l = "SELECT * FROM pedidos";
+$result = $mysqli->query($sql_l);
+
+// Exibe a tabela
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<th>Mesa</th><th>Garçom</th><th>Produto</th><th>Quantidade</th><th>Observações</th><th>Excluir</th>";
+
+    // Exibindo os dados
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["mesa_pedido"] . "</td>";
+        echo "<td>" . $row["garcompedido"] . "</td>";
+        echo "<td>" . $row["produtopedido"] . "</td>";
+        echo "<td>" . $row["quantidade_pedido"] . "</td>";
+        echo "<td>" . $row["obs_pedido"] . "</td>";
+        echo "<td><button class='botao-excluir-pedido' data-id='{$row['id_pedido']}'><span class='material-symbols-outlined'>delete</span></button></td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+}
+
+// Fecha a conexão
+$mysqli->close();
+?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.getElementsByClassName("botao-excluir-pedido");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+            var id = this.getAttribute("data-id");
+            var confirmacao = confirm("Tem certeza que deseja excluir este pedido?");
+            if (confirmacao) {
+                window.location.href = "index.php?excluir=" + id;
+            }
+        });
+    }
+});
+</script>
 
     <footer>
         ©HAMBURGOLÂNDIA · 2023
