@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     class="search-button"><span class="material-symbols-outlined">search</span></button></input>
                 <button id="pc-sch" class="search-button"><span>Buscar</span></button>
             </form>
+            
         </div>
         <div id="logout">
             <a href="logout.php">
@@ -70,11 +71,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <li><a href="preparos.php">A Preparo</a></li>
         </ul>
     </div>
-    <h1 class="grid-title no-select">Cadastro de Produtos</h1>
+    <h1 class="grid-title no-select">Fazer pedido</h1>
 
-    <div class="containerpedidos centro">
+    <div class="containerpedidos ">
         <div class="corpo">
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+            <form  class= "caixa" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                 <!-- Input para o nome do produto -->
                 <div class="label-float">
                     <input name="mesa" type="text" placeholder=" " required>

@@ -38,8 +38,9 @@ session_start();
 <body>
     <nav>
         <?php
-        if (session_status() !== PHP_SESSION_ACTIVE){
+        if (isset($_SESSION['usuario_logado'])) {
             echo `<img id="logo" src="img/logos/1.png" alt="Logo" onClick="document.location.href='login.php'">`;
+            echo 'Hello World!';
         } else {
             echo `<img id="logo" src="img/logos/1.png" alt="Logo" onClick="document.location.href='index.php'">`;
         }

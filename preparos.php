@@ -51,6 +51,7 @@ include 'includes/conexao.php'
         </ul>
     </div>
     <h1 class="grid-title no-select">Pedidos</h1>
+<<<<<<< HEAD
     <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['excluir']) && is_numeric($_GET['excluir'])) {
@@ -99,13 +100,48 @@ document.addEventListener("DOMContentLoaded", function() {
             var id = this.getAttribute("data-id");
             var confirmacao = confirm("Tem certeza que deseja excluir este pedido?");
             if (confirmacao) {
-                window.location.href = "index.php?excluir=" + id;
+                window.location.href = "delete_item.php?excluir=" + id;
             }
         });
     }
 });
 </script>
 
+=======
+    <section class="pedidos">
+        <table>
+            <th>Mesa</th>
+            <th>Garçom</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Observações</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+            <?php
+            $sql_l = "SELECT * FROM pedidos";
+            $result = $mysqli->query($sql_l);
+
+            if ($result->num_rows > 0) {
+                // Exibindo os dados
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["mesa_pedido"] . "</td>";
+                    echo "<td>" . $row["garcompedido"] . "</td>";
+                    echo "<td>" . $row["produtopedido"] . "</td>";
+                    echo "<td>" . $row["quantidade_pedido"] . "</td>";
+                    echo "<td>" . $row["obs_pedido"] . "</td>";
+                    echo "<td><button id='botao-editar-pedido'><span class='material-symbols-outlined'>
+            edit
+            </span></button></td>";
+                    echo "<td><button id='botao-excluir-pedido'><span class='material-symbols-outlined'>
+            delete
+            </span></button></td>";
+                }
+            }
+            ?>
+        </table>
+    </section>
+>>>>>>> b95b8de852e4f2a3970511792c62a81bbf07f80d
     <footer>
         ©HAMBURGOLÂNDIA · 2023
     </footer>
